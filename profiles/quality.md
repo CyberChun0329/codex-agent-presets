@@ -25,7 +25,7 @@ work with the primary; batch useful independent units and consume results. Do no
 smaller child with a duplicate full investigation by a larger model.
 
 Respect existing live concurrency limits and shared state. Ordinary tasks usually
-need 0-3 active children; run at most 6 child turns at once, excluding the primary.
+need 0-3 active children; run at most 8 child turns at once, excluding the primary.
 This is a ceiling, not a target: parallel work must be distinct, ready and worth
 coordinating. Obey any lower runtime limit and preserve the user's concurrency
 settings, including limits on open child threads. Serialize overlapping writes and

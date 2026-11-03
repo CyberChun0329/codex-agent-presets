@@ -8,8 +8,8 @@
 
 | 预设 | 主模型 | 子模型 | 子模型推理档位 | 同时工作的子 agent 上限 |
 | --- | --- | --- | --- | --- |
-| Quality | `gpt-6.1-sol` | Luna、Terra、Sol、Astra | High／Xhigh／条件性 Max | 6 |
-| Extra Quality | `gpt-6-astra` | Terra、Sol、Astra | High／Xhigh／条件性 Max | 6 |
+| Quality | `gpt-6.1-sol` | Luna、Terra、Sol、Astra | High／Xhigh／条件性 Max | 8 |
+| Extra Quality | `gpt-6-astra` | Terra、Sol、Astra | High／Xhigh／条件性 Max | 8 |
 | Balance | `gpt-6.1-sol` | Luna、Terra、Sol | Low–Max，按条件使用 | 6 |
 | Economy | `gpt-6.1-terra` | Luna、Terra | Low–Xhigh | 3 |
 

@@ -8,8 +8,8 @@ Describe your task as usual; Codex uses the selected profile to decide whether a
 
 | Profile | Primary model | Child models | Child effort | Active child limit |
 | --- | --- | --- | --- | --- |
-| Quality | `gpt-6.1-sol` | Luna, Terra, Sol, Astra | High / Xhigh / conditional Max | 6 |
-| Extra Quality | `gpt-6-astra` | Terra, Sol, Astra | High / Xhigh / conditional Max | 6 |
+| Quality | `gpt-6.1-sol` | Luna, Terra, Sol, Astra | High / Xhigh / conditional Max | 8 |
+| Extra Quality | `gpt-6-astra` | Terra, Sol, Astra | High / Xhigh / conditional Max | 8 |
 | Balance | `gpt-6.1-sol` | Luna, Terra, Sol | Low–Max, conditional | 6 |
 | Economy | `gpt-6.1-terra` | Luna, Terra | Low–Xhigh | 3 |
 

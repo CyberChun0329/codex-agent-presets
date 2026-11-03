@@ -5,9 +5,9 @@
 - Provide four independent English profiles and eight shared roles, with bilingual documentation and subscription-based recommendations.
 - Install only the selected profile. Reinstalling or switching profiles replaces the same marked `AGENTS.md` block; other `config.toml` settings are preserved.
 - Keep the three installation choices: scope, profile and optional daily repository update check.
-- Limit child agents working at once to 3 for Economy and 6 for the other profiles.
+- Limit child agents working at once to 3 for Economy, 6 for Balance, and 8 for Quality and Extra Quality.
 
 - 提供四份独立的英文配置、八个共用角色及双语文档和订阅选档建议。
 - 仅安装所选配置。重装或切换档位时替换 `AGENTS.md` 中同一个标记区块；保留 `config.toml` 的其他设置。
 - 保留三个安装选项：作用域、档位和可选的每日仓库更新检查。
-- Economy 最多同时使用 3 个子 agent，其他档位最多同时使用 6 个。
+- Economy 最多同时使用 3 个子 agent，Balance 最多 6 个，Quality 和 Extra Quality 最多 8 个。
