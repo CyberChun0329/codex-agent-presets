@@ -19,7 +19,7 @@ The model names in the child column refer to `gpt-6-luna`, `gpt-6.1-terra`, `gpt
 
 ## Choose by subscription
 
-Use these recommendations as a starting point, then adjust to your usage:
+These are usage suggestions, not quota estimates:
 
 | ChatGPT monthly subscription | Recommendation |
 | --- | --- |
@@ -32,7 +32,7 @@ See [OpenAI pricing](https://learn.chatgpt.com/docs/pricing) for current prices 
 
 ## Install
 
-Fill in the repository URL and paste this prompt into Codex:
+Paste this prompt into Codex:
 
 ```text
 Install Codex Agent Presets from this repository:
@@ -52,6 +52,6 @@ Add the complete selected profile to AGENTS.md using its start/end markers; if t
 Only if I choose yes, create or reuse a built-in daily check at 09:00 local time. Inspect only the repository's latest commit; notify on change or failure, stay quiet otherwise, and do not auto-update configuration. Ask if the time zone is unknown; report if built-in scheduling is unavailable. Report the changed paths when finished.
 ```
 
-Start a fresh chat after installation. An isolated project Economy installation passed; activation in a fresh chat and daily checks remain untested.
+Start a fresh chat after installation.
 
 See the [benchmark notes](EVIDENCE.md) for the model-selection evidence.

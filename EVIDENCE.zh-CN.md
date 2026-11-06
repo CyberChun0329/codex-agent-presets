@@ -1,6 +1,6 @@
 # 模型选型依据
 
-[English](EVIDENCE.md) · **外部评测于 2026-11-03 复核；本地文稿对比为 2026-11-06** · 采用 **2026-10-26** GPT-6.1 Terra 发布后的模型组合
+[English](EVIDENCE.md) · **外部评测：2026-11-03** · **本地对比：2026-11-06**
 
 Luna 指 GPT-6 Luna，Terra／Sol 指 GPT-6.1 Terra／Sol，Astra 指 GPT-6 Astra。
 
@@ -14,7 +14,7 @@ Luna 指 GPT-6 Luna，Terra／Sol 指 GPT-6.1 Terra／Sol，Astra 指 GPT-6 Astr
 | [Terra Max／Xhigh](https://artificialanalysis.ai/models/comparisons/gpt-6-1-terra-vs-gpt-6-1-terra-xhigh) | Terminal-Bench 4.0：56%／46%；科学计算：58%／42%；自动化：60%／60% | $0.96／$0.40 |
 | [Sol Max／Xhigh](https://artificialanalysis.ai/models/comparisons/gpt-6-1-sol-vs-gpt-6-1-sol-xhigh) | 科学计算：58%／50%；Terminal-Bench 4.0：56%／54%；自动化：65%／67%；GDP.pdf：31%／32% | $1.27／$0.76 |
 | [Terra High／Sol Medium](https://artificialanalysis.ai/models/comparisons/gpt-6-1-terra-high-vs-gpt-6-1-sol-medium) | Terminal-Bench 4.0：42%／48%；FrontierCode 2.0：37%／33% | $0.26／$0.36 |
-| [Terra Max／Sol High](https://artificialanalysis.ai/models/comparisons/gpt-6-1-terra-vs-gpt-6-1-sol-high) | 科学计算：58%／46%；Briefcase v1.1 Elo：1402／1467；GDP.pdf：29%／32% | $0.96／$0.59 |
+| [Terra Max／Sol High](https://artificialanalysis.ai/models/comparisons/gpt-6-1-terra-vs-gpt-6-1-sol-high) | Terminal-Bench 4.0：56%／52%；科学计算：58%／46%；Briefcase v1.1 Elo：1402／1467；Omniscience v1.1 净分：30／41；GDP.pdf：29%／32% | $0.96／$0.59 |
 | [Luna Max／Xhigh](https://artificialanalysis.ai/models/comparisons/gpt-6-luna-vs-gpt-6-luna-xhigh) | Terminal-Bench 4.0：13%／8%；科学计算：9%／5%；自动化：53%／48% | $0.15／$0.10 |
 
 表中科学计算为 Terminal-Bench-Science 0.1，自动化为 AutomationBench-AA。
@@ -23,7 +23,7 @@ Luna 指 GPT-6 Luna，Terra／Sol 指 GPT-6.1 Terra／Sol，Astra 指 GPT-6 Astr
 用于需要更深入推理的工作；Luna 则需要明确范围和有效检查。它们不支持统一提高推理
 档位，提高小模型的推理档位也不一定能替代更强的模型。
 
-完整指标和时间比较见英文页。Economy 不保证任务完成得最快。
+Terra High／Sol Medium 的首个回答 token 时间分别为 20.82／9.35 秒，整项任务耗时为 171.39／217.80 秒；这是当时的快照。较低 token 价格或更快的首次输出不能确定总成本或完成时间，Economy 不保证任务完成得最快。
 
 ## 原始测试榜单
 
@@ -32,7 +32,7 @@ Luna 指 GPT-6 Luna，Terra／Sol 指 GPT-6.1 Terra／Sol，Astra 指 GPT-6 Astr
   **58.2% ±3.1**、Astra **58.2% ±2.8**、Luna **16.4% ±2.7**；所查页面没有 Terra。
   成本和 token 数统计整套测试，运行方式与上面的 AA 比较不同。
 - [ALE v1.1](https://snorkel.ai/leaderboard/agents-last-exam/)：122 个任务、55 个子行业。
-  Terra/Max、Codex 的通过率为 **41.8%**，得分为 **69.8%**。通过率要求完整完成，
+  Terra/Max、Codex 的通过率为 **41.8%**，得分为 **69.8%**，总耗时 **124h36m**、输出 **5.5M token**。通过率要求完整完成，
   得分包含部分完成。
 
 ## OpenAI 数据与建议
@@ -43,51 +43,27 @@ Luna 指 GPT-6 Luna，Terra／Sol 指 GPT-6.1 Terra／Sol，Astra 指 GPT-6 Astr
 推理档位，也是 Balance、Economy 允许较低档位的依据。v1 得分与 v1.1 通过率应分别比较。
 
 [OpenAI 建议](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-6-astra#gpt-61-terra)
-将 Terra 用于自然写作、视觉推理和精确的电脑操作，因此各档都保留这些用途。本次评估
-未找到控制当前模型版本和推理档位的独立写作／视觉比较。Briefcase 衡量工作成果，不能单独证明文风优势。
+将 Terra 用于自然写作、视觉推理和精确的电脑操作。Briefcase 衡量完整工作成果，不能单独证明文风优势。
 
 ## 本地固定标准文稿对比 — 2026-11-06
 
-Terra/High 与 Sol/High 使用相同事实和验收标准，各修订一段英文安装说明及一段中文
-验证范围说明。两组首稿均可接受，无需必要返工。随后，两名新审阅者分别检查同一组
-七段匿名文字：四段修订稿和三段预备样本。两人均找到七处预列事实错误，并通过四段
-合格修订稿。两人还发现一段原拟作为合格对照的样本漏写根模型应设置的值；评估保留
-这项样本准备错误。预列错误清单不是经过验证的完整审阅答案。
+Terra/High 与 Sol/High 使用相同事实和标准，分别修订同一组英文、中文技术说明；两组首稿均达到要求，无需返工。两种模型还各审阅了同一组七段短篇技术文字。
 
-| 任务／模型，均为 High | 原生回合耗时 | 未缓存输入 token | 缓存输入 token | 输出 token |
+| 任务／模型，均为 High | 任务耗时 | 未缓存输入 token | 缓存输入 token | 输出 token |
 | --- | ---: | ---: | ---: | ---: |
 | 两段修订／Terra | 38.7 s | 31,763 | 89,088 | 1,069 |
 | 两段修订／Sol | 44.0 s | 31,864 | 89,472 | 1,163 |
 | 七段审阅／Terra | 31.8 s | 18,195 | 71,296 | 841 |
 | 七段审阅／Sol | 44.4 s | 18,217 | 100,480 | 1,333 |
 
-这支持在 Quality 中明确：固定标准的修订及基于所给材料的审阅通常从 Terra/High 开始。
-任务需要解决实质歧义或相互牵连的概念决策时，仍适合使用 Sol；审阅者身份本身不足以
-构成这个理由。
+Terra/High 在这次小样本中耗时更短、输出 token 更少。任务耗时包含检查、等待和工具调用，不代表完整工作流耗时。缓存输入属于输入，输出已包含推理 token。
 
-这是一次短篇受控对比，采用专门编写的样本，不是独立榜单或长篇文稿测试。耗时包含
-身份检查、等待和工具调用；缓存输入属于输入，输出已包含推理 token。主代理准备与
-整合开销未按模型归属，子回合实际 service tier 未暴露，因此这些数字不测量整套系统
-成本或 Codex 账户额度。主机设置未修改。方法参考
-[OpenAI 的同输入比较建议](https://developers.openai.com/api/docs/guides/model-selection#experiment)。
-
-## 将文稿分工应用到四档 — v0.4.1
+## 如何应用
 
 | 档位 | 固定标准修订与基于所给材料的审阅 |
 | --- | --- |
-| Economy | 优先 Terra。保留原有选择：范围明确且可有效检查的工作可用 Low／Medium，正常推理用 High，条件相互牵连时用 Xhigh；仍限于 Luna／Terra。 |
-| Balance | 优先 Terra，审阅者身份本身不要求 Sol；推理档位仍按原有任务标准选择。实质歧义、架构／方法选择和证据综合使用 Sol。 |
-| Quality | 通常从 Terra/High 开始；实质歧义和相互牵连的概念决策使用 Sol。 |
-| Extra Quality | 通常从 Terra/High 开始；Sol 的适用边界相同，审阅者身份本身不构成选用 Sol 的理由。 |
+| Economy | 优先 Terra：范围明确且可有效检查的工作用 Low／Medium，正常推理用 High，条件相互牵连时用 Xhigh；模型池限于 Luna／Terra。 |
+| Balance | 优先 Terra，按任务选择推理档位；实质歧义、架构或方法选择及证据综合使用 Sol。 |
+| Quality 和 Extra Quality | 通常从 Terra/High 开始；实质歧义或相互牵连的概念决策使用 Sol。审阅者身份本身不要求 Sol。 |
 
-上面的实测只比较了 High。把任务偏好应用到另外三档，是与原有 Terra 写作及限定范围
-执行指引一致的策略延伸；它没有证明 Terra/Low 或 Medium 能达到 High 的效果，也没有
-确定所有任务的最佳档位或完成任何一档的整套校准。Economy 和 Balance 保留原有低档位
-选择；Extra Quality 的 High 起点符合其原有下限。模型池、推理范围、并发上限和安装
-行为均不变。
-
-## 这些数据能说明什么
-
-Extra Quality 不使用 Luna、Economy 不使用 Max，都是对可用模型和推理档位的选择。
-目前没有四档完整配置、Ultra 主模型表现或 Codex 订阅用量的对照测试。README 中的
-订阅选档表是使用建议，不是经过测量的额度估算。
+本地对比只覆盖 High 与短篇技术文稿，不能推广到 Low／Medium 或长篇文稿。现有数据未评估四档完整配置、Ultra 主模型表现或 Codex 订阅用量。

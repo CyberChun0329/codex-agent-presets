@@ -1,6 +1,6 @@
 # Model-selection evidence
 
-[简体中文](EVIDENCE.zh-CN.md) · External benchmarks reviewed **2026-11-03**, following the **2026-10-26** release of GPT-6.1 Terra; local document comparison **2026-11-06**.
+[简体中文](EVIDENCE.zh-CN.md) · External benchmarks: **2026-11-03** · Local comparison: **2026-11-06**.
 
 Luna means GPT-6 Luna; Terra and Sol mean GPT-6.1 Terra and Sol; Astra means GPT-6 Astra.
 
@@ -102,64 +102,34 @@ do. The chart reports v1 scores; compare them separately from v1.1 pass rates.
 [Official chart](https://openai.com/index/introducing-gpt-6-1-terra/).
 
 OpenAI recommends Terra for natural writing, visual reasoning and precise computer
-use. All profiles retain those uses. This review found no usable independent
-writing or visual comparison controlling for current model version and effort.
-The reviewed LMArena snapshot predated Terra 6.1; [OSWorld 2.0](https://snorkel.ai/leaderboard/os-world-2-0/)
-had no comparable current-model rows. Briefcase scores measure work products, not
-prose style alone. [Official guidance](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-6-astra#gpt-61-terra).
+use. Briefcase measures complete work products, not prose style alone.
+[Official guidance](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-6-astra#gpt-61-terra).
 
 ## Local fixed-criteria document comparison — 2026-11-06
 
-Terra/High and Sol/High received the same supplied facts and acceptance criteria.
-Each revised an English installation explanation and a Chinese validation-scope
-explanation. Both pairs' first drafts were accepted without necessary repair.
-Two fresh reviewers then assessed the same seven anonymous sections: the four
-revisions and three prepared fixtures. Both found all seven prelisted factual
-errors and passed the four accepted revisions. Both also found a missing root-model
-value in a fixture intended to be clean; that preparation error is retained in the
-assessment. The planted-error list was not an exhaustive review gold standard.
+Terra/High and Sol/High revised the same English and Chinese technical sections
+using supplied facts and criteria. Both first drafts met the requirements without
+rework. Each model also reviewed the same seven short technical sections.
 
-| Task / model, High | Native turn time | Uncached input tokens | Cached input tokens | Output tokens |
+| Task / model, High | Task time | Uncached input tokens | Cached input tokens | Output tokens |
 | --- | ---: | ---: | ---: | ---: |
 | Two revisions / Terra | 38.7 s | 31,763 | 89,088 | 1,069 |
 | Two revisions / Sol | 44.0 s | 31,864 | 89,472 | 1,163 |
 | Seven-section review / Terra | 31.8 s | 18,195 | 71,296 | 841 |
 | Seven-section review / Sol | 44.4 s | 18,217 | 100,480 | 1,333 |
 
-This supports making Terra/High the explicit Quality starting point for revision
-and source-bound review under fixed criteria. Sol remains appropriate when the
-assigned work must resolve substantive ambiguity or coupled conceptual decisions.
-Reviewer status alone does not establish that need.
+Terra/High took less time and used fewer output tokens in this small test. Task
+time includes checks, waiting and tool use; it is not a full-workflow measurement.
+Cached input is part of input, and output includes reasoning tokens.
 
-This was one short controlled batch with purpose-written fixtures, not an
-independent benchmark or a long-manuscript test. Time includes identity checks,
-waiting and tools. Cached input is part of input; output includes reasoning tokens.
-Parent preparation and integration were not attributed to either pair, and actual
-child service tier was not exposed. These figures do not measure full-system cost
-or Codex account allowances. Host settings were not modified.
-The method follows [OpenAI's same-input comparison guidance](https://developers.openai.com/api/docs/guides/model-selection#experiment).
-
-## Applying the document guidance across profiles — v0.4.1
+## Applying the evidence
 
 | Profile | Fixed-criteria revision and source-bound review |
 | --- | --- |
-| Economy | Prefer Terra. Retain Low/Medium for bounded, effectively checked work, High for normal reasoning and Xhigh for interacting constraints. Stay within Luna/Terra. |
-| Balance | Prefer Terra; reviewer status alone does not require Sol. Retain the existing task-based effort choices. Use Sol for substantive ambiguity, architecture/method choice and evidence synthesis. |
-| Quality | Normally start with Terra/High. Use Sol for substantive ambiguity and coupled conceptual decisions. |
-| Extra Quality | Normally start with Terra/High. Apply the same Sol boundary; a reviewer role alone does not warrant Sol. |
+| Economy | Prefer Terra: Low/Medium for bounded, effectively checked work, High for normal reasoning, Xhigh for interacting constraints; the pool is Luna/Terra. |
+| Balance | Prefer Terra and choose effort by task; use Sol for substantive ambiguity, architecture or method choices, and evidence synthesis. |
+| Quality and Extra Quality | Normally start with Terra/High; use Sol for substantive ambiguity or coupled conceptual decisions. Reviewer status alone does not require Sol. |
 
-The observed comparison above used High only. Applying the task preference to the
-other profiles is a policy extension consistent with their existing Terra writing
-and bounded-execution guidance. It does not establish that Terra/Low or Medium
-matches High, determine the best effort for every task, or complete calibration of
-any whole profile. Economy and Balance retain their existing lower-effort options;
-Extra Quality's High starting point fits its existing effort floor. Model pools,
-effort ranges, child limits and installation behaviour remain unchanged.
-
-## What the evidence supports
-
-Extra Quality's exclusion of Luna is a spending choice. Economy's exclusion of Max
-limits available effort. Neither choice has been shown to be optimal for every
-task. No comparison here measures the four complete profiles, Ultra primary-agent
-performance, or Codex subscription usage. The subscription table in the README is
-a practical recommendation, not a measured allowance estimate.
+The local test covered High and short technical documents only; it does not
+establish results at Low/Medium or on long manuscripts. No comparison here measures
+complete profiles, Ultra primary performance or Codex subscription usage.
