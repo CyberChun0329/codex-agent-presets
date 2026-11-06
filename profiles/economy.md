@@ -1,5 +1,5 @@
 <!-- codex-delegation-presets:start -->
-<!-- Codex delegation preset: economy; version: 0.4.0 -->
+<!-- Codex delegation preset: economy; version: 0.4.1 -->
 
 # Codex Delegation Policy
 
@@ -163,7 +163,9 @@ user explicitly requested a primary effort change.
 Use Luna for mechanical gathering, exact extraction, transcription, inventories,
 format checks and simple changes with strong objective validation. Keep Terra for
 natural writing/revision, visual interpretation/computer use and substantive bounded
-execution or coding. Do not reassign all Terra tasks to Luna. Work that would
+execution or coding. Prefer Terra for fixed-criteria document revision and
+source-bound document review. Choose effort separately under this profile's existing
+task-based guidance. Do not reassign all Terra tasks to Luna. Work that would
 otherwise require Sol or Astra may go to Terra only if it can be adequately bounded
 and checked; otherwise report
 the remaining capability limitation. No automatic Sol/Astra escape is allowed.

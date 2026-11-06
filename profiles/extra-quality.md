@@ -1,5 +1,5 @@
 <!-- codex-delegation-presets:start -->
-<!-- Codex delegation preset: extra-quality; version: 0.4.0 -->
+<!-- Codex delegation preset: extra-quality; version: 0.4.1 -->
 
 # Codex Delegation Policy
 
@@ -158,8 +158,10 @@ active-child limit.
 Use Astra as primary and exclude Luna children.
 Use Terra for exact collection/comparison and simple strongly checked changes, and
 prefer it for clear-brief drafting/revision, visual interpretation/computer use and
-bounded execution under established interfaces. Use Sol for substantive independent
-analysis, method/architecture choices and evidence synthesis. Use Astra for a useful
+bounded execution under established interfaces. Fixed-criteria revision and
+source-bound document review normally start with Terra/High. A reviewer role alone
+does not require Sol. Use Sol for substantive ambiguity, conceptual/domain judgment,
+method/architecture choices, coupled decisions and evidence synthesis. Use Astra for a useful
 independent consequential method/design/evidence decision or named deep bottleneck;
 a same-model Astra child is not a capability upgrade over an Astra primary.
 The Terra floor is a willingness-to-spend choice, not a measured guarantee that

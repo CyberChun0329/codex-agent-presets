@@ -136,8 +136,25 @@ independent benchmark or a long-manuscript test. Time includes identity checks,
 waiting and tools. Cached input is part of input; output includes reasoning tokens.
 Parent preparation and integration were not attributed to either pair, and actual
 child service tier was not exposed. These figures do not measure full-system cost
-or Codex account allowances. Other profiles and host settings were not changed.
+or Codex account allowances. Host settings were not modified.
 The method follows [OpenAI's same-input comparison guidance](https://developers.openai.com/api/docs/guides/model-selection#experiment).
+
+## Applying the document guidance across profiles — v0.4.1
+
+| Profile | Fixed-criteria revision and source-bound review |
+| --- | --- |
+| Economy | Prefer Terra. Retain Low/Medium for bounded, effectively checked work, High for normal reasoning and Xhigh for interacting constraints. Stay within Luna/Terra. |
+| Balance | Prefer Terra; reviewer status alone does not require Sol. Retain the existing task-based effort choices. Use Sol for substantive ambiguity, architecture/method choice and evidence synthesis. |
+| Quality | Normally start with Terra/High. Use Sol for substantive ambiguity and coupled conceptual decisions. |
+| Extra Quality | Normally start with Terra/High. Apply the same Sol boundary; a reviewer role alone does not warrant Sol. |
+
+The observed comparison above used High only. Applying the task preference to the
+other profiles is a policy extension consistent with their existing Terra writing
+and bounded-execution guidance. It does not establish that Terra/Low or Medium
+matches High, determine the best effort for every task, or complete calibration of
+any whole profile. Economy and Balance retain their existing lower-effort options;
+Extra Quality's High starting point fits its existing effort floor. Model pools,
+effort ranges, child limits and installation behaviour remain unchanged.
 
 ## What the evidence supports
 

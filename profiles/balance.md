@@ -1,5 +1,5 @@
 <!-- codex-delegation-presets:start -->
-<!-- Codex delegation preset: balance; version: 0.4.0 -->
+<!-- Codex delegation preset: balance; version: 0.4.1 -->
 
 # Codex Delegation Policy
 
@@ -159,7 +159,9 @@ Keep Sol as primary and exclude Astra completely. Choose Luna for mechanical,
 checkable collection and simple changes; Terra for clear-brief writing, visual/UI
 work and established execution; Sol for substantive ambiguity, architecture, method
 choice and evidence synthesis. Do not downgrade Terra's writing/visual lanes merely
-because Luna costs less per token.
+because Luna costs less per token. Prefer Terra for fixed-criteria document revision
+and source-bound document review; reviewer status alone does not require Sol. Choose
+effort separately under the following guidance.
 Allow Low/Medium for bounded tasks with effective checks, High for normal reasoning,
 and Xhigh for materially interacting constraints. Compare Terra/Low or Medium with
 Luna/Max before spending more effort on Luna. Compare Sol/Medium or High with

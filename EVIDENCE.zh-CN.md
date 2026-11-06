@@ -68,8 +68,23 @@ Terra/High 与 Sol/High 使用相同事实和验收标准，各修订一段英�
 这是一次短篇受控对比，采用专门编写的样本，不是独立榜单或长篇文稿测试。耗时包含
 身份检查、等待和工具调用；缓存输入属于输入，输出已包含推理 token。主代理准备与
 整合开销未按模型归属，子回合实际 service tier 未暴露，因此这些数字不测量整套系统
-成本或 Codex 账户额度。其他三档及主机设置未修改。方法参考
+成本或 Codex 账户额度。主机设置未修改。方法参考
 [OpenAI 的同输入比较建议](https://developers.openai.com/api/docs/guides/model-selection#experiment)。
+
+## 将文稿分工应用到四档 — v0.4.1
+
+| 档位 | 固定标准修订与基于所给材料的审阅 |
+| --- | --- |
+| Economy | 优先 Terra。保留原有选择：范围明确且可有效检查的工作可用 Low／Medium，正常推理用 High，条件相互牵连时用 Xhigh；仍限于 Luna／Terra。 |
+| Balance | 优先 Terra，审阅者身份本身不要求 Sol；推理档位仍按原有任务标准选择。实质歧义、架构／方法选择和证据综合使用 Sol。 |
+| Quality | 通常从 Terra/High 开始；实质歧义和相互牵连的概念决策使用 Sol。 |
+| Extra Quality | 通常从 Terra/High 开始；Sol 的适用边界相同，审阅者身份本身不构成选用 Sol 的理由。 |
+
+上面的实测只比较了 High。把任务偏好应用到另外三档，是与原有 Terra 写作及限定范围
+执行指引一致的策略延伸；它没有证明 Terra/Low 或 Medium 能达到 High 的效果，也没有
+确定所有任务的最佳档位或完成任何一档的整套校准。Economy 和 Balance 保留原有低档位
+选择；Extra Quality 的 High 起点符合其原有下限。模型池、推理范围、并发上限和安装
+行为均不变。
 
 ## 这些数据能说明什么
 
