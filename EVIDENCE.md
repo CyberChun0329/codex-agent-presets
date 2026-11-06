@@ -1,6 +1,6 @@
 # Model-selection evidence
 
-[简体中文](EVIDENCE.zh-CN.md) · Reviewed **2026-11-03**, following the **2026-10-26** release of GPT-6.1 Terra.
+[简体中文](EVIDENCE.zh-CN.md) · External benchmarks reviewed **2026-11-03**, following the **2026-10-26** release of GPT-6.1 Terra; local document comparison **2026-11-06**.
 
 Luna means GPT-6 Luna; Terra and Sol mean GPT-6.1 Terra and Sol; Astra means GPT-6 Astra.
 
@@ -107,6 +107,37 @@ writing or visual comparison controlling for current model version and effort.
 The reviewed LMArena snapshot predated Terra 6.1; [OSWorld 2.0](https://snorkel.ai/leaderboard/os-world-2-0/)
 had no comparable current-model rows. Briefcase scores measure work products, not
 prose style alone. [Official guidance](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-6-astra#gpt-61-terra).
+
+## Local fixed-criteria document comparison — 2026-11-06
+
+Terra/High and Sol/High received the same supplied facts and acceptance criteria.
+Each revised an English installation explanation and a Chinese validation-scope
+explanation. Both pairs' first drafts were accepted without necessary repair.
+Two fresh reviewers then assessed the same seven anonymous sections: the four
+revisions and three prepared fixtures. Both found all seven prelisted factual
+errors and passed the four accepted revisions. Both also found a missing root-model
+value in a fixture intended to be clean; that preparation error is retained in the
+assessment. The planted-error list was not an exhaustive review gold standard.
+
+| Task / model, High | Native turn time | Uncached input tokens | Cached input tokens | Output tokens |
+| --- | ---: | ---: | ---: | ---: |
+| Two revisions / Terra | 38.7 s | 31,763 | 89,088 | 1,069 |
+| Two revisions / Sol | 44.0 s | 31,864 | 89,472 | 1,163 |
+| Seven-section review / Terra | 31.8 s | 18,195 | 71,296 | 841 |
+| Seven-section review / Sol | 44.4 s | 18,217 | 100,480 | 1,333 |
+
+This supports making Terra/High the explicit Quality starting point for revision
+and source-bound review under fixed criteria. Sol remains appropriate when the
+assigned work must resolve substantive ambiguity or coupled conceptual decisions.
+Reviewer status alone does not establish that need.
+
+This was one short controlled batch with purpose-written fixtures, not an
+independent benchmark or a long-manuscript test. Time includes identity checks,
+waiting and tools. Cached input is part of input; output includes reasoning tokens.
+Parent preparation and integration were not attributed to either pair, and actual
+child service tier was not exposed. These figures do not measure full-system cost
+or Codex account allowances. Other profiles and host settings were not changed.
+The method follows [OpenAI's same-input comparison guidance](https://developers.openai.com/api/docs/guides/model-selection#experiment).
 
 ## What the evidence supports
 

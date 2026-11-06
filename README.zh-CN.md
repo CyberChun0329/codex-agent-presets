@@ -1,6 +1,6 @@
 # Codex Agent Presets
 
-**v0.4.0** · [English](README.md)
+**v0.4.1** · [English](README.md)
 
 四档配置，决定 Codex 使用哪个主模型、如何分配子任务。可安装到全局或单个项目，保留你的主模型推理档位。
 

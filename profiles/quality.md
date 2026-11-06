@@ -1,5 +1,5 @@
 <!-- codex-delegation-presets:start -->
-<!-- Codex delegation preset: quality; version: 0.4.0 -->
+<!-- Codex delegation preset: quality; version: 0.4.1 -->
 
 # Codex Delegation Policy
 
@@ -161,8 +161,10 @@ validation. Prefer Terra for drafting/revision within a clear brief, visual reco
 computer use with defined outcomes, analysis under an established method and bounded
 implementation. Consider Terra/Xhigh directly for bounded interacting coding steps,
 and Terra/Max for fitting demanding visual/scientific work when evidence supports it.
-Use Sol for substantive ambiguity, conceptual/domain judgment, strategy/method choice,
-coupled decisions and evidence synthesis. Importance, length or imperfect machine
+Fixed-criteria revision and source-bound document review normally start with
+Terra/High. A reviewer role alone does not require Sol. Use Sol for substantive
+ambiguity, conceptual/domain judgment, strategy/method choice, coupled decisions
+and evidence synthesis. Importance, length or imperfect machine
 verification alone do not require Sol.
 Proactively consult Astra on a consequential unresolved independent method/design/
 strategy/evidence decision or named deep bottleneck when stronger reasoning helps.

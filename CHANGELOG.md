@@ -1,5 +1,13 @@
 # Changelog / 版本记录
 
+## 0.4.1 — 2026-11-06
+
+- Clarify Quality: fixed-criteria revision and source-bound document review normally start with Terra/High. Keep Sol for substantive ambiguity and coupled decisions.
+- Add the local bilingual revision and anonymous review comparison, including native time, tokens and its limits. Other profiles, shared roles and installation prompts are unchanged.
+
+- 明确 Quality：固定标准的文稿修订与基于所给材料的审阅通常从 Terra/High 开始；实质歧义及相互牵连的决策仍使用 Sol。
+- 补充本地双语修订与匿名审阅对比，记录原生耗时、token 和适用范围。其他三档、共用角色和安装 prompt 不变。
+
 ## 0.4.0 — 2026-11-03
 
 - Provide four independent English profiles and eight shared roles, with bilingual documentation and subscription-based recommendations.

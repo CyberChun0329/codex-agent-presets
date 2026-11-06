@@ -1,6 +1,6 @@
 # Codex Agent Presets
 
-**v0.4.0** · [简体中文](README.zh-CN.md)
+**v0.4.1** · [简体中文](README.zh-CN.md)
 
 Four profiles control the primary model and how Codex delegates tasks. Install globally or for one project while keeping your primary reasoning effort.
 
