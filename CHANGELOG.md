@@ -1,5 +1,17 @@
 # Changelog / 版本记录
 
+## 0.4.2
+
+### English
+
+- Choose child models for each task and reassess when the work changes.
+- Simplify delegation and retry rules across all four profiles.
+
+### 简体中文
+
+- 按子任务选择模型，任务变化时重新判断。
+- 简化四档的委派和重试规则。
+
 ## 0.4.1 — 2026-11-06
 
 ### English

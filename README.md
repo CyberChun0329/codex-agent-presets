@@ -1,10 +1,8 @@
 # Codex Agent Presets
 
-**v0.4.1** · [简体中文](README.zh-CN.md)
+**v0.4.2** · [简体中文](README.zh-CN.md)
 
-Four profiles control the primary model and how Codex delegates tasks. Install globally or for one project while keeping your primary reasoning effort.
-
-Describe your task as usual; Codex uses the selected profile to decide whether and how to delegate.
+Choose a profile to set Codex's primary model and delegation rules. Install globally or for one project while keeping your primary reasoning effort.
 
 | Profile | Primary model | Child models | Child effort | Active child limit |
 | --- | --- | --- | --- | --- |

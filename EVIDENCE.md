@@ -47,8 +47,8 @@ deeper reasoning; the small score differences do not establish a general advanta
 | Time to first answer token | 20.82 s | 9.35 s |
 | Whole-task time | 171.39 s | 217.80 s |
 
-Lower token prices and faster first output do not settle total cost or completion
-time. Economy therefore makes no promise of fastest completion. Timing is a snapshot.
+These timings are a snapshot. Compare whole-task time and cost as well as
+first-token latency and token prices.
 [Source](https://artificialanalysis.ai/models/comparisons/gpt-6-1-terra-high-vs-gpt-6-1-sol-medium).
 
 ### Terra Max versus Sol High
@@ -126,9 +126,9 @@ Cached input is part of input, and output includes reasoning tokens.
 
 | Profile | Fixed-criteria revision and source-bound review |
 | --- | --- |
-| Economy | Prefer Terra: Low/Medium for bounded, effectively checked work, High for normal reasoning, Xhigh for interacting constraints; the pool is Luna/Terra. |
+| Economy | Prefer Terra at Low or Medium for bounded work with effective checks, High for normal reasoning, and Xhigh for interacting constraints. |
 | Balance | Prefer Terra and choose effort by task; use Sol for substantive ambiguity, architecture or method choices, and evidence synthesis. |
-| Quality and Extra Quality | Normally start with Terra/High; use Sol for substantive ambiguity or coupled conceptual decisions. Reviewer status alone does not require Sol. |
+| Quality and Extra Quality | Normally start with Terra/High. Use Sol for substantive ambiguity or coupled conceptual decisions. |
 
 The local test covered High and short technical documents only; it does not
 establish results at Low/Medium or on long manuscripts. No comparison here measures

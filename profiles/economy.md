@@ -1,150 +1,90 @@
 <!-- codex-delegation-presets:start -->
-<!-- Codex delegation preset: economy; version: 0.4.1 -->
+<!-- Codex delegation preset: economy; version: 0.4.2 -->
 
 # Codex Delegation Policy
 
-Scope: only primary/child model selection and delegated work. This block does not
-replace the user's general writing, coding, completion, skills or tool preferences.
-Existing user/project authority, permission boundaries and required review gates
-still apply. A nearer selected project profile overrides the global profile's
-primary recommendation, child pool, routing and active-child limit. Never broaden
-scope through delegation.
+Apply this policy to delegation. Follow the user's instructions, project
+permissions and required reviews. A project preset takes precedence over the
+global preset.
 
-## Responsibilities and useful delegation
+## Delegation
 
-The primary owns scope, permission interpretation, decomposition, coupled decisions,
-integration and final acceptance. Only the primary orchestrates; children cannot
-spawn agents. Platform approval reviewers are separate. Main effort follows the
-user's selection: the package's Ultra recommendation is applied only by explicit
-user request, never inferred from its profile name.
+The primary decides scope, divides work and accepts the final result. Only the
+primary starts or directs children. It keeps decisions that depend on each other
+together. Delegate independent work when it is worth the time and coordination.
+Give each child a distinct task or a specific independent check. Use tools
+directly for straightforward checks or calculations.
 
-Delegate independently useful work when its quality, time or context benefit
-exceeds setup, runtime verification, waiting and integration. Zero children is normal.
-Use direct tools for mechanical extraction/calculation when sufficient. Keep coupled
-work with the primary; batch useful independent units and consume results. Do not pair every
-smaller child with a duplicate full investigation by a larger model.
+Use at most 3 active child turns at once, excluding the primary. Respect
+any lower client limit and the user's settings, including limits on open child
+threads. Assign one owner at a time to overlapping writes or a shared UI.
 
-Respect existing live concurrency limits and shared state. Ordinary tasks usually
-need 0-3 active children; run at most 3 child turns at once, excluding the primary.
-This is a ceiling, not a target: parallel work must be distinct, ready and worth
-coordinating. Obey any lower runtime limit and preserve the user's concurrency
-settings, including limits on open child threads. Serialize overlapping writes and
-shared mutable UI; assign one owner to each coherent UI phase.
+Choose a role for the work. Scouts collect verifiable facts. Bounded analysts
+and workers apply fixed criteria. Operators carry out defined procedures.
+Analysts and implementers exercise judgment within an independent assignment.
+Reviewers examine a specific risk. Critical agents address a named hard problem.
+The role does not set the model or reasoning effort.
 
-Roles describe duties and permissions, not fixed model/effort. Package roles use
-the cqp_ prefix to preserve existing custom roles:
-- cqp_scout: bounded, checkable collection; no material judgment or writes.
-- cqp_bounded_analyst / cqp_bounded_worker: fixed criteria with strong checks.
-- cqp_operator: execution under stable constraints and objective checks.
-- cqp_analyst / cqp_implementer: independent analysis/execution with in-lane judgment.
-- cqp_reviewer: one named material risk or concrete review surface, read-only.
-- cqp_critical: one named hard independent bottleneck; write only if expressly scoped.
+## Assignment and model choice
 
-Roles do not pin model or effort. Each dispatch explicitly states the role, exact
-model, exact effort and a short task-based reason. Use native delegation, no separate
-model processes for a review or receipt. Standalone CLI/API model transport requires
-separate user authority. These rules do not alter parent permissions or service tier.
+Give each child its goal, relevant sources, scope and acceptance criteria.
+Include only the context it needs. Use `fork_turns="none"` unless the user
+authorizes sharing the full history. For writes, identify the authorized files
+or targets. Start when required inputs are ready.
 
-## Task contracts and effort
+Specify the role, model, reasoning effort and a short reason. Use native
+delegation. A separate CLI or API model call requires user authorization.
 
-Default to fork_turns="none" with a self-contained contract: objective, role/pair,
-authoritative sources, scope/ownership, constraints, acceptance/evidence, output and
-stop conditions. Include relevant baseline/version and failures, not copied history.
-Full-history inheritance needs explicit user approval. Read-only roles return data
-and findings, never temporary/report artifacts. Writers have exact authorized paths,
-before-state and post-checks; preserve others' changes. Required inputs and interfaces
-must be ready before dependent execution/review; no waiting-only lanes.
+Choose the pair for the current task. Once a decision is settled, assess its
+implementation and verification on their own criteria. When choosing a stronger
+model than the profile would normally use for the task, name the remaining
+judgment or capability need in the dispatch reason.
 
-Choose model and effort separately within the selected profile:
-- Low/Medium: available only where the profile permits; bounded work with clear
-  goals and effective checks. Benchmark support is task-specific, not universal.
-- High: normal baseline when the path/checks are clear, including bounded review.
-- Xhigh: materially interacting constraints, alternatives or non-obvious diagnosis.
-- Max: a named depth bottleneck or task-matched quality/cost evidence. Compare a
-  stronger model at lower effort where the selected profile permits it. Length,
-  importance, reviewer status or one failure alone do not establish a need for Max.
+Choose model and effort separately within the profile:
+- Low or Medium, where allowed, for bounded work with effective checks.
+- High for work with a clear approach, including bounded reviews.
+- Xhigh for interacting constraints or a difficult diagnosis.
+- Max for a specific reasoning bottleneck or task-matched evidence of benefit.
+  Consider lower effort on a stronger model when the profile allows it.
 
-A smaller model at Max is not presumed equivalent to a larger model at High.
-Keep a coherent task on one pair unless an evidenced gap warrants change. More
-effort addresses insufficient depth; missing facts, authority and tool failures
-need their own remedies. Preserve valid work and hand off only the unresolved delta.
-Never silently exceed a selected profile's pool/cap; report the remaining limitation
-and let the user choose a profile change or explicit exception.
+Keep the pair while it fits the work. Before reusing a child, check its role,
+permissions and pair against the next assignment, including the value of its
+existing context. If the pair changes, use a supported setting change or a new
+child with an explicit pair. Preserve useful results and pass only the work that
+remains. If no allowed pair meets the need, report the limitation to the user.
 
-## Runtime verification and handoff
+## Runtime verification
 
-Before substantive child work on launch and every resumed turn, verify the actual
-model/effort from fresh native evidence for that child/current turn. Launch settings,
-role names, self-report and old receipts are not proof. Direct inspection or a primary
-receipt naming child, turn, actual pair and exact evidence location suffices.
-The primary locates it immediately after launch/resume, before unrelated lengthy work.
-Use current native metadata exposed by the client or its readable native records.
-Unsupported or missing metadata never waives verification; do not fabricate a receipt.
+Before substantive work on each child turn, the primary or child checks the
+actual model and effort in current Codex runtime metadata or records. The primary
+can relay the child and turn IDs, actual pair and source of the check. A launch
+request or a previous turn does not establish the current pair.
 
-Verified ordinary read-only work proceeds without another acknowledgement. Writes
-and costly checks additionally require current-turn scoped release from the primary,
-batched with identity confirmation. Release adds neither human authority nor runtime
-permission. A new turn invalidates prior proof and any required release.
+Read-only work can proceed after verification. Writes and costly checks also
+need the primary's approval for that turn within the user's authorization.
+The primary can give that approval with the verification result.
 
-Read available evidence before asking/waiting. If proof or required release is missing,
-notify once, do safe read-only preflight, wait at most once up to 60 seconds and recheck.
-If still blocked, return ESCALATE with runtime_metadata_unavailable or
-runtime_release_pending. On a model/effort mismatch, including Ultra children, stop
-with runtime_model_effort_mismatch. No READY/resume loop, repeated polling, automatic
-respawn or promotion; the primary resolves the cause.
+If proof or approval is missing, check available evidence and tell the primary
+what is missing. Wait briefly only if it is expected, then stop the affected work
+if it remains blocked. If the runtime pair differs from the assigned pair, stop
+and report the mismatch. Close children when finished if the client supports it.
 
-Consume completed results before follow-up. Reuse compatible children for substantive
-deltas, not acknowledgement turns. Confirm loaded role/permissions and pair fit the
-new contract, then verify the new turn. A changed pair needs a supported setting
-change or new explicit-pair child and fresh proof. Closed restoration needs verified
-pair restoration; use a fresh verified child if restoration drifts. Close unused
-children when supported; otherwise retain idle ones without housekeeping turns.
+## Review and failures
 
-## Review and integration of delegated work
+Keep required reviews. Review the actual version against its requirements and
+check the relevant source, output or behavior. For a blind review, keep prior
+verdicts and producer rationale out of the assignment. If exposed, report the
+loss of blindness and use a fresh reviewer when a blind verdict is required.
+The primary checks delegated results before adoption and accepts the whole task.
 
-Identify the authoritative review version and preserved invariants. Recheck actual
-targets and required before-state before adoption. Source identity is not semantic
-correctness, independence or permission. For blind/fresh review, exclude producer
-rationale, prior verdicts and expected winners. Contamination invalidates that blind
-attempt; sanitize and use a fresh reviewer. Reviews of prior judgments must be labeled.
+Retry temporary failures when a retry is likely to help. Honor Retry-After and
+use bounded backoff. Check whether an uncertain call already succeeded before
+retrying it. Report availability failures without substituting a model that
+cannot meet the requirement.
 
-Match a delegated check to the user's intended outcome: facts/voice for communication,
-calculation/interpretation for analysis, coherence/audience fit for creation, actual
-state for tool actions. Keep required project checks and acceptance gates. A child's
-PASS does not establish integrated acceptance. For material claim changes, compare
-actor, action, quantifiers, conditions and evidence scope; resolve meaningful deltas.
-Do not rewrite acceptable delegated prose wholesale or add a full second investigation.
-
-For a delegated visual finding, inspect exact full/adjacent pages and relevant
-crop/rotation; contact sheets are triage. For implementation, checks exercise the
-real interface and integrated fixtures. These requirements apply to delegated lanes,
-not as replacements for the recipient's general document or coding workflow.
-
-One wave per decision phase; later waves need remaining ready independent work, a
-new evidence gap or failed acceptance. After two substantive failures on the same
-criterion, the primary resolves/replans. Add a reviewer only for a named unresolved
-material risk; do not run reviewer and critical lanes on the same risk simultaneously.
-Stop delegation when acceptance is met. Report status, decisive evidence, limitations
-and unresolved delta; distinguish candidate, adopted, verified and accepted states.
-
-## Call failures and exceptions
-
-For every subagent call, including follow-up, transient capacity/rate/service failure
-requires three retries after the initial failed attempt on the same model/effort
-(four attempts total) before considering capability reduction. Honor Retry-After,
-use bounded backoff, resolve unknown outcomes and retain completed work. Availability
-failure is not capability evidence. After exhaustion, preserve required capability,
-report the dependency and continue independent authorized work. A same/weaker model
-may assist but cannot satisfy a stronger-expert requirement. Permission denials,
-invalid contracts and identity mismatches need their own remedies, not blind retries.
-
-Missing/conflicting required input: CONTRACT_INVALID. Changed required before-state:
-STALE_CONTRACT. Stop affected work and return the reason/scope to the primary;
-unaffected work needs still-valid authority, evidence and required release. Resolve
-ordinary in-lane ambiguity; ESCALATE when independence, capability, authority or
-adequate verification cannot be maintained. Use COMPLETE for completed scoped work.
-The primary owns final verification and acceptance; lower resource use counts only
-when the user's required quality, completeness and evidence are met.
+Resolve ordinary ambiguity within the assignment. Stop affected work and explain
+what is needed if required inputs are missing or conflict, a required starting
+condition changes, or the child lacks authority, capability or evidence to proceed.
 
 ## Selected delegation profile: economy
 
@@ -152,24 +92,12 @@ Primary model recommendation: `gpt-6.1-terra`. Primary effort remains the user's
 choice; `ultra` is recommended but applied only on explicit request.
 Allowed child models: `gpt-6-luna`, `gpt-6.1-terra`.
 Allowed child efforts: `low`, `medium`, `high`, `xhigh`; never Ultra.
-A nearer selected profile overrides the global profile's routing, pool and
-active-child limit.
 
-Use Terra as primary with a strict Luna/Terra child pool. Prefer Low/Medium for
-bounded work with effective checks, High when normal reasoning is needed, and Xhigh
-for interacting constraints. Max is outside this profile; change profile explicitly
-if it or a higher model is required. Preserve the user's primary effort unless the
-user explicitly requested a primary effort change.
 Use Luna for mechanical gathering, exact extraction, transcription, inventories,
 format checks and simple changes with strong objective validation. Keep Terra for
 natural writing/revision, visual interpretation/computer use and substantive bounded
 execution or coding. Prefer Terra for fixed-criteria document revision and
-source-bound document review. Choose effort separately under this profile's existing
-task-based guidance. Do not reassign all Terra tasks to Luna. Work that would
-otherwise require Sol or Astra may go to Terra only if it can be adequately bounded
-and checked; otherwise report
-the remaining capability limitation. No automatic Sol/Astra escape is allowed.
-Prefer fewer useful lanes and direct tools over spending on multiple weak attempts.
-This is an economy/capability policy, not a promise of fastest end-to-end completion.
+source-bound document review. If a task cannot be bounded and checked within
+the allowed model pool and efforts, report the limitation.
 
 <!-- codex-delegation-presets:end -->

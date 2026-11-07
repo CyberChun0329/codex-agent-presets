@@ -23,7 +23,7 @@ Luna 指 GPT-6 Luna，Terra／Sol 指 GPT-6.1 Terra／Sol，Astra 指 GPT-6 Astr
 用于需要更深入推理的工作；Luna 则需要明确范围和有效检查。它们不支持统一提高推理
 档位，提高小模型的推理档位也不一定能替代更强的模型。
 
-Terra High／Sol Medium 的首个回答 token 时间分别为 20.82／9.35 秒，整项任务耗时为 171.39／217.80 秒；这是当时的快照。较低 token 价格或更快的首次输出不能确定总成本或完成时间，Economy 不保证任务完成得最快。
+Terra High／Sol Medium 的首个回答 token 时间分别为 20.82／9.35 秒，整项任务耗时为 171.39／217.80 秒。这是当时的快照。比较时兼顾整项任务的耗时和成本，以及首次输出延迟和 token 价格。
 
 ## 原始测试榜单
 
@@ -62,8 +62,8 @@ Terra/High 在这次小样本中耗时更短、输出 token 更少。任务耗�
 
 | 档位 | 固定标准修订与基于所给材料的审阅 |
 | --- | --- |
-| Economy | 优先 Terra：范围明确且可有效检查的工作用 Low／Medium，正常推理用 High，条件相互牵连时用 Xhigh；模型池限于 Luna／Terra。 |
+| Economy | 优先 Terra。范围明确且可有效检查的工作用 Low／Medium，正常推理用 High，条件相互牵连时用 Xhigh。 |
 | Balance | 优先 Terra，按任务选择推理档位；实质歧义、架构或方法选择及证据综合使用 Sol。 |
-| Quality 和 Extra Quality | 通常从 Terra/High 开始；实质歧义或相互牵连的概念决策使用 Sol。审阅者身份本身不要求 Sol。 |
+| Quality 和 Extra Quality | 通常从 Terra/High 开始。实质歧义或相互牵连的概念决策使用 Sol。 |
 
 本地对比只覆盖 High 与短篇技术文稿，不能推广到 Low／Medium 或长篇文稿。现有数据未评估四档完整配置、Ultra 主模型表现或 Codex 订阅用量。
