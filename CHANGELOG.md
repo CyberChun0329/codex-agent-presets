@@ -1,5 +1,19 @@
 # Changelog / 版本记录
 
+## 0.5.0
+
+### English
+
+- Rework all four profiles around task-specific quality and cost tradeoffs, with direct model and effort choices for distinct kinds of work.
+- Explain the benchmark evidence, comparison method, source limits and profile preferences in [Benchmarks and preset design](EVIDENCE.md).
+- Publish the aggregate data, cost inputs and offline [comparison script](benchmarks/README.md).
+
+### 简体中文
+
+- 按具体任务的质量与成本取舍调整四档配置，为不同工作直接选择模型和推理档位。
+- 在[评测依据与预设设计](EVIDENCE.zh-CN.md)中说明评测、比较方法、来源局限及各档偏好。
+- 公开汇总数据、费用输入和离线[比较程序](benchmarks/README.zh-CN.md)。
+
 ## 0.4.2
 
 ### English
@@ -17,12 +31,12 @@
 ### English
 
 - Prefer Terra for fixed-criteria document revision and review. Quality and Extra Quality normally start with Terra/High; Balance and Economy retain task-based effort selection.
-- Add a [local Terra/High vs Sol/High comparison](EVIDENCE.md) for revision and review.
+- Added a local Terra/High vs Sol/High comparison for revision and review.
 
 ### 简体中文
 
 - 四档固定标准的文稿修订和审阅优先 Terra：Quality、Extra Quality 通常从 Terra/High 开始，Balance、Economy 仍按任务选择推理档位。
-- 补充 Terra/High 与 Sol/High 的[本地修订、审阅对比](EVIDENCE.zh-CN.md)。
+- 补充 Terra/High 与 Sol/High 的本地修订、审阅对比。
 
 ## 0.4.0 — 2026-11-03
 

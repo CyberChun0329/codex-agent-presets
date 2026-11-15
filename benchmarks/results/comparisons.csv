@@ -1,0 +1,196 @@
+benchmark,pair,quality,metric_kind,metric_unit,cost_usd_per_task,observation_status,pareto_observed_set,linear_supported,v_min_exact,v_max_exact
+aa-briefcase,Astra/max,1568.82,elo,Elo rating,9.502083915057868,observed,True,True,1797370284437027/3487500000000000,
+aa-briefcase,Astra/xhigh,1543.31,elo,Elo rating,6.563521325092936,observed,False,False,,
+aa-briefcase,Astra/high,1502.9,elo,Elo rating,4.763525793864492,observed,False,False,,
+aa-briefcase,Sol/max,1554.87,elo,Elo rating,2.31260277730976,observed,True,True,6370200780670571/252500000000000000,1797370284437027/3487500000000000
+aa-briefcase,Sol/xhigh,1504.37,elo,Elo rating,1.0385626211756458,observed,True,True,16130698334597/2863200000000000,6370200780670571/252500000000000000
+aa-briefcase,Astra/medium,1462.27,elo,Elo rating,3.93998566214159,observed,False,False,,
+aa-briefcase,Terra/max,1401.3,elo,Elo rating,0.8077762402973092,observed,True,False,,
+aa-briefcase,Sol/high,1468.58,elo,Elo rating,0.8369288919931833,observed,True,True,4656985331655127/1349875000000000000,16130698334597/2863200000000000
+aa-briefcase,Sol/medium,1360.59,elo,Elo rating,0.46437006546077314,observed,True,True,1818431040929867/596000000000000000,4656985331655127/1349875000000000000
+aa-briefcase,Terra/xhigh,1333.94,elo,Elo rating,0.40585356484217194,observed,True,False,,
+aa-briefcase,Terra/high,1265.03,elo,Elo rating,0.2755634102049543,observed,True,False,,
+aa-briefcase,Terra/medium,1190.66,elo,Elo rating,0.18372845655950432,observed,False,False,,
+aa-briefcase,Luna/xhigh,1235.43,elo,Elo rating,0.08249954686550107,observed,True,True,1014561300192123/2452000000000000000,1818431040929867/596000000000000000
+aa-briefcase,Luna/high,1186.39,elo,Elo rating,0.06220832086165861,observed,True,True,1454264271135449/4507500000000000000,1014561300192123/2452000000000000000
+aa-briefcase,Luna/medium,1096.24,elo,Elo rating,0.03312303543894963,observed,True,True,0,1454264271135449/4507500000000000000
+automationbench-aa,Astra/max,0.6849174806688876,objective_credit,,1.5955923111377626,observed,True,True,2241724030876473/31967110887422,
+automationbench-aa,Astra/xhigh,0.6717778020215392,objective_credit,,1.4063887148113552,observed,True,False,,
+automationbench-aa,Astra/high,0.666122174975011,objective_credit,,1.2951847697570746,observed,True,False,,
+automationbench-aa,Sol/max,0.6486844882398171,objective_credit,,0.2968194851747073,observed,False,False,,
+automationbench-aa,Sol/xhigh,0.6657372141364344,objective_credit,,0.2505578926118788,observed,True,True,1229702526450422/664516185010421,2241724030876473/31967110887422
+automationbench-aa,Astra/medium,0.6459498850561176,objective_credit,,1.1770207482301795,observed,False,False,,
+automationbench-aa,Terra/max,0.6016762327257726,objective_credit,,0.1852850534338407,observed,True,False,,
+automationbench-aa,Sol/high,0.6449523732184466,objective_credit,,0.22578054709230258,observed,True,False,,
+automationbench-aa,Sol/medium,0.6257350970435687,objective_credit,,0.19630359332471714,observed,True,False,,
+automationbench-aa,Terra/xhigh,0.5992855956353923,objective_credit,,0.1275876399668366,observed,True,True,1595779408926879/1063420886980555,1229702526450422/664516185010421
+automationbench-aa,Terra/high,0.584605963496433,objective_credit,,0.10816495593633713,observed,True,False,,
+automationbench-aa,Terra/medium,0.5780171778957812,objective_credit,,0.09567205178829902,observed,True,True,37461176260576883/49886131952059850,1595779408926879/1063420886980555
+automationbench-aa,Luna/xhigh,0.47800686767566575,objective_credit,,0.023298294600704986,observed,False,False,,
+automationbench-aa,Luna/high,0.4782449139916615,objective_credit,,0.020749699267145254,observed,True,True,4178530383091399/73631226078082400,37461176260576883/49886131952059850
+automationbench-aa,Luna/medium,0.4046136879135791,objective_credit,,0.016571168884053855,observed,True,True,0,4178530383091399/73631226078082400
+gdp-pdf,Astra/max,0.31,all_pass_fraction,fraction,2.0758207,observed,False,False,,
+gdp-pdf,Astra/xhigh,0.322,all_pass_fraction,fraction,1.9127231,observed,True,True,31266433200000001/40000000000000,
+gdp-pdf,Astra/high,0.31,all_pass_fraction,fraction,1.7948240999999998,observed,False,False,,
+gdp-pdf,Sol/max,0.31,all_pass_fraction,fraction,0.41986644,observed,False,False,,
+gdp-pdf,Sol/xhigh,0.318,all_pass_fraction,fraction,0.36805064000000004,observed,False,False,,
+gdp-pdf,Astra/medium,0.304,all_pass_fraction,fraction,1.7198086000000001,observed,False,False,,
+gdp-pdf,Terra/max,0.286,all_pass_fraction,fraction,0.23517992,observed,True,False,,
+gdp-pdf,Sol/high,0.32,all_pass_fraction,fraction,0.34940143999999995,observed,True,True,1217946133333333/240000000000000,31266433200000001/40000000000000
+gdp-pdf,Sol/medium,0.3,all_pass_fraction,fraction,0.33747824000000004,observed,True,False,,
+gdp-pdf,Terra/xhigh,0.266,all_pass_fraction,fraction,0.18231887,observed,False,False,,
+gdp-pdf,Terra/high,0.28,all_pass_fraction,fraction,0.17116762000000002,observed,False,False,,
+gdp-pdf,Terra/medium,0.284,all_pass_fraction,fraction,0.16670952,observed,True,True,73022951499999999/49000000000000000,1217946133333333/240000000000000
+gdp-pdf,Luna/xhigh,0.186,all_pass_fraction,fraction,0.020663617000000002,observed,True,True,919225500000001/2000000000000000,73022951499999999/49000000000000000
+gdp-pdf,Luna/high,0.182,all_pass_fraction,fraction,0.018825166,observed,True,True,696809499999999/22000000000000000,919225500000001/2000000000000000
+gdp-pdf,Luna/medium,0.138,all_pass_fraction,fraction,0.017431547000000002,observed,True,True,0,696809499999999/22000000000000000
+terminalbench-4-0,Astra/max,0.590909090909091,success_fraction,fraction,8.498119471851334,observed,False,False,,
+terminalbench-4-0,Astra/xhigh,0.595959595959596,success_fraction,fraction,5.855482520522051,observed,True,True,8065438117378953/70707070707070,
+terminalbench-4-0,Astra/high,0.54040404040404,success_fraction,fraction,4.0469926217499435,observed,False,False,,
+terminalbench-4-0,Sol/max,0.560606060606061,success_fraction,fraction,1.8227634618325745,observed,True,True,3374509295168579/50505050505050,8065438117378953/70707070707070
+terminalbench-4-0,Sol/xhigh,0.54040404040404,success_fraction,fraction,1.0259491542428136,observed,True,True,1977723560663019/252525252525250,27021375180759/891265597148
+terminalbench-4-0,Astra/medium,0.494949494949495,success_fraction,fraction,4.430107637760555,observed,False,False,,
+terminalbench-4-0,Terra/max,0.555555555555556,success_fraction,fraction,1.4853125323157166,observed,True,True,27021375180759/891265597148,3374509295168579/50505050505050
+terminalbench-4-0,Sol/high,0.515151515151515,success_fraction,fraction,0.8281767981765117,observed,True,True,2144213276305617/353535353535350,1977723560663019/252525252525250
+terminalbench-4-0,Sol/medium,0.47979797979798,success_fraction,fraction,0.61375547054595,observed,True,True,4405335577959004/1515151515151525,2144213276305617/353535353535350
+terminalbench-4-0,Terra/xhigh,0.464646464646465,success_fraction,fraction,0.6570154849421312,observed,False,False,,
+terminalbench-4-0,Terra/high,0.419191919191919,success_fraction,fraction,0.43754204742758984,observed,True,True,2698082595789899/1599326599326600,4405335577959004/1515151515151525
+terminalbench-4-0,Terra/medium,0.323232323232323,success_fraction,fraction,0.2756570916801959,observed,True,True,10204583032173031/14898989898989885,2698082595789899/1599326599326600
+terminalbench-4-0,Luna/xhigh,0.0808080808080808,success_fraction,fraction,0.1981783100252545,observed,True,False,,
+terminalbench-4-0,Luna/high,0.0454545454545455,success_fraction,fraction,0.12040055149702272,observed,True,False,,
+terminalbench-4-0,Luna/medium,0.0252525252525253,success_fraction,fraction,0.07156543103673528,observed,True,True,0,10204583032173031/14898989898989885
+terminal-bench-science,Astra/max,0.633333333333333,success_fraction,fraction,17.47623317094791,observed,True,True,14137299475052301/52380952380952,
+terminal-bench-science,Astra/xhigh,0.547619047619048,success_fraction,fraction,7.911376268795269,observed,False,False,,
+terminal-bench-science,Astra/high,0.595238095238095,success_fraction,fraction,8.657557264060951,observed,True,False,,
+terminal-bench-science,Sol/max,0.580952380952381,success_fraction,fraction,3.338933695895609,observed,True,True,469400252689634/4761904761905,14137299475052301/52380952380952
+terminal-bench-science,Sol/xhigh,0.504761904761905,success_fraction,fraction,2.296981365236668,observed,True,False,,
+terminal-bench-science,Astra/medium,0.533333333333333,success_fraction,fraction,7.199806849332205,observed,False,False,,
+terminal-bench-science,Terra/max,0.576190476190476,success_fraction,fraction,2.869533443205975,observed,True,True,1829520748921636/157142857142857,469400252689634/4761904761905
+terminal-bench-science,Sol/high,0.461904761904762,success_fraction,fraction,1.605728310002876,observed,True,False,,
+terminal-bench-science,Sol/medium,0.371428571428571,success_fraction,fraction,0.8716673097183191,observed,True,False,,
+terminal-bench-science,Terra/xhigh,0.419047619047619,success_fraction,fraction,1.040012694284339,observed,True,True,212431992478116/42857142857143,1829520748921636/157142857142857
+terminal-bench-science,Terra/high,0.333333333333333,success_fraction,fraction,0.615148709328107,observed,True,True,5920318568585224/2142857142857125,212431992478116/42857142857143
+terminal-bench-science,Terra/medium,0.247619047619048,success_fraction,fraction,0.37833596658469804,observed,True,True,8238002780453709/7777777777777790,5920318568585224/2142857142857125
+terminal-bench-science,Luna/xhigh,0.0523809523809524,success_fraction,fraction,0.34076412103533965,observed,True,False,,
+terminal-bench-science,Luna/high,0.0285714285714286,success_fraction,fraction,0.23679716008794693,observed,True,False,,
+terminal-bench-science,Luna/medium,0.0142857142857143,success_fraction,fraction,0.13119588317108677,observed,True,True,0,8238002780453709/7777777777777790
+frontiercode-2-0,Astra/max,0.42374797979798,rubric_credit,,6.538762177543925,observed,True,True,5246247359323774/547474747475,
+frontiercode-2-0,Astra/xhigh,0.414029545454545,rubric_credit,,4.043001526196352,observed,False,False,,
+frontiercode-2-0,Astra/high,0.401351515151515,rubric_credit,,3.7656869184315704,observed,False,False,,
+frontiercode-2-0,Sol/max,0.406262878787879,rubric_credit,,1.130379974115731,observed,True,False,,
+frontiercode-2-0,Sol/xhigh,0.385190909090909,rubric_credit,,0.7028196642979474,observed,True,False,,
+frontiercode-2-0,Astra/medium,0.365771717171717,rubric_credit,,2.795366062360042,observed,False,False,,
+frontiercode-2-0,Terra/max,0.423200505050505,rubric_credit,,1.292514818220151,observed,True,True,84968205120344/4586930627025,5246247359323774/547474747475
+frontiercode-2-0,Sol/high,0.36737297979798,rubric_credit,,0.6299191586051632,observed,False,False,,
+frontiercode-2-0,Sol/medium,0.333875757575758,rubric_credit,,0.41067512029360587,observed,False,False,,
+frontiercode-2-0,Terra/xhigh,0.368595202020202,rubric_credit,,0.570209653316789,observed,False,False,,
+frontiercode-2-0,Terra/high,0.37457904040404,rubric_credit,,0.3918518439445046,observed,True,True,1343710626753707/292196969696970,84968205120344/4586930627025
+frontiercode-2-0,Terra/medium,0.345359343434343,rubric_credit,,0.2574807812691339,observed,True,True,17304303244564709/15934419191919100,1343710626753707/292196969696970
+frontiercode-2-0,Luna/xhigh,0.184238888888889,rubric_credit,,0.11031972115250702,observed,False,False,,
+frontiercode-2-0,Luna/high,0.186015151515152,rubric_credit,,0.08443774882348681,observed,True,True,790582114823303/1458049242424250,17304303244564709/15934419191919100
+frontiercode-2-0,Luna/medium,0.127693181818182,rubric_credit,,0.05281446423055469,observed,True,True,0,790582114823303/1458049242424250
+hle-diamond,Astra/max,0.638,accuracy,,0.5512169800000001,observed,True,True,4420532980000001/500000000000000,
+hle-diamond,Astra/xhigh,0.615,accuracy,,0.37042833000000003,observed,True,False,,
+hle-diamond,Astra/high,0.593,accuracy,,0.25744072999999995,observed,True,False,,
+hle-diamond,Sol/max,0.588,accuracy,,0.109163682,observed,True,True,3572763/2500000,4420532980000001/500000000000000
+hle-diamond,Sol/xhigh,0.558,accuracy,,0.066290526,observed,True,True,765013/1300000,3572763/2500000
+hle-diamond,Astra/medium,0.527,accuracy,,0.12000678000000001,observed,False,False,,
+hle-diamond,Terra/max,0.473,accuracy,,0.146503118,observed,False,False,,
+hle-diamond,Sol/high,0.519,accuracy,,0.043340136,observed,True,True,495947/1180000,765013/1300000
+hle-diamond,Sol/medium,0.46,accuracy,,0.018542786,observed,True,True,9580793/147000000,495947/1180000
+hle-diamond,Terra/xhigh,0.423,accuracy,,0.041241618,observed,False,False,,
+hle-diamond,Terra/high,0.354,accuracy,,0.018256048,observed,True,False,,
+hle-diamond,Terra/medium,0.313,accuracy,,0.008961993,observed,True,True,72381437/1620000000,9580793/147000000
+hle-diamond,Luna/xhigh,0.189,accuracy,,0.0061972267,observed,True,False,,
+hle-diamond,Luna/high,0.156,accuracy,,0.0036252272999999996,observed,True,False,,
+hle-diamond,Luna/medium,0.151,accuracy,,0.0017238493,observed,True,True,0,72381437/1620000000
+omniscience,Astra/max,42.4333333333333,net_score,,0.09884949999999999,observed,False,False,,
+omniscience,Astra/xhigh,43.6666666666667,net_score,,0.051777050000000005,observed,False,False,,
+omniscience,Astra/high,44.5666666666667,net_score,,0.027963416666666664,observed,True,True,853950909090909/100000000000000000,
+omniscience,Sol/max,42.0333333333333,net_score,,0.018309156666666666,observed,False,False,,
+omniscience,Sol/xhigh,42.3666666666667,net_score,,0.009176496666666666,observed,True,True,2809413333333333/880000000000000000,853950909090909/100000000000000000
+omniscience,Astra/medium,41.4,net_score,,0.010943366666666668,observed,False,False,,
+omniscience,Terra/max,29.5666666666667,net_score,,0.04251464966666667,observed,False,False,,
+omniscience,Sol/high,41,net_score,,0.004933313333333333,observed,True,False,,
+omniscience,Sol/medium,40.1666666666667,net_score,,0.0021529633333333335,observed,True,True,5303816666666669/135666666666667000000,2809413333333333/880000000000000000
+omniscience,Terra/xhigh,28.9333333333333,net_score,,0.007935478333333334,observed,False,False,,
+omniscience,Terra/high,27.7666666666667,net_score,,0.0029521950000000003,observed,False,False,,
+omniscience,Terra/medium,26.6,net_score,,0.0016225816666666666,observed,True,True,31532024999999999/1004166666666667500000,5303816666666669/135666666666667000000
+omniscience,Luna/xhigh,-12.9666666666667,net_score,,0.0008852055,observed,False,False,,
+omniscience,Luna/high,-12.8,net_score,,0.0005733978333333333,observed,True,False,,
+omniscience,Luna/medium,-13.5666666666667,net_score,,0.00036130066666666664,observed,True,True,0,31532024999999999/1004166666666667500000
+mlcr-aa,Astra/max,0.416666666666667,answer_pass_fraction,complete answer pass@1 by majority judge,0.572562,observed,True,True,230313550000000/16666666666667,
+mlcr-aa,Astra/xhigh,0.361111111111111,answer_pass_fraction,complete answer pass@1 by majority judge,0.479227,observed,False,False,,
+mlcr-aa,Astra/high,0.327777777777778,answer_pass_fraction,complete answer pass@1 by majority judge,0.441567,observed,False,False,,
+mlcr-aa,Sol/max,0.383333333333333,answer_pass_fraction,complete answer pass@1 by majority judge,0.1119349,observed,True,True,454904166666667/694444444444425,230313550000000/16666666666667
+mlcr-aa,Sol/xhigh,0.355555555555556,answer_pass_fraction,complete answer pass@1 by majority judge,0.09373873333333332,observed,True,True,744613333333333/1250000000000000,454904166666667/694444444444425
+mlcr-aa,Astra/medium,0.383333333333333,answer_pass_fraction,complete answer pass@1 by majority judge,0.4193811666666667,observed,False,False,,
+mlcr-aa,Terra/max,0.305555555555556,answer_pass_fraction,complete answer pass@1 by majority judge,0.0639542,observed,True,True,29654956666666667/50000000000000000,744613333333333/1250000000000000
+mlcr-aa,Sol/high,0.316666666666667,answer_pass_fraction,complete answer pass@1 by majority judge,0.08664606666666666,observed,False,False,,
+mlcr-aa,Sol/medium,0.322222222222222,answer_pass_fraction,complete answer pass@1 by majority judge,0.08369556666666668,observed,True,False,,
+mlcr-aa,Terra/xhigh,,answer_pass_fraction,complete answer pass@1 by majority judge,,missing_or_excluded,UNKNOWN,UNKNOWN,,
+mlcr-aa,Terra/high,,answer_pass_fraction,complete answer pass@1 by majority judge,,missing_or_excluded,UNKNOWN,UNKNOWN,,
+mlcr-aa,Terra/medium,,answer_pass_fraction,complete answer pass@1 by majority judge,,missing_or_excluded,UNKNOWN,UNKNOWN,,
+mlcr-aa,Luna/xhigh,0.205555555555556,answer_pass_fraction,complete answer pass@1 by majority judge,0.004644286666666666,observed,True,True,73458333333333/3703703703704000,29654956666666667/50000000000000000
+mlcr-aa,Luna/high,0.194444444444444,answer_pass_fraction,complete answer pass@1 by majority judge,0.004423911666666667,observed,True,True,140274999999999/11111111111111000,73458333333333/3703703703704000
+mlcr-aa,Luna/medium,0.183333333333333,answer_pass_fraction,complete answer pass@1 by majority judge,0.004283636666666668,observed,True,True,0,140274999999999/11111111111111000
+artificial-analysis-long-context-reasoning,Astra/max,0.806666666666667,accuracy,,0.9973057,observed,False,False,,
+artificial-analysis-long-context-reasoning,Astra/xhigh,0.8,accuracy,,0.9699102000000001,observed,False,False,,
+artificial-analysis-long-context-reasoning,Astra/high,0.8,accuracy,,0.9597182,observed,False,False,,
+artificial-analysis-long-context-reasoning,Sol/max,0.83,accuracy,,0.19940344,observed,False,False,,
+artificial-analysis-long-context-reasoning,Sol/xhigh,0.796666666666667,accuracy,,0.19346964,observed,False,False,,
+artificial-analysis-long-context-reasoning,Astra/medium,0.796666666666667,accuracy,,0.9532501999999999,observed,False,False,,
+artificial-analysis-long-context-reasoning,Terra/max,0.826666666666667,accuracy,,0.10255566999999999,observed,True,True,9273851299999999/2666666666666700,2922385666666667/222222222222200
+artificial-analysis-long-context-reasoning,Sol/high,0.823333333333333,accuracy,,0.19138134,observed,False,False,,
+artificial-analysis-long-context-reasoning,Sol/medium,0.833333333333333,accuracy,,0.19022724,observed,True,True,2922385666666667/222222222222200,
+artificial-analysis-long-context-reasoning,Terra/xhigh,0.816666666666667,accuracy,,0.09712817,observed,False,False,,
+artificial-analysis-long-context-reasoning,Terra/high,0.823333333333333,accuracy,,0.09590477,observed,True,False,,
+artificial-analysis-long-context-reasoning,Terra/medium,0.806666666666667,accuracy,,0.09526462000000001,observed,True,False,,
+artificial-analysis-long-context-reasoning,Luna/xhigh,0.8,accuracy,,0.009817157,observed,True,True,16172857142857/952380952381000,9273851299999999/2666666666666700
+artificial-analysis-long-context-reasoning,Luna/high,0.793333333333333,accuracy,,0.009703947000000001,observed,True,True,68460000000001/10000000000000000,16172857142857/952380952381000
+artificial-analysis-long-context-reasoning,Luna/medium,0.783333333333333,accuracy,,0.009635487,observed,True,True,0,68460000000001/10000000000000000
+briefcase-rubric,Astra/max,0.5202020202020202,rubric_check_fraction,fraction,9.502083915057868,observed,False,False,,
+briefcase-rubric,Astra/xhigh,0.5232323232323233,rubric_check_fraction,fraction,6.563521325092936,observed,False,False,,
+briefcase-rubric,Astra/high,0.5080808080808081,rubric_check_fraction,fraction,4.763525793864492,observed,False,False,,
+briefcase-rubric,Sol/max,0.5565656565656566,rubric_check_fraction,fraction,2.31260277730976,observed,True,True,6370200780670571/202020202020202,
+briefcase-rubric,Sol/xhigh,0.5161616161616162,rubric_check_fraction,fraction,1.0385626211756458,observed,True,True,2016337291824625/252525252525253,6370200780670571/202020202020202
+briefcase-rubric,Astra/medium,0.47474747474747475,rubric_check_fraction,fraction,3.93998566214159,observed,False,False,,
+briefcase-rubric,Terra/max,0.42424242424242425,rubric_check_fraction,fraction,0.8077762402973092,observed,False,False,,
+briefcase-rubric,Sol/high,0.4909090909090909,rubric_check_fraction,fraction,0.8369288919931833,observed,True,True,18627941326620508/2525252525252525,2016337291824625/252525252525253
+briefcase-rubric,Sol/medium,0.4404040404040404,rubric_check_fraction,fraction,0.46437006546077314,observed,True,True,12729017286509069/3468013468013468,18627941326620508/2525252525252525
+briefcase-rubric,Terra/xhigh,0.4080808080808081,rubric_check_fraction,fraction,0.40585356484217194,observed,True,False,,
+briefcase-rubric,Terra/high,0.37676767676767675,rubric_check_fraction,fraction,0.2755634102049543,observed,True,False,,
+briefcase-rubric,Terra/medium,0.33636363636363636,rubric_check_fraction,fraction,0.18372845655950432,observed,False,False,,
+briefcase-rubric,Luna/xhigh,0.33636363636363636,rubric_check_fraction,fraction,0.08249954686550107,observed,True,True,1014561300192123/909090909090908,12729017286509069/3468013468013468
+briefcase-rubric,Luna/high,0.3181818181818182,rubric_check_fraction,fraction,0.06220832086165861,observed,True,True,1454264271135449/1868686868686870,1014561300192123/909090909090908
+briefcase-rubric,Luna/medium,0.2808080808080808,rubric_check_fraction,fraction,0.03312303543894963,observed,True,True,0,1454264271135449/1868686868686870
+automation-strict,Astra/max,0.4155251141552511,strict_task_fraction,fraction,1.5955923111377626,observed,True,True,1222758562296258/40127300401273,
+automation-strict,Astra/xhigh,0.3942161339421613,strict_task_fraction,fraction,1.4063887148113552,observed,True,False,,
+automation-strict,Astra/high,0.3744292237442922,strict_task_fraction,fraction,1.2951847697570746,observed,True,False,,
+automation-strict,Sol/max,0.3698630136986301,strict_task_fraction,fraction,0.2968194851747073,observed,False,False,,
+automation-strict,Sol/xhigh,0.3713850837138508,strict_task_fraction,fraction,0.2505578926118788,observed,True,True,614851263225211/213089802130898,1222758562296258/40127300401273
+automation-strict,Astra/medium,0.3363774733637747,strict_task_fraction,fraction,1.1770207482301795,observed,False,False,,
+automation-strict,Terra/max,0.3302891933028919,strict_task_fraction,fraction,0.1852850534338407,observed,True,False,,
+automation-strict,Sol/high,0.334855403348554,strict_task_fraction,fraction,0.22578054709230258,observed,True,False,,
+automation-strict,Sol/medium,0.3013698630136986,strict_task_fraction,fraction,0.19630359332471714,observed,False,False,,
+automation-strict,Terra/xhigh,0.3287671232876712,strict_task_fraction,fraction,0.1275876399668366,observed,True,True,48356951785663/27674000276740,614851263225211/213089802130898
+automation-strict,Terra/high,0.3059360730593607,strict_task_fraction,fraction,0.10816495593633713,observed,False,False,,
+automation-strict,Terra/medium,0.3105022831050228,strict_task_fraction,fraction,0.09567205178829902,observed,True,True,37461176260576883/82191780821917800,48356951785663/27674000276740
+automation-strict,Luna/xhigh,0.1491628614916286,strict_task_fraction,fraction,0.023298294600704986,observed,True,False,,
+automation-strict,Luna/high,0.1461187214611872,strict_task_fraction,fraction,0.020749699267145254,observed,True,True,4178530383091399/44140030441400300,37461176260576883/82191780821917800
+automation-strict,Luna/medium,0.1019786910197869,strict_task_fraction,fraction,0.016571168884053855,observed,True,True,0,4178530383091399/44140030441400300
+omniscience-accuracy,Astra/max,0.6156666666666667,accuracy,,0.09884949999999999,observed,False,False,,
+omniscience-accuracy,Astra/xhigh,0.6103333333333333,accuracy,,0.051777050000000005,observed,False,False,,
+omniscience-accuracy,Astra/high,0.611,accuracy,,0.027963416666666664,observed,False,False,,
+omniscience-accuracy,Sol/max,0.6183333333333333,accuracy,,0.018309156666666666,observed,True,True,45663300000000/38333333333333,
+omniscience-accuracy,Sol/xhigh,0.6106666666666667,accuracy,,0.009176496666666666,observed,True,True,4243183333333333/6666666666666700,45663300000000/38333333333333
+omniscience-accuracy,Astra/medium,0.5963333333333334,accuracy,,0.010943366666666668,observed,False,False,,
+omniscience-accuracy,Terra/max,0.47633333333333333,accuracy,,0.04251464966666667,observed,False,False,,
+omniscience-accuracy,Sol/high,0.604,accuracy,,0.004933313333333333,observed,True,True,5560699999999999/16000000000000000,4243183333333333/6666666666666700
+omniscience-accuracy,Sol/medium,0.596,accuracy,,0.0021529633333333335,observed,True,True,8143921212121213/950000000000000000,5560699999999999/16000000000000000
+omniscience-accuracy,Terra/xhigh,0.48033333333333333,accuracy,,0.007935478333333334,observed,False,False,,
+omniscience-accuracy,Terra/high,0.4726666666666667,accuracy,,0.0029521950000000003,observed,False,False,,
+omniscience-accuracy,Terra/medium,0.47433333333333333,accuracy,,0.0016225816666666666,observed,True,False,,
+omniscience-accuracy,Luna/xhigh,0.386,accuracy,,0.0008852055,observed,False,False,,
+omniscience-accuracy,Luna/high,0.39,accuracy,,0.0005733978333333333,observed,True,False,,
+omniscience-accuracy,Luna/medium,0.387,accuracy,,0.00036130066666666664,observed,True,True,0,8143921212121213/950000000000000000

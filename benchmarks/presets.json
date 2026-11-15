@@ -1,0 +1,213 @@
+{
+  "profiles": [
+    "economy",
+    "balance",
+    "quality",
+    "extra-quality"
+  ],
+  "primary_models": [
+    "Terra",
+    "Sol",
+    "Sol",
+    "Astra"
+  ],
+  "primary_effort": "user choice, preserved by installation",
+  "active_child_limits": [
+    3,
+    6,
+    8,
+    8
+  ],
+  "general_defaults": [
+    {
+      "id": "C1",
+      "task": "Literal copying, counting and fixed replacement",
+      "pairs": {
+        "economy": "Luna/medium",
+        "balance": "Luna/high",
+        "quality": "Luna/high",
+        "extra-quality": "Luna/high"
+      },
+      "benchmark": null
+    },
+    {
+      "id": "C2",
+      "task": "Structural mapping under complete fields and rules",
+      "pairs": {
+        "economy": "Luna/high",
+        "balance": "Luna/high",
+        "quality": "Luna/high",
+        "extra-quality": "Luna/high"
+      },
+      "benchmark": null
+    },
+    {
+      "id": "C3",
+      "task": "Execution with behavior, mechanism and steps specified",
+      "pairs": {
+        "economy": "Terra/medium",
+        "balance": "Terra/medium",
+        "quality": "Terra/high",
+        "extra-quality": "Terra/high"
+      },
+      "benchmark": null
+    },
+    {
+      "id": "C4",
+      "task": "Natural writing, fidelity review, ordinary local implementation or diagnosis",
+      "pairs": {
+        "economy": "Terra/high",
+        "balance": "Terra/high",
+        "quality": "Terra/high",
+        "extra-quality": "Terra/high"
+      },
+      "benchmark": null
+    },
+    {
+      "id": "C5",
+      "task": "Tool workflow managing state and constraints under established rules",
+      "pairs": {
+        "economy": "Terra/medium",
+        "balance": "Terra/xhigh",
+        "quality": "Sol/xhigh",
+        "extra-quality": "Astra/max"
+      },
+      "benchmark": null
+    },
+    {
+      "id": "C6",
+      "task": "Substantive evidence judgment within a given framework",
+      "pairs": {
+        "economy": "Sol/medium",
+        "balance": "Sol/medium",
+        "quality": "Sol/high",
+        "extra-quality": "Astra/high"
+      },
+      "benchmark": null
+    },
+    {
+      "id": "C7",
+      "task": "Construct or reassess premises, system contract or evaluation framework",
+      "pairs": {
+        "economy": "Sol/high",
+        "balance": "Sol/high",
+        "quality": "Astra/high",
+        "extra-quality": "Astra/high"
+      },
+      "benchmark": null
+    },
+    {
+      "id": "C8",
+      "task": "Jointly construct assumptions, methods and observables",
+      "pairs": {
+        "economy": "Sol/xhigh",
+        "balance": "Sol/xhigh",
+        "quality": "Astra/xhigh",
+        "extra-quality": "Astra/max"
+      },
+      "benchmark": null
+    },
+    {
+      "id": "C9",
+      "task": "Sustained difficult proof, deep derivation or counterexample search",
+      "pairs": {
+        "economy": "Sol/xhigh",
+        "balance": "Sol/max",
+        "quality": "Astra/max",
+        "extra-quality": "Astra/max"
+      },
+      "benchmark": null
+    }
+  ],
+  "task_branches": [
+    {
+      "id": "ordinary_code",
+      "task": "Ordinary code implementation: clear behavior; choose local implementation and tests",
+      "pairs": {
+        "economy": "Terra/medium",
+        "balance": "Terra/high",
+        "quality": "Terra/high",
+        "extra-quality": "Terra/high"
+      },
+      "benchmark": "frontiercode-2-0"
+    },
+    {
+      "id": "demanding_code",
+      "task": "Demanding code integration: implement established mechanisms while tracking integration constraints",
+      "pairs": {
+        "economy": "Terra/high",
+        "balance": "Terra/high",
+        "quality": "Terra/max",
+        "extra-quality": "Terra/max"
+      },
+      "benchmark": "frontiercode-2-0"
+    },
+    {
+      "id": "document_qa",
+      "task": "Document QA: answer fully and correctly from given documents",
+      "pairs": {
+        "economy": "Terra/medium",
+        "balance": "Sol/high",
+        "quality": "Sol/high",
+        "extra-quality": "Sol/high"
+      },
+      "benchmark": "gdp-pdf"
+    },
+    {
+      "id": "stateful_tools",
+      "task": "Stateful tools: perform established operations while maintaining state and policy constraints",
+      "pairs": {
+        "economy": "Terra/medium",
+        "balance": "Terra/xhigh",
+        "quality": "Sol/xhigh",
+        "extra-quality": "Astra/max"
+      },
+      "benchmark": "automation-strict"
+    },
+    {
+      "id": "end_to_end_tools",
+      "task": "End-to-end tools: environment exploration, implementation, execution and feedback adjustment determine a working deliverable",
+      "pairs": {
+        "economy": "Terra/medium",
+        "balance": "Sol/medium",
+        "quality": "Sol/xhigh",
+        "extra-quality": "Astra/xhigh"
+      },
+      "benchmark": "terminalbench-4-0"
+    },
+    {
+      "id": "scientific_execution",
+      "task": "Scientific execution: numerical/scientific implementation, computation and validation are the main burden",
+      "pairs": {
+        "economy": "Terra/high",
+        "balance": "Terra/xhigh",
+        "quality": "Terra/max",
+        "extra-quality": "Astra/max"
+      },
+      "benchmark": "terminal-bench-science"
+    },
+    {
+      "id": "closed_hard_qa",
+      "task": "Closed hard QA: fixed answer acceptance; no open adoption or evaluation-standard selection",
+      "pairs": {
+        "economy": "Terra/medium",
+        "balance": "Sol/medium",
+        "quality": "Sol/max",
+        "extra-quality": "Astra/max"
+      },
+      "benchmark": "hle-diamond"
+    },
+    {
+      "id": "source_synthesis",
+      "task": "Heavy evidence synthesis: reconstruct chronology or causal chains, resolve conflicts and answer composite questions from fixed material and framework",
+      "pairs": {
+        "economy": "Terra/max",
+        "balance": "Sol/xhigh",
+        "quality": "Sol/max",
+        "extra-quality": "Astra/max"
+      },
+      "benchmark": "mlcr-aa"
+    }
+  ],
+  "interpretation": "Preset task mappings and quality/cost preferences supplied to the calculator for comparison."
+}

@@ -1,0 +1,30 @@
+{
+  "snapshot_rows": 660,
+  "metric_views": 44,
+  "comparison_rows": 195,
+  "profile_tradeoff_rows": 32,
+  "observed_by_view": {
+    "terminalbench-4-0": 15,
+    "frontiercode-2-0": 15,
+    "terminal-bench-science": 15,
+    "hle-diamond": 15,
+    "gdp-pdf": 15,
+    "automation-strict": 15,
+    "automationbench-aa": 15,
+    "briefcase-rubric": 15,
+    "aa-briefcase": 15,
+    "omniscience": 15,
+    "omniscience-accuracy": 15,
+    "mlcr-aa": 12,
+    "artificial-analysis-long-context-reasoning": 15
+  },
+  "cost_rows_reproduced": 338,
+  "input_sha256": {
+    "components.csv": "9a8dc7e2c67c38441342e0c4e3a3f4c3867f893268909185809787a6474e178b",
+    "cost-inputs.csv": "6478cdc3a0f53c82ae187e4e32540bc16d6ee5f94328d9c426ea5b85a9f7657b",
+    "observations.csv": "69e8e74baccbc8407db13daef9989da53bf34de77edbe069f5fc8ca5cb51f3e9",
+    "sources.json": "4095c735d04d960c28d8175ac64d1d63ecc483a6ed73ae7de3de08905535610b",
+    "presets.json": "794a7433d6bfd402e0d9d23bddc31f071497c6b64ab2776d5b1c6b4831c79af5"
+  },
+  "calculator_sha256": "96d6f9293957c66bdb8ad16c58d155df78a15125d3a4ff043592557e52392c4b"
+}

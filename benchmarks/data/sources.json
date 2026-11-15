@@ -1,0 +1,301 @@
+{
+  "capture_date": "2026-11-15",
+  "payload": {
+    "url": "https://artificialanalysis.ai/data/241a91dd5b5e7b25.txt",
+    "sha256": "da313748d48332503c5b1b80cdbfa5e9d3c2354dc5e96ce2f1b0e792792c06eb",
+    "captured_at": "2026-11-15T07:58:31Z"
+  },
+  "client_chunk": {
+    "url": "https://artificialanalysis.ai/_next/static/chunks/17016-9e1b20384a9bc1ed.js",
+    "sha256": "684fdd9385797f417913e0168efcfb3c4e9967660697bddc7f40e1669f5acbfa"
+  },
+  "evaluation_pages": {
+    "aa-3d": "https://artificialanalysis.ai/evaluations/aa-3d",
+    "aa-analyst-agent": "https://artificialanalysis.ai/evaluations/aa-analyst-agent",
+    "aa-briefcase": "https://artificialanalysis.ai/evaluations/aa-briefcase",
+    "aa-personalitybench": "https://artificialanalysis.ai/evaluations/aa-personalitybench",
+    "aime-2025": "https://artificialanalysis.ai/evaluations/aime-2025",
+    "apex-agents-aa": "https://artificialanalysis.ai/evaluations/apex-agents-aa",
+    "artificial-analysis-intelligence-index": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
+    "artificial-analysis-long-context-reasoning": "https://artificialanalysis.ai/evaluations/artificial-analysis-long-context-reasoning",
+    "automation-strict": "https://artificialanalysis.ai/evaluations/automationbench-aa",
+    "automationbench-aa": "https://artificialanalysis.ai/evaluations/automationbench-aa",
+    "briefcase-rubric": "https://artificialanalysis.ai/evaluations/aa-briefcase",
+    "code2video-aa": "https://artificialanalysis.ai/evaluations/code2video-aa",
+    "critpt": "https://artificialanalysis.ai/evaluations/critpt",
+    "critpt-v2": "https://artificialanalysis.ai/evaluations/critpt-v2",
+    "critpt-v2-hard": "https://artificialanalysis.ai/evaluations/critpt-v2",
+    "enterprise-ops-gym-aa": "https://artificialanalysis.ai/evaluations/enterprise-ops-gym-aa",
+    "frontiercode": "https://artificialanalysis.ai/evaluations/frontiercode",
+    "frontiercode-2-0": "https://artificialanalysis.ai/evaluations/frontiercode-2-0",
+    "gdp-pdf": "https://artificialanalysis.ai/evaluations/gdp-pdf",
+    "gdpval-aa": "https://artificialanalysis.ai/evaluations/gdpval-aa",
+    "global-mmlu-lite": "https://artificialanalysis.ai/evaluations/global-mmlu-lite",
+    "gpqa-diamond": "https://artificialanalysis.ai/evaluations/gpqa-diamond",
+    "harvey-lab-aa": "https://artificialanalysis.ai/evaluations/harvey-lab-aa",
+    "healthbench": "https://artificialanalysis.ai/evaluations/healthbench",
+    "hle-diamond": "https://artificialanalysis.ai/evaluations/hle-diamond",
+    "humanitys-last-exam": "https://artificialanalysis.ai/evaluations/humanitys-last-exam",
+    "ifbench": "https://artificialanalysis.ai/evaluations/ifbench",
+    "itbench-aa": "https://artificialanalysis.ai/evaluations/itbench-aa",
+    "livecodebench": "https://artificialanalysis.ai/evaluations/livecodebench",
+    "math-500": "https://artificialanalysis.ai/evaluations/math-500",
+    "mka": "https://artificialanalysis.ai/evaluations/mka",
+    "mlcr-aa": "https://artificialanalysis.ai/evaluations/mlcr-aa",
+    "mmlu-pro": "https://artificialanalysis.ai/evaluations/mmlu-pro",
+    "mmmu-pro": "https://artificialanalysis.ai/evaluations/mmmu-pro",
+    "omniscience": "https://artificialanalysis.ai/evaluations/omniscience",
+    "omniscience-accuracy": "https://artificialanalysis.ai/evaluations/omniscience",
+    "scicode": "https://artificialanalysis.ai/evaluations/scicode",
+    "tau2-bench": "https://artificialanalysis.ai/evaluations/tau2-bench",
+    "tau3-banking": "https://artificialanalysis.ai/evaluations/tau3-banking",
+    "terminal-bench-science": "https://artificialanalysis.ai/evaluations/terminal-bench-science",
+    "terminalbench-2-1": "https://artificialanalysis.ai/evaluations/terminalbench-2-1",
+    "terminalbench-4-0": "https://artificialanalysis.ai/evaluations/terminalbench-4-0",
+    "terminalbench-hard": "https://artificialanalysis.ai/evaluations/terminalbench-hard",
+    "vials-aa": "https://artificialanalysis.ai/evaluations/vials-aa"
+  },
+  "secondary_view_page_aliases": {
+    "automation-strict": "automationbench-aa",
+    "briefcase-rubric": "aa-briefcase",
+    "omniscience-accuracy": "omniscience",
+    "critpt-v2-hard": "critpt-v2"
+  },
+  "token_key_and_nominal_tasks": {
+    "aa-3d": {
+      "token_key": "aa3d",
+      "task_count": 55
+    },
+    "aa-analyst-agent": {
+      "token_key": "analystAgent",
+      "task_count": 80
+    },
+    "aa-briefcase": {
+      "token_key": "briefcase",
+      "task_count": 91
+    },
+    "aa-personalitybench": {
+      "token_key": null,
+      "task_count": null
+    },
+    "aime-2025": {
+      "token_key": null,
+      "task_count": null
+    },
+    "apex-agents-aa": {
+      "token_key": "apexAgents",
+      "task_count": 452
+    },
+    "artificial-analysis-intelligence-index": {
+      "token_key": null,
+      "task_count": null
+    },
+    "artificial-analysis-long-context-reasoning": {
+      "token_key": "lcr",
+      "task_count": 100
+    },
+    "automation-strict": {
+      "token_key": "automationBench",
+      "task_count": 657
+    },
+    "automationbench-aa": {
+      "token_key": "automationBench",
+      "task_count": 657
+    },
+    "briefcase-rubric": {
+      "token_key": "briefcase",
+      "task_count": 91
+    },
+    "code2video-aa": {
+      "token_key": "code2video",
+      "task_count": 114
+    },
+    "critpt": {
+      "token_key": "critpt",
+      "task_count": 70
+    },
+    "critpt-v2": {
+      "token_key": "critptAgentic",
+      "task_count": 70
+    },
+    "critpt-v2-hard": {
+      "token_key": "critptAgenticHard",
+      "task_count": 40
+    },
+    "enterprise-ops-gym-aa": {
+      "token_key": "enterpriseOpsGym",
+      "task_count": 1117
+    },
+    "frontiercode": {
+      "token_key": "frontierCode",
+      "task_count": 100
+    },
+    "frontiercode-2-0": {
+      "token_key": "frontierCode20",
+      "task_count": 132
+    },
+    "gdp-pdf": {
+      "token_key": "gdpPdf",
+      "task_count": 100
+    },
+    "gdpval-aa": {
+      "token_key": "gdpval",
+      "task_count": 220
+    },
+    "global-mmlu-lite": {
+      "token_key": null,
+      "task_count": null
+    },
+    "gpqa-diamond": {
+      "token_key": "gpqa",
+      "task_count": 198
+    },
+    "harvey-lab-aa": {
+      "token_key": "harveyLab",
+      "task_count": 120
+    },
+    "healthbench": {
+      "token_key": "healthbench",
+      "task_count": 5000
+    },
+    "hle-diamond": {
+      "token_key": "hleDiamond",
+      "task_count": 1000
+    },
+    "humanitys-last-exam": {
+      "token_key": "hle",
+      "task_count": 2158
+    },
+    "ifbench": {
+      "token_key": "ifbench",
+      "task_count": 294
+    },
+    "itbench-aa": {
+      "token_key": "itBench",
+      "task_count": 59
+    },
+    "livecodebench": {
+      "token_key": null,
+      "task_count": null
+    },
+    "math-500": {
+      "token_key": null,
+      "task_count": null
+    },
+    "mka": {
+      "token_key": "mka",
+      "task_count": 200
+    },
+    "mlcr-aa": {
+      "token_key": "mlcr",
+      "task_count": 60
+    },
+    "mmlu-pro": {
+      "token_key": null,
+      "task_count": null
+    },
+    "mmmu-pro": {
+      "token_key": "mmmuPro",
+      "task_count": 1730
+    },
+    "omniscience": {
+      "token_key": "omniscience",
+      "task_count": 3000
+    },
+    "omniscience-accuracy": {
+      "token_key": "omniscience",
+      "task_count": 3000
+    },
+    "scicode": {
+      "token_key": "scicode",
+      "task_count": 288
+    },
+    "tau2-bench": {
+      "token_key": "tau2",
+      "task_count": 114
+    },
+    "tau3-banking": {
+      "token_key": "tauBanking",
+      "task_count": 97
+    },
+    "terminal-bench-science": {
+      "token_key": "terminalBenchScience",
+      "task_count": 70
+    },
+    "terminalbench-2-1": {
+      "token_key": "terminalBench21",
+      "task_count": 89
+    },
+    "terminalbench-4-0": {
+      "token_key": "terminalBench40",
+      "task_count": 66
+    },
+    "terminalbench-hard": {
+      "token_key": "terminalbenchHard",
+      "task_count": 44
+    },
+    "vials-aa": {
+      "token_key": "vials",
+      "task_count": 161
+    }
+  },
+  "cost_formula": "If cacheable input is null: input_tokens * input_price. Otherwise: cacheable_input_tokens * cache_hit_rate * cache_hit_price + (input_tokens - cacheable_input_tokens * cache_hit_rate) * cache_write_price. Missing cache hit or write price uses input price. Add (answer_tokens + reasoning_tokens) * output_price; divide by 1,000,000 and nominal task_count. Missing token components remain missing.",
+  "caveats": [
+    "Results and prices reflect the source snapshot date.",
+    "Blank numeric fields are unknown. Cache price fallback follows the cost formula above.",
+    "price_fallback marks entries in the source priceFallbackByModelId map; these are excluded from cost reconstruction.",
+    "Analyst Agent pass^5 requires five attempts to be correct; a matching five-attempt cost is unavailable.",
+    "HealthBench quality and cost may refer to different versions, so they are excluded from quality/cost analysis.",
+    "SciCode counts subproblems nested in problems, rather than independent whole tasks.",
+    "CritPt v2 Hard uses critptAgenticHard and 40 tasks; CritPt v2 uses critptAgentic and 70 tasks.",
+    "Derived metric views share underlying runs.",
+    "Omniscience hallucination denominator is incorrect / (incorrect + partial + not_attempted), not incorrect / attempted.",
+    "Fraction and Elo units are labeled; other units are provided where established by the source. Blank units are unknown."
+  ],
+  "evaluation_page_sha256": {
+    "aa-3d": "468e193d442324423962f80013c5ca46a8d2d2572cc483fbb666649630c5632a",
+    "aa-analyst-agent": "6cf0174ad19fadfd6789c30a50381454fa6133c501320cabd2ba986e064ba17a",
+    "aa-briefcase": "d036a965f8da253ec6da33accdc73d33c872f14e675a27ffed7b4cab4b121abd",
+    "aa-personalitybench": "88fa4f053b76a856bc4acafeaff18e2516ee943123855601a07bd19f64310e0b",
+    "aime-2025": "4995efb9fefd2926b16a3984f869486736a781b3485427be7319cc37b8b95e64",
+    "apex-agents-aa": "3763c1eae3f681781e7afceab1b03c95d3e310ffdc047b19d716b4d89138468f",
+    "artificial-analysis-intelligence-index": "8136b68c4d63d1fa6c3bed58652e77bc85626cca50081c9c34564ae570371bfa",
+    "artificial-analysis-long-context-reasoning": "988bd548726fe4b20e026b25e27eb74dab4aa5fd850b8d88009da5bf98673640",
+    "automation-strict": "25c0bf55f493590df02b600e5831608dab19ad12a5be7ae53f4eb380b2e59722",
+    "automationbench-aa": "25c0bf55f493590df02b600e5831608dab19ad12a5be7ae53f4eb380b2e59722",
+    "briefcase-rubric": "d036a965f8da253ec6da33accdc73d33c872f14e675a27ffed7b4cab4b121abd",
+    "code2video-aa": "000253e7136a65689816559b1aa3b8a72d0b93937748e7dabfdd9d83bb8ffdbf",
+    "critpt": "5b3ec26a6761cb8d66de001657de66e1f4bc11b7c67a2fd7400762e5b6bc2717",
+    "critpt-v2": "063260ed70f216fa7e7c1b3e51c9e48c8b453a5ca26fd2633c6d31566707aff0",
+    "critpt-v2-hard": "063260ed70f216fa7e7c1b3e51c9e48c8b453a5ca26fd2633c6d31566707aff0",
+    "enterprise-ops-gym-aa": "5f07c8d5f6ed248bc7b758ff4236db56f13ef5286e3e710995a73d60a4c5e4a6",
+    "frontiercode": "0aa45574345cb1cd91c869244c8cb6d7d1cfea26f718428cc94ce39abac23e73",
+    "frontiercode-2-0": "c62062ce1c6d9f53d1d42d6340910e9512b2155ca989fefbee14e0f104676cbb",
+    "gdp-pdf": "68bea052f5e5588405743321e99f0d81e0397e6df8940b1a6dff7e706cf2400e",
+    "gdpval-aa": "225eb7b1b4f440d0f502ad6311ba2c065ac7b27b6f29ae7f7a7eaa6d9815d5c8",
+    "global-mmlu-lite": "18bcd3ffe92ea28be8f112fa47b39db4a9a1313ff82f904d2cd86aa70d00daa3",
+    "gpqa-diamond": "19f78e082eb815aa73931c1d86feaf83539a1c6ae2cece49360ce867f87a6417",
+    "harvey-lab-aa": "5004daeb498adbbe8d3e0b20596e2e0427635184231225496be3fdb73ead77f0",
+    "healthbench": "6916cc1c6d28d98f05ef6fcbf565841bae71d06921b2f146ff6b5f1953023036",
+    "hle-diamond": "ee4a8fd70fdbda8d16c79e46bfb0bcedd5acc206693b281e507e85cf426096bf",
+    "humanitys-last-exam": "448f51998b3a7d95283d7224a2d1d2e76735107a3b187ea6ea08e69dc36f42c3",
+    "ifbench": "edad0d9c6c522483286bf30f3a971f635f135efeb782152bdee789ed5be1cdd1",
+    "itbench-aa": "ba17c601b9ec9126411ebfe33f9120182e94092f7d0e991703c5a954f64b1188",
+    "livecodebench": "ba61c443421f0923fa738f771aa52910d2dddcd2a429e4e962bc35ec00ca24e4",
+    "math-500": "9bc830cd5783532d5dae0fe932c8c0225c8e5022fbb6d9f45df666142579479f",
+    "mka": "8fc274cbb7e41b5f2e8d27efc4daaebd43a026f9bc8a66d341b7e0cab855b28b",
+    "mlcr-aa": "9f896fde6bb3b6c9e180c78c938a83f4a06e20e87513987441ca4992c453280e",
+    "mmlu-pro": "befdaf32ec1584cd39f2ecb8489806528386c252a1bcf69333cb81475772a113",
+    "mmmu-pro": "497ea3075c963e3b8104b93438fa79fa5188839145014e74c1f795fde2d17184",
+    "omniscience": "cd3c59fcd5e52e920a0b6fea7a13219542263d56f4553e9446bd5172d9cc90ad",
+    "omniscience-accuracy": "cd3c59fcd5e52e920a0b6fea7a13219542263d56f4553e9446bd5172d9cc90ad",
+    "scicode": "7a25960d3624dcc167a9629dd6c7785ac5b4687cf66c6be8f2e4f22c3dbda161",
+    "tau2-bench": "beacffd0dfbf7b11a8662a428c8981eb6ab57c63df649633382a271980e42b04",
+    "tau3-banking": "883b5fe5676bf60c91e5a1730758ab99fdae7e3cc3763235e2775ec34b3af59a",
+    "terminal-bench-science": "6a22689dd347871442e19a9ebc07da5fb2156240bc911270eae414ead8db77ba",
+    "terminalbench-2-1": "660d00774d134289b8d681d5ac8aaf7fdaf26bd02bab31e86fbf44d933f1d8ae",
+    "terminalbench-4-0": "16bf8292792db131eb6cef9cb1cb46270337126a7360173265b58fedefa16266",
+    "terminalbench-hard": "bc3e167f3f1773eda71eea423b4c37de2112a924c87778dfedb16b34fe5c6657",
+    "vials-aa": "ecffe02cfeb1c285262c059b9d2d56b1116c55ce2092fa11d279beb0de986b33"
+  }
+}

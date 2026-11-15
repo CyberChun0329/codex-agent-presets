@@ -1,135 +1,64 @@
-# Model-selection evidence
+# Benchmarks and preset design
 
-[简体中文](EVIDENCE.zh-CN.md) · External benchmarks: **2026-11-03** · Local comparison: **2026-11-06**.
+[简体中文](EVIDENCE.zh-CN.md) · Evidence reviewed: **15 November 2026**
 
-Luna means GPT-6 Luna; Terra and Sol mean GPT-6.1 Terra and Sol; Astra means GPT-6 Astra.
+The presets express different preferences for task quality and cost. The models considered are GPT-6 Luna, GPT-6.1 Terra, GPT-6.1 Sol and GPT-6 Astra. Select model and reasoning effort for the remaining work and its acceptance requirements.
 
-## Artificial Analysis
+The comparison pool contains Medium, High, Xhigh and Max for these four families, except Luna/Max: 15 possible pairs. Low and non-reasoning are outside the presets. A source need not have results for every pair.
 
-These comparisons use Intelligence Index v5.0. Percentages are rounded as displayed;
-confidence intervals were not provided. **II cost/task** is the index's weighted
-average task cost, not the price of an individual benchmark or a measure of Codex credits.
+The [model, data and reproduction guide](benchmarks/README.md) provides the numerical snapshot, cost inputs, calculation and profile tradeoff tables.
 
-### Terra: Max versus Xhigh
+## Evidence used
 
-| Measure | Max | Xhigh |
-| --- | ---: | ---: |
-| Terminal-Bench 4.0 | 56% | 46% |
-| Terminal-Bench-Science 0.1 | 58% | 42% |
-| AutomationBench-AA | 60% | 60% |
-| II cost/task | $0.96 | $0.40 |
+The main comparisons use [Artificial Analysis (AA)](https://artificialanalysis.ai/methodology/intelligence-benchmarking):
 
-Balance allows Terra Max for suitable terminal and scientific tasks. The unchanged
-automation result gives no reason to use Max routinely for automation.
-[Source](https://artificialanalysis.ai/models/comparisons/gpt-6-1-terra-vs-gpt-6-1-terra-xhigh).
-
-### Sol: Max versus Xhigh
-
-| Measure | Max | Xhigh |
-| --- | ---: | ---: |
-| Terminal-Bench 4.0 | 56% | 54% |
-| Terminal-Bench-Science 0.1 | 58% | 50% |
-| AutomationBench-AA | 65% | 67% |
-| GDP.pdf | 31% | 32% |
-| II cost/task | $1.27 | $0.76 |
-
-The results vary by task. Balance reserves Sol Max for work that benefits from
-deeper reasoning; the small score differences do not establish a general advantage.
-[Source](https://artificialanalysis.ai/models/comparisons/gpt-6-1-sol-vs-gpt-6-1-sol-xhigh).
-
-### Terra High versus Sol Medium
-
-| Measure | Terra High | Sol Medium |
-| --- | ---: | ---: |
-| Terminal-Bench 4.0 | 42% | 48% |
-| FrontierCode 2.0 | 37% | 33% |
-| II cost/task | $0.26 | $0.36 |
-| Time to first answer token | 20.82 s | 9.35 s |
-| Whole-task time | 171.39 s | 217.80 s |
-
-These timings are a snapshot. Compare whole-task time and cost as well as
-first-token latency and token prices.
-[Source](https://artificialanalysis.ai/models/comparisons/gpt-6-1-terra-high-vs-gpt-6-1-sol-medium).
-
-### Terra Max versus Sol High
-
-| Measure | Terra Max | Sol High |
-| --- | ---: | ---: |
-| Terminal-Bench 4.0 | 56% | 52% |
-| Terminal-Bench-Science 0.1 | 58% | 46% |
-| AA-Briefcase v1.1 Elo | 1402 | 1467 |
-| AA-Omniscience v1.1 net score | 30 | 41 |
-| GDP.pdf | 29% | 32% |
-| II cost/task | $0.96 | $0.59 |
-
-These mixed results support choosing by task rather than replacing Sol with
-higher-effort Terra across the board.
-[Source](https://artificialanalysis.ai/models/comparisons/gpt-6-1-terra-vs-gpt-6-1-sol-high).
-
-### Luna: Max versus Xhigh
-
-Max improves Terminal-Bench 4.0 from **8% to 13%**, science from **5% to 9%**, and
-AutomationBench-AA from **48% to 53%**. II cost/task rises from **$0.10 to $0.15**.
-Balance allows Luna Max for bounded, well-checked work when the added reasoning is
-useful. These scores do not establish it as a substitute for Terra.
-[Source](https://artificialanalysis.ai/models/comparisons/gpt-6-luna-vs-gpt-6-luna-xhigh).
-
-## Benchmark-author results
-
-- **Terminal-Bench 4.0:** 66 tasks, Harbor, pinned `terminal-bench@4.0.0`, Codex,
-  Max. Resolution rates: Sol **58.2% ±3.1**, Astra **58.2% ±2.8**, Luna **16.4% ±2.7**.
-  The reviewed page had no Terra result. Costs and tokens cover the whole benchmark.
-  These runs differ from Artificial Analysis's runs above.
-  [Leaderboard and methodology](https://snorkel.ai/leaderboard/terminal-bench/).
-- **ALE v1.1:** 122 tasks across 55 sub-industries. Terra/Max with Codex achieved
-  **41.8% pass rate** and **69.8% score**, taking **124h36m** and **5.5M output tokens**
-  in total. Pass rate requires full completion; score includes partial credit.
-  [Leaderboard](https://snorkel.ai/leaderboard/agents-last-exam/).
-
-## OpenAI results and guidance
-
-The official **ALE v1** chart reports:
-
-| Model / effort | Score | Cost/task |
-| --- | ---: | ---: |
-| Luna / Max | 50.9% | $0.14 |
-| Terra / Low | 55.9% | $0.16 |
-| Terra / Medium | 57.6% | $0.29 |
-| Terra / Max | 60.0% | $1.01 |
-
-This supports considering lower effort on a stronger model, as Balance and Economy
-do. The chart reports v1 scores; compare them separately from v1.1 pass rates.
-[Official chart](https://openai.com/index/introducing-gpt-6-1-terra/).
-
-OpenAI recommends Terra for natural writing, visual reasoning and precise computer
-use. Briefcase measures complete work products, not prose style alone.
-[Official guidance](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-6-astra#gpt-61-terra).
-
-## Local fixed-criteria document comparison — 2026-11-06
-
-Terra/High and Sol/High revised the same English and Chinese technical sections
-using supplied facts and criteria. Both first drafts met the requirements without
-rework. Each model also reviewed the same seven short technical sections.
-
-| Task / model, High | Task time | Uncached input tokens | Cached input tokens | Output tokens |
-| --- | ---: | ---: | ---: | ---: |
-| Two revisions / Terra | 38.7 s | 31,763 | 89,088 | 1,069 |
-| Two revisions / Sol | 44.0 s | 31,864 | 89,472 | 1,163 |
-| Seven-section review / Terra | 31.8 s | 18,195 | 71,296 | 841 |
-| Seven-section review / Sol | 44.4 s | 18,217 | 100,480 | 1,333 |
-
-Terra/High took less time and used fewer output tokens in this small test. Task
-time includes checks, waiting and tool use; it is not a full-workflow measurement.
-Cached input is part of input, and output includes reasoning tokens.
-
-## Applying the evidence
-
-| Profile | Fixed-criteria revision and source-bound review |
+| Task evidence | Evaluations |
 | --- | --- |
-| Economy | Prefer Terra at Low or Medium for bounded work with effective checks, High for normal reasoning, and Xhigh for interacting constraints. |
-| Balance | Prefer Terra and choose effort by task; use Sol for substantive ambiguity, architecture or method choices, and evidence synthesis. |
-| Quality and Extra Quality | Normally start with Terra/High. Use Sol for substantive ambiguity or coupled conceptual decisions. |
+| Repository changes, terminal work and scientific execution | [FrontierCode-AA 2.0](https://artificialanalysis.ai/evaluations/frontiercode-2-0), [Terminal-Bench 4.0](https://artificialanalysis.ai/evaluations/terminalbench-4-0), [Terminal-Bench-Science](https://artificialanalysis.ai/evaluations/terminal-bench-science) |
+| Stateful tool workflows | [AutomationBench-AA](https://artificialanalysis.ai/evaluations/automationbench-aa): strict pass, objective completion and guardrail violations read together |
+| Source-based answers and long-context reasoning | [GDP.pdf](https://artificialanalysis.ai/evaluations/gdp-pdf), [MLCR-AA](https://artificialanalysis.ai/evaluations/mlcr-aa), [AA-LCR v1.1](https://artificialanalysis.ai/evaluations/artificial-analysis-long-context-reasoning) |
+| Difficult knowledge, reasoning and physics | [HLE-Diamond](https://artificialanalysis.ai/evaluations/hle-diamond), [CritPt v2 and its hard subset](https://artificialanalysis.ai/evaluations/critpt-v2) |
+| Professional deliverables and knowledge reliability | [Briefcase](https://artificialanalysis.ai/evaluations/aa-briefcase), [Omniscience](https://artificialanalysis.ai/evaluations/omniscience) |
 
-The local test covered High and short technical documents only; it does not
-establish results at Low/Medium or on long manuscripts. No comparison here measures
-complete profiles, Ultra primary performance or Codex subscription usage.
+We also checked task and execution conditions against [Vals Finance Agent](https://www.vals.ai/benchmarks/fabv2-1) and [Legal Research](https://www.vals.ai/benchmarks/legal_research), CUA Speedrun's [OSWorld](https://cuaspeedrun.com/dataset-osworld-energy50-representative.html) and [OSWorld2](https://cuaspeedrun.com/dataset-osworld2-k52.html), [DeepFinance](https://arxiv.org/pdf/2611.10926), and [Snorkel's Terminal-Bench leaderboard](https://snorkel.ai/leaderboard/terminal-bench/). These are checks on coverage and transfer, not a complete four-model, all-effort experiment. Publishers use different tasks, harnesses, scoring, attempts and cost definitions; scores cannot be averaged across benchmarks. Missing or invalid observations are not zeros.
+
+Separately, OpenAI's [model selection guide](https://developers.openai.com/api/docs/guides/model-selection) and [Terra release notes](https://openai.com/index/introducing-gpt-6-1-terra/) provide vendor guidance, including Terra's natural writing and visual strengths. This guidance is not independent benchmark evidence or an independent replication.
+
+## Comparing quality and cost
+
+Within each source and task, compare quality gains, cost differences or multiples, and relevant risks in their original units. The [calculation guide](benchmarks/README.md#what-the-calculation-means) explains the Pareto frontier and conditional `value × quality − cost` comparison. A quality floor comes from the task's requirements, not the median or top half of the available candidates.
+
+## Choosing the Balance defaults
+
+Balance selects a defensible task-quality/cost compromise, rather than the cheapest pair or the highest quality/cost ratio. These examples show the decisions behind its defaults. Figures are from the referenced AA snapshot:
+
+| Task / Balance pair | Tradeoff informing the choice |
+| --- | --- |
+| Ordinary code / Terra/High | Terra/Medium→High adds about 2.92 scoring-credit percentage points at 1.52× cost. High→Max adds 4.86 points at 3.30× cost; the policy reserves that additional spend for demanding integration. The source did not separately test those two difficulty groups. |
+| Complete document answers / Sol/High | Terra/Medium→Sol/High adds 3.6 all-pass percentage points at 2.10× cost. Sol/High→Astra/Xhigh adds only 0.2 points at 5.47× cost. This informs the shared Sol/High default for similar answers, not every form of document reasoning. |
+| End-to-end tool work / Sol/Medium | On Terminal-Bench 4.0, Sol/Medium scores 47.98% at $0.614 per source task, versus Terra/Xhigh's 46.46% at $0.657. This is a point comparison under that harness, not proven native superiority. |
+
+For demanding code, Terra/Max→Astra/Max adds about **0.055 scoring-credit percentage points** at **5.06×** source cost. The higher profiles can share Terra/Max; this does not prove equal quality or that ordinary code has reached a plateau.
+
+These defaults combine source observations, task matching and the stated resource preference. No fitted acceptance probability or precise willingness-to-pay parameter uniquely determines them. Task and harness differences can explain conflicting rankings; their effects have not been isolated.
+
+## Extending the quality and cost preferences
+
+Economy accepts some loss of quality margin to reduce cost where the task's requirements permit it. Quality retains Sol/High or Xhigh for normal substantive judgment and pays more for task-relevant quality. Extra Quality accepts larger premiums for the last increment of quality. The task's acceptance requirements still apply in all four.
+
+Heavy evidence synthesis illustrates this approach: reconstructing chronology or causal chains, resolving conflicting records and answering composite questions under a fixed framework. MLCR informs this narrow route; a long document, citations or a medical label alone do not trigger it.
+
+| Profile | Pair | MLCR complete-answer pass | Source cost/task |
+| --- | --- | ---: | ---: |
+| Economy | Terra/Max | 30.56% | $0.06395 |
+| Balance | Sol/Xhigh | 35.56% | $0.09374 |
+| Quality | Sol/Max | 38.33% | $0.11193 |
+| Extra Quality | Astra/Max | 41.67% | $0.57256 |
+
+In this snapshot, Terra/Max costs less than Sol/Medium, which is why an Economy route can use Max. Sol/High→Sol/Max gains 6.67 pass percentage points for about 29% more source cost. Extra's final 3.33-point gain over Sol/Max costs about 5.12×: it is a quality premium, not better cost efficiency. MLCR has matching observations for 12 of 15 pairs; Terra/Medium, High and Xhigh are missing. Its accuracy component is not monotone along this sequence, so the overall pass increase is not improvement on every dimension.
+
+AA-LCR provides a countercheck: Sol/Medium, High and Max score about 83.33%, 82.33% and 83.00%. Longer context therefore does not justify a general Max rule. The heavy-synthesis mapping remains a policy choice, not a causal result about a single task feature.
+
+These source point estimates do not establish a unique best model or statistically significant differences, and are not native Codex measurements. AA's weighted Cost per Task gives background for its own task mix; it cannot replace the individual task comparisons or predict subscription allowance. Full workflow cost also includes the primary agent, tools, handoffs and necessary rework. That native total has not been measured here.
+
+Profiles can share a model/effort pair. A difficult integration, a complete answer from documents and a multi-state tool workflow can call for different choices even when all involve files or code; task length, a medical label or terminal use alone does not determine the route. Check the defaults against your quality requirements and observed workflow costs. The profiles impose no fixed model ladder, usage quota or requirement that a cheaper attempt fail first.

@@ -3,8 +3,8 @@ description = "Worker for bounded execution with fixed targets and strong valida
 
 developer_instructions = """
 Follow the selected Codex Delegation Policy and the primary's assignment,
-including runtime verification. If either is missing or conflicts, ask the
-primary to clarify. Only the primary delegates and accepts the final result.
+including runtime verification. Ask the primary about missing or conflicting
+requirements. Only the primary delegates and accepts results.
 
 Make the authorized change against the specified criteria. Preserve others'
 work. Run the agreed checks against the applicable version and report changes,

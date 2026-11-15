@@ -1,5 +1,5 @@
 <!-- codex-delegation-presets:start -->
-<!-- Codex delegation preset: economy; version: 0.4.2 -->
+<!-- Codex delegation preset: economy; version: 0.5.0 -->
 
 # Codex Delegation Policy
 
@@ -35,39 +35,32 @@ or targets. Start when required inputs are ready.
 Specify the role, model, reasoning effort and a short reason. Use native
 delegation. A separate CLI or API model call requires user authorization.
 
-Choose the pair for the current task. Once a decision is settled, assess its
-implementation and verification on their own criteria. When choosing a stronger
-model than the profile would normally use for the task, name the remaining
-judgment or capability need in the dispatch reason.
+Choose model and effort together using the task defaults below. Explain any
+exception by the remaining work and task fit, using the same criteria for
+cheaper and costlier alternatives. Once a decision is settled, assess its
+implementation and verification separately.
 
-Choose model and effort separately within the profile:
-- Low or Medium, where allowed, for bounded work with effective checks.
-- High for work with a clear approach, including bounded reviews.
-- Xhigh for interacting constraints or a difficult diagnosis.
-- Max for a specific reasoning bottleneck or task-matched evidence of benefit.
-  Consider lower effort on a stronger model when the profile allows it.
-
-Keep the pair while it fits the work. Before reusing a child, check its role,
-permissions and pair against the next assignment, including the value of its
-existing context. If the pair changes, use a supported setting change or a new
-child with an explicit pair. Preserve useful results and pass only the work that
-remains. If no allowed pair meets the need, report the limitation to the user.
+Keep the pair while it fits. Before reusing a child, check its role, permissions,
+pair and useful context against the next assignment. If the pair changes, use a
+supported setting change or a new child with that pair. Preserve useful results
+and hand off only the remaining work. If no allowed pair fits, report the
+limitation to the user.
 
 ## Runtime verification
 
-Before substantive work on each child turn, the primary or child checks the
+Before substantive work on every child turn, the primary or child verifies the
 actual model and effort in current Codex runtime metadata or records. The primary
-can relay the child and turn IDs, actual pair and source of the check. A launch
-request or a previous turn does not establish the current pair.
+may relay the child and turn IDs, pair and evidence source. A launch request or
+an earlier turn is insufficient.
 
-Read-only work can proceed after verification. Writes and costly checks also
-need the primary's approval for that turn within the user's authorization.
-The primary can give that approval with the verification result.
+After verification, read-only work can proceed. Writes and costly checks also
+require the primary's approval for the current turn within the user's authority;
+the primary may send approval with the verification result.
 
-If proof or approval is missing, check available evidence and tell the primary
-what is missing. Wait briefly only if it is expected, then stop the affected work
-if it remains blocked. If the runtime pair differs from the assigned pair, stop
-and report the mismatch. Close children when finished if the client supports it.
+If verification or approval is missing, check available evidence and tell the
+primary what is needed. Wait briefly if it is expected, then stop the affected
+work if it remains unavailable. Stop and report a model/effort mismatch. Close
+finished children when the client supports it.
 
 ## Review and failures
 
@@ -88,16 +81,77 @@ condition changes, or the child lacks authority, capability or evidence to proce
 
 ## Selected delegation profile: economy
 
-Primary model recommendation: `gpt-6.1-terra`. Primary effort remains the user's
-choice; `ultra` is recommended but applied only on explicit request.
-Allowed child models: `gpt-6-luna`, `gpt-6.1-terra`.
-Allowed child efforts: `low`, `medium`, `high`, `xhigh`; never Ultra.
+Primary model recommendation: `gpt-6.1-terra`. Primary effort is the user's choice;
+Ultra is used only when explicitly requested.
+Allowed child models: `gpt-6-luna`, `gpt-6.1-terra`, `gpt-6.1-sol`, `gpt-6-astra`.
+Allowed child efforts: `medium`, `high`, `xhigh`, `max`; never Low, non-reasoning,
+child Ultra or Luna/Max. Luna, Terra, Sol and Astra below refer to those models;
+M, H, X and Max mean Medium, High, Xhigh and Max respectively.
 
-Use Luna for mechanical gathering, exact extraction, transcription, inventories,
-format checks and simple changes with strong objective validation. Keep Terra for
-natural writing/revision, visual interpretation/computer use and substantive bounded
-execution or coding. Prefer Terra for fixed-criteria document revision and
-source-bound document review. If a task cannot be bounded and checked within
-the allowed model pool and efforts, report the limitation.
+### General task defaults
+
+| Remaining work | Pair |
+| --- | --- |
+| Literal copying, counting and fixed replacement | Luna/M |
+| Structural mapping under complete fields and rules | Luna/H |
+| Execution with behavior, mechanism and steps specified | Terra/M |
+| Natural writing, fidelity review, ordinary local implementation or diagnosis | Terra/H |
+| Tool workflow managing state and constraints under established rules | Terra/M |
+| Substantive evidence judgment within a given framework | Sol/M |
+| Construct or reassess premises, system contract or evaluation framework | Sol/H |
+| Jointly construct assumptions, methods and observables | Sol/X |
+| Sustained difficult proof, deep derivation or counterexample search | Sol/X |
+
+### Specific task branches
+
+| Remaining work and condition | Pair |
+| --- | --- |
+| Ordinary code implementation: clear behavior; choose local implementation and tests | Terra/M |
+| Demanding code integration: implement established mechanisms while tracking integration constraints | Terra/H |
+| Document QA: answer fully and correctly from given documents | Terra/M |
+| Stateful tools: perform established operations while maintaining state and policy constraints | Terra/M |
+| End-to-end tools: environment exploration, implementation, execution and feedback adjustment determine a working deliverable | Terra/M |
+| Scientific execution: numerical/scientific implementation, computation and validation are the main burden | Terra/H |
+| Closed hard QA: fixed answer acceptance; no open adoption or evaluation-standard selection | Terra/M |
+| Heavy evidence synthesis: reconstruct chronology or causal chains, resolve conflicts and answer composite questions from fixed material and framework | Terra/Max |
+
+Choose based on the remaining work and complete deliverable. When its conditions
+apply, a specific branch takes precedence over its general row. Select a
+task-matched alternative directly when warranted, without requiring a cheaper
+attempt to fail, model quotas or routine duplicate runs. Importance, length, role
+title or imperfect machine verification alone does not justify escalation. The
+tables give task defaults.
+
+- A patch or calculation with location, mechanism and steps specified uses the
+  specified-execution row, even if long or run in a terminal.
+- Constructing or reassessing system contracts, failure/recovery semantics,
+  premises, evaluation criteria or a scientific solution framework uses the
+  premises/contract or joint-construction row. Ordinary local implementation or
+  diagnosis includes choosing reproduction, observations, root cause and a local
+  fix. An unknown root cause alone does not change its row. Use ordinary code when
+  code must be delivered. Interpreting a local bug against records remains local
+  diagnosis.
+- For mixed tool work, select by the unresolved technical burden, not title,
+  file format, scientific label, deliverable name or order. Established algorithms
+  with code integration and given error tests use the code branch; sustained
+  judgment about numerical approximation, stability or scientific validity under
+  a fixed framework uses scientific execution. A result table or renaming results
+  does not change the route. Distinguish state constraints from environment repair
+  by the work actually remaining.
+- Natural writing and fidelity checking use the local-work row. Judging whether a
+  source claim holds uses evidence judgment or framework construction, as applicable.
+  For overlapping QA, heavy evidence synthesis takes precedence when chain
+  reconstruction, conflict resolution and composite adjudication are the main
+  burden. Document QA covers complete answers from supplied material. Closed hard
+  QA applies when external domain knowledge or independent hard problem solving
+  dominates and acceptance is fixed. Length, citations, professional terminology,
+  cover label or subject alone does not decide the route. Sustained proof takes
+  precedence, including under fixed axioms; ordinary function boundary tests do not.
+- Research-level physics problems requiring a tool-assisted scientific solution
+  with defined answer acceptance may use Astra/Medium directly. Routine formula
+  evaluation or a physics label alone does not trigger this alternative.
+- For inseparable mixed work, route by the unresolved part decisive to success.
+  Do not split dependencies to lower the model or require additional review or
+  duplicate runs. Keep explicit human and external review gates.
 
 <!-- codex-delegation-presets:end -->
