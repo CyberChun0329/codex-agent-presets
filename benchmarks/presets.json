@@ -1,4 +1,11 @@
 {
+  "preset_version": "0.5.0",
+  "model_ids": {
+    "Luna": "gpt-6-luna",
+    "Terra": "gpt-6.1-terra",
+    "Sol": "gpt-6.1-sol",
+    "Astra": "gpt-6-astra"
+  },
   "profiles": [
     "economy",
     "balance",

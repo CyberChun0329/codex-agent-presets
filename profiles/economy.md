@@ -1,5 +1,5 @@
 <!-- codex-delegation-presets:start -->
-<!-- Codex delegation preset: economy; version: 0.5.0 -->
+<!-- Codex delegation preset: economy; version: 0.5.1 -->
 
 # Codex Delegation Policy
 
@@ -83,7 +83,7 @@ condition changes, or the child lacks authority, capability or evidence to proce
 
 Primary model recommendation: `gpt-6.1-terra`. Primary effort is the user's choice;
 Ultra is used only when explicitly requested.
-Allowed child models: `gpt-6-luna`, `gpt-6.1-terra`, `gpt-6.1-sol`, `gpt-6-astra`.
+Allowed child models: `gpt-6-luna`, `gpt-6.1-terra`, `gpt-6.2-sol`, `gpt-6.2-astra`.
 Allowed child efforts: `medium`, `high`, `xhigh`, `max`; never Low, non-reasoning,
 child Ultra or Luna/Max. Luna, Terra, Sol and Astra below refer to those models;
 M, H, X and Max mean Medium, High, Xhigh and Max respectively.
@@ -112,8 +112,18 @@ M, H, X and Max mean Medium, High, Xhigh and Max respectively.
 | Stateful tools: perform established operations while maintaining state and policy constraints | Terra/M |
 | End-to-end tools: environment exploration, implementation, execution and feedback adjustment determine a working deliverable | Terra/M |
 | Scientific execution: numerical/scientific implementation, computation and validation are the main burden | Terra/H |
-| Closed hard QA: fixed answer acceptance; no open adoption or evaluation-standard selection | Terra/M |
+| Closed hard QA: fixed answer acceptance; no open adoption or evaluation-standard selection | Sol/M |
 | Heavy evidence synthesis: reconstruct chronology or causal chains, resolve conflicts and answer composite questions from fixed material and framework | Terra/Max |
+
+- For closed hard QA, consider Sol/H when greater answer accuracy is worth the
+  additional cost.
+- For exploratory tool work, consider Terra/H when a wrong turn would require
+  repeating the steps that follow.
+- For small scientific code with a specified method, Luna/X is an alternative
+  to the specified-execution and ordinary-code defaults when independent tests
+  verify the result across the required cases. Use the demanding integration
+  or scientific execution branch if integration constraints or numerical
+  judgment are the main challenge.
 
 Choose based on the remaining work and complete deliverable. When its conditions
 apply, a specific branch takes precedence over its general row. Select a

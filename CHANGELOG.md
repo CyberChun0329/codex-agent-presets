@@ -1,5 +1,17 @@
 # Changelog / 版本记录
 
+## 0.5.1
+
+### English
+
+- Initial support for GPT-6.2 Sol and GPT-6.2 Astra.
+- Added benchmark scores and per-task costs by reasoning effort, with estimates labeled. [Benchmark data](benchmarks/README.md)
+
+### 简体中文
+
+- 初步支持 GPT-6.2 Sol 和 GPT-6.2 Astra。
+- 补充了各推理档位的评测得分和每题费用，并标明费用估算值。[评测数据](benchmarks/README.zh-CN.md)
+
 ## 0.5.0
 
 ### English

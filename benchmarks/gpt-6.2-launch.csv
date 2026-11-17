@@ -1,0 +1,6 @@
+benchmark,model,effort,comparator,comparator_effort,score_measure,relation,score_difference,unit,task_cost_ratio,source
+FrontierCode 2.0,gpt-6.2-sol,max,gpt-6.2-astra,max,absolute score gap,at most,0.5,points,about 1/5,https://openai.com/index/introducing-gpt-6-2-astra-sol/
+Terminal-Bench-Science 0.1,gpt-6.2-astra,,gpt-6-astra,,score gain,reported,9,percentage points,less than 1/3,https://openai.com/index/introducing-gpt-6-2-astra-sol/
+Agents' Last Exam,gpt-6.2-astra,,gpt-6-astra,,score gain,reported,5.2,points,less than 1/3,https://openai.com/index/introducing-gpt-6-2-astra-sol/
+GDPval v2,gpt-6.2-sol,,gpt-6.1-sol,,score gain,reported,5.3,percentage points,,https://openai.com/index/introducing-gpt-6-2-astra-sol/
+GDPval v2,gpt-6.2-astra,,gpt-6-astra,,score gain,reported,6.2,percentage points,,https://openai.com/index/introducing-gpt-6-2-astra-sol/

@@ -1,14 +1,44 @@
 # Benchmarks and preset design
 
-[简体中文](EVIDENCE.zh-CN.md) · Evidence reviewed: **15 November 2026**
+[简体中文](EVIDENCE.zh-CN.md)
 
-The presets express different preferences for task quality and cost. The models considered are GPT-6 Luna, GPT-6.1 Terra, GPT-6.1 Sol and GPT-6 Astra. Select model and reasoning effort for the remaining work and its acceptance requirements.
+## GPT-6.2 model choices
 
-The comparison pool contains Medium, High, Xhigh and Max for these four families, except Luna/Max: 15 possible pairs. Low and non-reasoning are outside the presets. A source need not have results for every pair.
+All four presets use GPT-6.2 for Sol and Astra. On FrontierCode 2.0, Sol/Max scored within 0.5 points of Astra/Max at about one-fifth of its cost. On Terminal-Bench-Science 0.1, Astra gained nine percentage points over the previous Astra at less than a third of its task cost. On GDPval v2, Sol gained 5.3 percentage points over the previous Sol. [OpenAI launch results](https://openai.com/index/introducing-gpt-6-2-astra-sol/) · [Launch comparisons](benchmarks/gpt-6.2-launch.csv)
 
-The [model, data and reproduction guide](benchmarks/README.md) provides the numerical snapshot, cost inputs, calculation and profile tradeoff tables.
+For requests with up to 272,000 input tokens at standard API rates, a million input, cached input and output tokens cost $2, $0.10 and $10 with GPT-6.2 Sol, or $8, $0.40 and $40 with GPT-6.2 Astra. Actual task cost also depends on token use. [OpenAI pricing](https://developers.openai.com/api/docs/pricing#latest-models)
 
-## Evidence used
+### From Balance to the other presets
+
+Choose Balance first for each task, weighing the score gain against the extra cost and the consequences of an error. Economy places more weight on cost. Quality and Extra Quality pay more when the evidence supports a useful gain. Two presets can share a pair, as Economy and Balance do for hard questions with a fixed answer.
+
+| Task | Choice and evidence |
+| --- | --- |
+| Established tool workflows | In AA AutomationBench, Terra/Xhigh passed 32.88% under strict scoring, with 0.677 violations per task. Balance’s Sol/Medium passed 41.40%, with 0.397 violations per task. OpenAI scores Sol/Medium at 40.2% for $0.18 per task and Sol/High at 41.2% for $0.21. |
+| Tool work with exploration and feedback | Balance uses Sol/High. On LifeVal it scores 80.8% at $0.65 versus 70.3% at $0.38 for Sol/Medium. On BenchCAD the same upgrade raises the score from 41.2% to 64.0% and the cost from $0.29 to $0.75. Economy keeps Terra/Medium and can use Terra/High when a wrong turn would force later steps to be repeated. |
+| Scientific computation | On AA Terminal-Bench-Science, Terra/Xhigh scores 41.90% at $1.04 and Sol/Medium scores 60.48%. At standard short-context rates and an assumed 95% hit rate for cacheable input, Sol/Medium would cost $1.39 per task. Balance chooses Sol/Medium, or Sol/High when numerical error or stability determines acceptance. For small scientific code with a specified method and independent tests, Economy can use Luna/Xhigh. On SciCode, Luna/Xhigh earned 51.74% of subproblem credit and Terra/Medium earned 51.62%. Costs reconstructed using the AA client were $0.00144 and $0.00518 per task, respectively. |
+| Hard questions with a fixed answer | On AA HLE-Diamond, Terra/Medium scored 31.3% at $0.00896 per question. Sol/Medium scored 50.7% at an estimated $0.01872. This gain is worth the extra cent even for Economy. Both Economy and Balance can use Sol/High for stricter accuracy requirements (58.3%, estimated $0.04219). |
+| Demanding code integration | Extra Quality uses Astra/Xhigh and Quality uses Sol/Max. In AA FrontierCode, Astra/Xhigh earns 48.95% of scoring credit at $3.75 versus 44.38% at $1.30 for Sol/Max. OpenAI FrontierCode shows a smaller gap (44.1% versus 43.8%). On PatchBench, Astra/Xhigh scores 79.7% at $2.45, matching Astra/Max at $4.18. |
+| Heavy evidence synthesis | Extra Quality uses Astra/Max when the answer must cover a composite question in full. On AA MLCR its overall pass rate is 39.44%, versus 37.22% for Sol/Max. Passing requires a complete answer without contradictions. On the accuracy component, Sol/Max scores 98.89% versus 96.67% for Astra/Max. Consider Sol/Max when factual accuracy takes priority over coverage. |
+
+AA did not report the Sol/Medium and Sol/High task costs quoted as estimates. The supplementary table provides the token counts and pricing assumptions used to calculate them. Each comparison uses point estimates from one test setup. Native Codex rework and full workflow costs remain unmeasured. [Benchmark results](benchmarks/quality-6.2.csv) · [Supplementary results and cost estimates](benchmarks/task-tradeoffs-6.2.csv)
+
+### How Quality assigns four tasks
+
+Each comparison below uses scores and dollars per task from the same evaluation. Artificial Analysis (AA) and OpenAI use different test setups. The scores are point estimates and the costs describe the benchmark runs. [Scores and task costs by model and effort](benchmarks/quality-6.2.csv)
+
+| Task | Quality default | Evidence and exceptions |
+| --- | --- | --- |
+| Demanding code integration | Sol/Max | On AA FrontierCode 2.0, Sol/Max earned 44.38% of scoring credit at $1.2978 per task, versus 42.32% at $1.2925 for Terra/Max. Ordinary implementation stays on Terra/High. |
+| Scientific computation and validation | Sol/High | On AA Terminal-Bench-Science, Terra/Max scored 57.62% and Sol/High scored 67.62%. AA has no task cost for Sol/High. In OpenAI’s run, Sol/High scored 67.7% at $1.51 and Sol/Max scored 68.0% at $2.21. Consider Astra/High (74.9% at $5.20) when the extra accuracy matters. |
+| Hard questions with a fixed answer | Astra/High | On AA HLE-Diamond (1,000 questions), Astra/High scored 65.9% at $0.14656 versus 64.0% at $0.14888 for Sol/Max. Astra/Xhigh reached 67.3% at $0.23407 when higher accuracy is worth the cost. |
+| Multi-step tool use under established rules | Sol/High | OpenAI’s AutomationBench score was 41.2% at $0.21 for High and 40.6% at $0.23 for Xhigh. AA found a slight pass-rate advantage for Xhigh, but fewer violations per task for High. Consider Astra/High when one permission or state violation would invalidate the result. Tool work that requires exploring the environment and adapting to feedback stays on Sol/Xhigh. |
+
+## v0.5.0 benchmark baseline
+
+The examples and tables below use the 15 November 2026 snapshot. In those results, Sol means GPT-6.1 Sol and Astra means GPT-6 Astra. The other candidates are GPT-6 Luna and GPT-6.1 Terra. The 15 pairs cover Medium, High, Xhigh and Max, excluding Luna/Max. [Dataset and calculator](benchmarks/README.md)
+
+### Evidence used
 
 The main comparisons use [Artificial Analysis (AA)](https://artificialanalysis.ai/methodology/intelligence-benchmarking):
 
@@ -24,25 +54,25 @@ We also checked task and execution conditions against [Vals Finance Agent](https
 
 Separately, OpenAI's [model selection guide](https://developers.openai.com/api/docs/guides/model-selection) and [Terra release notes](https://openai.com/index/introducing-gpt-6-1-terra/) provide vendor guidance, including Terra's natural writing and visual strengths. This guidance is not independent benchmark evidence or an independent replication.
 
-## Comparing quality and cost
+### Comparing quality and cost
 
 Within each source and task, compare quality gains, cost differences or multiples, and relevant risks in their original units. The [calculation guide](benchmarks/README.md#what-the-calculation-means) explains the Pareto frontier and conditional `value × quality − cost` comparison. A quality floor comes from the task's requirements, not the median or top half of the available candidates.
 
-## Choosing the Balance defaults
+### Choosing the Balance defaults
 
 Balance selects a defensible task-quality/cost compromise, rather than the cheapest pair or the highest quality/cost ratio. These examples show the decisions behind its defaults. Figures are from the referenced AA snapshot:
 
-| Task / Balance pair | Tradeoff informing the choice |
+| Task / v0.5.0 Balance pair | Tradeoff informing the choice |
 | --- | --- |
-| Ordinary code / Terra/High | Terra/Medium→High adds about 2.92 scoring-credit percentage points at 1.52× cost. High→Max adds 4.86 points at 3.30× cost; the policy reserves that additional spend for demanding integration. The source did not separately test those two difficulty groups. |
+| Ordinary code / Terra/High | Terra/Medium→High adds about 2.92 scoring-credit percentage points at 1.52× cost. High→Max adds 4.86 points at 3.30× cost; the historical policy reserved that additional spend for demanding integration. The source did not separately test those two difficulty groups. |
 | Complete document answers / Sol/High | Terra/Medium→Sol/High adds 3.6 all-pass percentage points at 2.10× cost. Sol/High→Astra/Xhigh adds only 0.2 points at 5.47× cost. This informs the shared Sol/High default for similar answers, not every form of document reasoning. |
 | End-to-end tool work / Sol/Medium | On Terminal-Bench 4.0, Sol/Medium scores 47.98% at $0.614 per source task, versus Terra/Xhigh's 46.46% at $0.657. This is a point comparison under that harness, not proven native superiority. |
 
-For demanding code, Terra/Max→Astra/Max adds about **0.055 scoring-credit percentage points** at **5.06×** source cost. The higher profiles can share Terra/Max; this does not prove equal quality or that ordinary code has reached a plateau.
+For demanding code, Terra/Max→Astra/Max adds about **0.055 scoring-credit percentage points** at **5.06×** source cost. In that historical baseline the higher profiles shared Terra/Max; this does not prove equal quality or that ordinary code has reached a plateau.
 
 These defaults combine source observations, task matching and the stated resource preference. No fitted acceptance probability or precise willingness-to-pay parameter uniquely determines them. Task and harness differences can explain conflicting rankings; their effects have not been isolated.
 
-## Extending the quality and cost preferences
+### Extending the quality and cost preferences
 
 Economy accepts some loss of quality margin to reduce cost where the task's requirements permit it. Quality retains Sol/High or Xhigh for normal substantive judgment and pays more for task-relevant quality. Extra Quality accepts larger premiums for the last increment of quality. The task's acceptance requirements still apply in all four.
 

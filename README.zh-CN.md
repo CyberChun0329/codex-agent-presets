@@ -1,29 +1,37 @@
 # Codex Agent Presets
 
-**v0.5.0** · [English](README.md)
+**v0.5.1** · [English](README.md)
 
 四套按任务分工的 Codex 主模型与子代理预设。选择愿意为质量支付的溢价，安装到全局或单个项目，并保留已有主模型推理档位。
 
 | 档位 | 偏好 | 主模型 | 同时工作的子代理上限 |
 | --- | --- | --- | ---: |
 | [Economy](profiles/economy.md) | 保留任务要求，更重成本 | `gpt-6.1-terra` | 3 |
-| [Balance](profiles/balance.md) | 有竞争力的任务质量与成本折中 | `gpt-6.1-sol` | 6 |
-| [Quality](profiles/quality.md) | 愿为任务相关质量支付更多 | `gpt-6.1-sol` | 8 |
-| [Extra Quality](profiles/extra-quality.md) | 愿为困难工作接受更高溢价 | `gpt-6-astra` | 8 |
+| [Balance](profiles/balance.md) | 有竞争力的任务质量与成本折中 | `gpt-6.2-sol` | 6 |
+| [Quality](profiles/quality.md) | 愿为任务相关质量支付更多 | `gpt-6.2-sol` | 8 |
+| [Extra Quality](profiles/extra-quality.md) | 愿为困难工作接受更高溢价 | `gpt-6.2-astra` | 8 |
 
-四档均考虑 GPT-6 Luna、GPT-6.1 Terra、GPT-6.1 Sol 和 GPT-6 Astra，以及 Medium、High、Xhigh、Max 推理档位；不使用 Low、非推理、子代理 Ultra 或 Luna/Max。默认随任务变化，更高推理强度或更大的模型不自动代表更高质量或更低总成本。请确认账户可用模型。
+四档均考虑 GPT-6 Luna、GPT-6.1 Terra、GPT-6.2 Sol 和 GPT-6.2 Astra，以及 Medium、High、Xhigh、Max 推理档位；不使用 Low、非推理、子代理 Ultra 或 Luna/Max。默认随任务变化，更高推理强度或更大的模型不自动代表更高质量或更低总成本。请确认账户可用模型。
 
 上限只统计同时工作的子代理，不包括主代理；按工作需要启动，客户端或用户更低的限制仍适用。安装保留已有并发设置。主代理推理档位保持不变，包括已选的 Ultra；安装不会开启 Ultra。
 
 ## 为什么这样分工？
 
-0.5.0 在相关评测内比较质量、任务成本和风险。Balance 是折中基准，其他档位体现不同的质量溢价偏好，因此部分任务可以共享组合。自然写作、文档回答、代码集成和工具流程分别选型；普通未知根因也不会自动要求更强的推理模型。
+先按任务确定 Balance，选择质量有竞争力、成本也合适的模型和推理档位。Economy 在验收要求允许时，用一部分质量余量换取更低成本。Quality 和 Extra Quality 则依次更愿意为与任务相关的质量提升付费。同一任务可以在几个档位使用同一个组合。
 
-第三方来源、比较方法、Balance 的选择依据和局限见[评测依据与预设设计](EVIDENCE.zh-CN.md)。这些是有证据参考的默认，不是整套工作流的性能保证或订阅额度节省实测。
+| 任务 | Economy | Balance | Quality | Extra Quality |
+| --- | --- | --- | --- | --- |
+| 按既定步骤操作并跟踪状态的工具任务 | Terra/Medium | Sol/Medium | Sol/High | Astra/Max |
+| 需要探索环境并按反馈调整的工具任务 | Terra/Medium | Sol/High | Sol/Xhigh | Astra/Xhigh |
+| 科学计算与验证 | Terra/High | Sol/Medium | Sol/High | Astra/Max |
+| 答案固定的困难问答 | Sol/Medium | Sol/Medium | Astra/High | Astra/Max |
+| 困难代码集成 | Terra/High | Terra/High | Sol/Max | Astra/Xhigh |
+
+Sol 和 Astra 使用 GPT-6.2，Terra 使用 GPT-6.1，Luna 使用 GPT-6。各预设列有对应的例外条件。每项选择所依据的得分与费用差异见[评测依据与预设设计](EVIDENCE.zh-CN.md)。
 
 ### 评价模型与数据
 
-[可复算分析](benchmarks/README.zh-CN.md)提供评测汇总快照、令牌与价格输入、计算脚本及四档取舍表。计算在各任务内比较来源质量和成本；任务映射与四档偏好仍是明确的设计取舍，不是一个综合分自动优化的结果。
+[复算说明](benchmarks/README.zh-CN.md)涵盖 v0.5.0 基线和 6.2 数据。当前比较可查阅[评测得分与任务费用](benchmarks/quality-6.2.csv)，以及[补充任务对照与成本估算](benchmarks/task-tradeoffs-6.2.csv)。
 
 ## 按订阅选择
 
@@ -43,9 +51,9 @@
 将下面这段提示词交给 Codex：
 
 ```text
-请从以下仓库安装 Codex Agent Presets v0.5.0：
+请从以下仓库安装 Codex Agent Presets v0.5.1：
 https://github.com/CyberChun0329/codex-agent-presets
-全部源文件使用 v0.5.0 标签，或对应发布 ZIP。
+全部源文件使用 v0.5.1 标签，或对应发布 ZIP。
 
 读取预设或修改前，确定以下三个选择；若有缺项，一次询问所有缺项：
 1. 范围：全局或当前项目，并显示目标路径。

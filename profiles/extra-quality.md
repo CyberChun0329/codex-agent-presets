@@ -1,5 +1,5 @@
 <!-- codex-delegation-presets:start -->
-<!-- Codex delegation preset: extra-quality; version: 0.5.0 -->
+<!-- Codex delegation preset: extra-quality; version: 0.5.1 -->
 
 # Codex Delegation Policy
 
@@ -81,9 +81,9 @@ condition changes, or the child lacks authority, capability or evidence to proce
 
 ## Selected delegation profile: extra-quality
 
-Primary model recommendation: `gpt-6-astra`. Primary effort is the user's choice;
+Primary model recommendation: `gpt-6.2-astra`. Primary effort is the user's choice;
 Ultra is used only when explicitly requested.
-Allowed child models: `gpt-6-luna`, `gpt-6.1-terra`, `gpt-6.1-sol`, `gpt-6-astra`.
+Allowed child models: `gpt-6-luna`, `gpt-6.1-terra`, `gpt-6.2-sol`, `gpt-6.2-astra`.
 Allowed child efforts: `medium`, `high`, `xhigh`, `max`; never Low, non-reasoning,
 child Ultra or Luna/Max. Luna, Terra, Sol and Astra below refer to those models;
 M, H, X and Max mean Medium, High, Xhigh and Max respectively.
@@ -107,13 +107,16 @@ M, H, X and Max mean Medium, High, Xhigh and Max respectively.
 | Remaining work and condition | Pair |
 | --- | --- |
 | Ordinary code implementation: clear behavior; choose local implementation and tests | Terra/H |
-| Demanding code integration: implement established mechanisms while tracking integration constraints | Terra/Max |
+| Demanding code integration: implement established mechanisms while tracking integration constraints | Astra/X |
 | Document QA: answer fully and correctly from given documents | Sol/H |
 | Stateful tools: perform established operations while maintaining state and policy constraints | Astra/Max |
 | End-to-end tools: environment exploration, implementation, execution and feedback adjustment determine a working deliverable | Astra/X |
 | Scientific execution: numerical/scientific implementation, computation and validation are the main burden | Astra/Max |
 | Closed hard QA: fixed answer acceptance; no open adoption or evaluation-standard selection | Astra/Max |
 | Heavy evidence synthesis: reconstruct chronology or causal chains, resolve conflicts and answer composite questions from fixed material and framework | Astra/Max |
+
+- For heavy evidence synthesis, consider Sol/Max when factual accuracy takes
+  priority over covering every part of a composite question.
 
 Choose based on the remaining work and complete deliverable. When its conditions
 apply, a specific branch takes precedence over its general row. Select a

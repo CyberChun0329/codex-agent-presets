@@ -1,10 +1,18 @@
 # 评价模型、数据与复算
 
-[English](README.md) · 数据快照：**2026 年 11 月 15 日**
+[English](README.md)
 
-本目录提供按任务比较质量与成本的数据和程序。任务映射及愿意为质量支付多少是输入条件；程序比较这些选择，不自动选择或验证任务映射。
+## GPT-6.2 数据 · 2026 年 11 月 18 日
+
+| 表格 | 内容 |
+| --- | --- |
+| [发布对照](gpt-6.2-launch.csv) | OpenAI 发布时公布的五项对比 |
+| [得分与任务费用](quality-6.2.csv) | OpenAI 和 Artificial Analysis 按模型与推理档位给出的评测结果 |
+| [补充任务对照](task-tradeoffs-6.2.csv) | LifeVal、BenchCAD、PatchBench、MLCR 等补充成绩，以及四项 AA 评测的费用估算 |
 
 ## 查看或复算
+
+v0.5.0 基线取自 2026 年 11 月 15 日，其中 Sol 和 Astra 分别指 GPT-6.1 Sol 和 GPT-6 Astra。
 
 | 文件 | 内容 |
 | --- | --- |
@@ -12,7 +20,7 @@
 | [cost-inputs.csv](data/cost-inputs.csv) | 用于核算费用估计的来源令牌量、价格、缓存假设及任务分母 |
 | [components.csv](data/components.csv) | Automation、Omniscience、Briefcase、MLCR 分项，保留质量与风险的冲突 |
 | [sources.json](data/sources.json) | 来源链接、快照时间与哈希、单位和解释边界 |
-| [presets.json](presets.json) | 四档的 68 项默认及八类具体任务对应的主要来源 |
+| [presets.json](presets.json) | v0.5.0 的 68 项默认及八类具体任务对应的主要来源 |
 | [evaluate.py](evaluate.py) | 只依赖 Python 标准库的离线计算程序 |
 | [comparisons.csv](results/comparisons.csv) | 13 个所选指标视图的 195 行比较：观察点的 Pareto 状态与条件偏好区间 |
 | [profile-tradeoffs.csv](results/profile-tradeoffs.csv) | 八类具体任务在四档间的质量差、费用溢价及相关分项 |
@@ -26,6 +34,26 @@ python3 benchmarks/evaluate.py --output-dir /tmp/codex-preset-analysis
 程序复算公开结果表，并核对所有已提供的来源费用是否与令牌、价格输入一致。程序离线运行，不调用模型或修改 Codex 配置。[summary.json](results/summary.json)记录输入哈希与覆盖情况，[cost-checks.csv](results/cost-checks.csv)记录 338 个已复算费用和 322 个未知费用。
 
 数值快照来自 AA。Vals、CUA Speedrun、DeepFinance、Snorkel 和厂商建议分别用于任务覆盖及迁移检查，见[评测依据与预设设计](../EVIDENCE.zh-CN.md)，不把它们的成绩混入这些表。44 个视图包含共享运行和派生指标，不是 44 次独立实验。没有对应评测的一般任务默认，在 `presets.json` 中保留空来源。
+
+## 补充任务对照
+
+[补充表](task-tradeoffs-6.2.csv)收录 OpenAI 的 LifeVal、BenchCAD 和 PatchBench 成绩，AA MLCR 的准确性分项和整体通过率，以及四项 AA 评测的 Sol 成本估算。AA 分数用比例，OpenAI 用百分数。来源给出的任务费用、按 AA 客户端公式复算的费用和假设缓存命中率后估算的费用各列一栏。AutomationBench 严格通过率对应整次运行的每题费用。SciCode 等已收录的对照可见 [Quality 数据表](quality-6.2.csv)。
+
+复算 Sol/Medium 和 Sol/High 的估算费用时，取每行的输入（`I`）、回答（`A`）、推理（`R`）、可缓存输入（`C`）token 总数及任务数 `N`。按 AA 客户端的计价方式，可缓存输入中的命中比例为 `h` 时，每题美元费用为
+
+```text
+(C*h*0.10 + (I-C*h)*2.50 + (A+R)*10) / (1,000,000*N)
+```
+
+最低费用、95% 命中和最高费用分别取 `h` 为 1、0.95 和 0。来源缺少 `C` 时使用 `(I*2 + (A+R)*10) / (1,000,000*N)`，因此 HLE-Diamond 的三种估算相同。价格取自 2026 年 11 月 18 日的 OpenAI Standard 短上下文价目，每百万 token 计价，缓存写入按 30 分钟计算。实际命中率和上下文长度都会影响每题成本。[API 价目](https://developers.openai.com/api/docs/pricing#latest-models) · [AA 客户端](https://artificialanalysis.ai/_next/static/chunks/17016-9e1b20384a9bc1ed.js)
+
+## Quality 6.2 面板
+
+[quality-6.2.csv](quality-6.2.csv)保留 AA 的 FrontierCode 2.0、TerminalBench 4.0、SciCode、Terminal-Bench Science、HLE-Diamond、AutomationBench 严格通过率，以及 OpenAI 发布图中 FrontierCode 2.0、Terminal-Bench Science 和 AutomationBench 的完整采集候选行。AA 每题违规次数是越低越好的独立风险指标，不作为质量最大化目标。SciCode 未采集到 6.2 的质量或费用，旧模型数据不能证明 6.2 的比较。
+
+每行保留来源、指标、原始单位、模型档位和直接来源链接；AA 的 JSON 指针和来源快照 SHA-256 标识具体字段，OpenAI 数据提取自发布页的 Vega-Lite 图表。AA 的比例与 OpenAI 的百分数口径和运行条件各自保留，不合并比较。`usd_per_task` 是来源报告的任务费用或 `cost_basis` 标明的 AA 客户端重算值，不是 Codex 账单。`cost_scope` 区分严格通过率和风险指标所附的同次运行通用 AutomationBench 费用与面板费用。空值表示未知，不是零；允许参与不代表已测量。Low、非推理及 Luna/Max 保留数据但按 Quality 策略排除，违规指标也不作为质量指标。
+
+按[英文说明中的命令](README.md#quality-62-panels)可逐面板复核记录的 Pareto 前沿和条件偏好区间。计算只纳入同来源、条件、指标和单位下，质量与费用均已知且符合策略的候选。比较候选组合时，还须结合风险、任务要求和点估计的不确定性；前沿及区间本身不决定分工，未观察或未定价候选可能改变结果。
 
 ## 计算的含义
 

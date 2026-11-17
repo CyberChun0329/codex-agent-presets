@@ -1,5 +1,5 @@
 <!-- codex-delegation-presets:start -->
-<!-- Codex delegation preset: quality; version: 0.5.0 -->
+<!-- Codex delegation preset: quality; version: 0.5.1 -->
 
 # Codex Delegation Policy
 
@@ -81,9 +81,9 @@ condition changes, or the child lacks authority, capability or evidence to proce
 
 ## Selected delegation profile: quality
 
-Primary model recommendation: `gpt-6.1-sol`. Primary effort is the user's choice;
+Primary model recommendation: `gpt-6.2-sol`. Primary effort is the user's choice;
 Ultra is used only when explicitly requested.
-Allowed child models: `gpt-6-luna`, `gpt-6.1-terra`, `gpt-6.1-sol`, `gpt-6-astra`.
+Allowed child models: `gpt-6-luna`, `gpt-6.1-terra`, `gpt-6.2-sol`, `gpt-6.2-astra`.
 Allowed child efforts: `medium`, `high`, `xhigh`, `max`; never Low, non-reasoning,
 child Ultra or Luna/Max. Luna, Terra, Sol and Astra below refer to those models;
 M, H, X and Max mean Medium, High, Xhigh and Max respectively.
@@ -96,7 +96,7 @@ M, H, X and Max mean Medium, High, Xhigh and Max respectively.
 | Structural mapping under complete fields and rules | Luna/H |
 | Execution with behavior, mechanism and steps specified | Terra/H |
 | Natural writing, fidelity review, ordinary local implementation or diagnosis | Terra/H |
-| Tool workflow managing state and constraints under established rules | Sol/X |
+| Tool workflow managing state and constraints under established rules | Sol/H |
 | Substantive evidence judgment within a given framework | Sol/H |
 | Construct or reassess premises, system contract or evaluation framework | Astra/H |
 | Jointly construct assumptions, methods and observables | Astra/X |
@@ -107,13 +107,20 @@ M, H, X and Max mean Medium, High, Xhigh and Max respectively.
 | Remaining work and condition | Pair |
 | --- | --- |
 | Ordinary code implementation: clear behavior; choose local implementation and tests | Terra/H |
-| Demanding code integration: implement established mechanisms while tracking integration constraints | Terra/Max |
+| Demanding code integration: implement established mechanisms while tracking integration constraints | Sol/Max |
 | Document QA: answer fully and correctly from given documents | Sol/H |
-| Stateful tools: perform established operations while maintaining state and policy constraints | Sol/X |
+| Stateful tools: perform established operations while maintaining state and policy constraints | Sol/H |
 | End-to-end tools: environment exploration, implementation, execution and feedback adjustment determine a working deliverable | Sol/X |
-| Scientific execution: numerical/scientific implementation, computation and validation are the main burden | Terra/Max |
-| Closed hard QA: fixed answer acceptance; no open adoption or evaluation-standard selection | Sol/Max |
+| Scientific execution: numerical/scientific implementation, computation and validation are the main burden | Sol/H |
+| Closed hard QA: fixed answer acceptance; no open adoption or evaluation-standard selection | Astra/H |
 | Heavy evidence synthesis: reconstruct chronology or causal chains, resolve conflicts and answer composite questions from fixed material and framework | Sol/Max |
+
+- For scientific computation and validation, consider Astra/H when the expected
+  gain in accuracy is worth the additional task cost.
+- For closed hard QA, consider Astra/X when the answer requires greater accuracy
+  than Astra/H usually delivers.
+- For established tool workflows, consider Astra/H when one permission or state
+  violation would invalidate the entire result.
 
 For established frameworks and criteria requiring sustained joint evaluation of
 interacting evidence or interpretations, Sol/X may be selected directly.

@@ -1,6 +1,6 @@
 # Codex Agent Presets
 
-**v0.5.0** · [简体中文](README.zh-CN.md)
+**v0.5.1** · [简体中文](README.zh-CN.md)
 
 Four task-based presets for Codex's primary model and subagents. Choose how much
 quality premium to accept, install globally or for one project, and keep your
@@ -9,11 +9,11 @@ existing primary reasoning effort.
 | Profile | Preference | Primary model | Active child limit |
 | --- | --- | --- | ---: |
 | [Economy](profiles/economy.md) | Give more weight to cost while retaining the task's requirements | `gpt-6.1-terra` | 3 |
-| [Balance](profiles/balance.md) | Competitive task quality and cost | `gpt-6.1-sol` | 6 |
-| [Quality](profiles/quality.md) | Pay more for task-relevant quality | `gpt-6.1-sol` | 8 |
-| [Extra Quality](profiles/extra-quality.md) | Accept larger premiums for difficult work | `gpt-6-astra` | 8 |
+| [Balance](profiles/balance.md) | Competitive task quality and cost | `gpt-6.2-sol` | 6 |
+| [Quality](profiles/quality.md) | Pay more for task-relevant quality | `gpt-6.2-sol` | 8 |
+| [Extra Quality](profiles/extra-quality.md) | Accept larger premiums for difficult work | `gpt-6.2-astra` | 8 |
 
-All profiles consider GPT-6 Luna, GPT-6.1 Terra, GPT-6.1 Sol and GPT-6 Astra with
+All profiles consider GPT-6 Luna, GPT-6.1 Terra, GPT-6.2 Sol and GPT-6.2 Astra with
 Medium, High, Xhigh or Max effort. Low, non-reasoning, child Ultra and Luna/Max
 are excluded. Defaults differ by task; higher effort or a larger model does not
 automatically mean better quality or lower total cost. Check account availability
@@ -26,24 +26,28 @@ selected; installation does not enable Ultra.
 
 ## Why these defaults?
 
-Version 0.5.0 compares quality, task cost and risk within relevant benchmarks.
-Balance provides the reference tradeoff; the other profiles express different
-willingness to pay for quality. Some tasks share a pair across profiles. Natural
-writing, document answers, code integration and tool workflows have distinct
-routes, and ordinary unknown root causes do not automatically require a stronger
-reasoning model.
+Balance is the reference for each task. Choose a model and effort that deliver
+competitive quality at a reasonable cost. Economy accepts less quality margin
+where the task permits it. Quality and Extra Quality accept progressively larger
+premiums for gains that matter to the task. Several profiles can share the same choice.
 
-See [Benchmarks and preset design](EVIDENCE.md) for the third-party references,
-comparison method, Balance defaults and limits. These are evidence-informed
-defaults, not measured subscription savings or guarantees for every workflow.
+| Task | Economy | Balance | Quality | Extra Quality |
+| --- | --- | --- | --- | --- |
+| Tools with established steps and state constraints | Terra/Medium | Sol/Medium | Sol/High | Astra/Max |
+| Tool work that requires exploration and adjustment | Terra/Medium | Sol/High | Sol/Xhigh | Astra/Xhigh |
+| Scientific computation and validation | Terra/High | Sol/Medium | Sol/High | Astra/Max |
+| Hard questions with a fixed answer | Sol/Medium | Sol/Medium | Astra/High | Astra/Max |
+| Demanding code integration | Terra/High | Terra/High | Sol/Max | Astra/Xhigh |
+
+Sol and Astra refer to GPT-6.2, Terra to GPT-6.1 and Luna to GPT-6. Each profile
+lists its exceptions. See the [benchmark evidence](EVIDENCE.md) for the quality
+gains and cost differences behind these choices.
 
 ### Model and data
 
-The [reproducible analysis](benchmarks/README.md) includes the aggregate benchmark
-snapshot, token/price cost inputs, calculation script and four-profile tradeoff
-tables. It compares source-level quality and cost within tasks; task mappings
-and profile preferences remain explicit design choices, not an automatically
-optimized universal score.
+The [calculation guide](benchmarks/README.md) covers the v0.5.0 baseline and the
+6.2 comparisons. The current tables include [benchmark scores and task costs](benchmarks/quality-6.2.csv)
+and [additional task comparisons and cost estimates](benchmarks/task-tradeoffs-6.2.csv).
 
 ## Choose by subscription
 
@@ -64,9 +68,9 @@ usage limits.
 Paste this prompt into Codex:
 
 ```text
-Install Codex Agent Presets v0.5.0 from:
+Install Codex Agent Presets v0.5.1 from:
 https://github.com/CyberChun0329/codex-agent-presets
-Use tag v0.5.0, or the matching release ZIP, for all source files.
+Use tag v0.5.1, or the matching release ZIP, for all source files.
 
 Before reading profiles or making changes, resolve these three choices. If any are missing, ask for the missing choices together:
 1. Scope: global or current project; show the target paths.
