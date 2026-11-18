@@ -1,5 +1,5 @@
 <!-- codex-delegation-presets:start -->
-<!-- Codex delegation preset: quality; version: 0.5.1 -->
+<!-- Codex delegation preset: quality; version: 0.5.2 -->
 
 # Codex Delegation Policy
 
@@ -95,8 +95,7 @@ M, H, X and Max mean Medium, High, Xhigh and Max respectively.
 | Literal copying, counting and fixed replacement | Luna/H |
 | Structural mapping under complete fields and rules | Luna/H |
 | Execution with behavior, mechanism and steps specified | Terra/H |
-| Natural writing, fidelity review, ordinary local implementation or diagnosis | Terra/H |
-| Tool workflow managing state and constraints under established rules | Sol/H |
+| Natural writing, fidelity review or local diagnosis | Terra/H |
 | Substantive evidence judgment within a given framework | Sol/H |
 | Construct or reassess premises, system contract or evaluation framework | Astra/H |
 | Jointly construct assumptions, methods and observables | Astra/X |
@@ -108,13 +107,44 @@ M, H, X and Max mean Medium, High, Xhigh and Max respectively.
 | --- | --- |
 | Ordinary code implementation: clear behavior; choose local implementation and tests | Terra/H |
 | Demanding code integration: implement established mechanisms while tracking integration constraints | Sol/Max |
+| Original 2D interface design with key layout or interaction decisions | Sol/X |
+| Complex interactive browser 3D with substantial scene design or 3D interaction work | Sol/Max |
+| Bounded extraction that depends on labels, positions or relations in an image | Terra/H |
 | Document QA: answer fully and correctly from given documents | Sol/H |
-| Stateful tools: perform established operations while maintaining state and policy constraints | Sol/H |
+| Stateful tools: perform established operations where tracking state or applying workflow constraints is central to the work | Sol/H |
 | End-to-end tools: environment exploration, implementation, execution and feedback adjustment determine a working deliverable | Sol/X |
+| Recovery of an unfamiliar terminal environment with a repeatable check | Sol/H |
 | Scientific execution: numerical/scientific implementation, computation and validation are the main burden | Sol/H |
 | Closed hard QA: fixed answer acceptance; no open adoption or evaluation-standard selection | Astra/H |
 | Heavy evidence synthesis: reconstruct chronology or causal chains, resolve conflicts and answer composite questions from fixed material and framework | Sol/Max |
 
+- For original 2D design, choose Astra/H when the brief makes visual design
+  itself a primary acceptance criterion. For complex browser 3D, choose
+  Astra/Max when the brief requires both high visual fidelity and polished
+  interaction.
+- When UI design and behavior are specified, use specified execution for a
+  prescribed patch, ordinary implementation for local work, or demanding
+  integration when changes must preserve behavior across coupled components.
+- Check the rendered UI and affected interactions at relevant screen sizes
+  and states. For an independent comparison against a fixed UI reference, use
+  fidelity review. A prescribed browser test under known conditions uses
+  specified execution. If tracking state constraints or exploring the environment
+  determines the result, use the corresponding tools branch.
+- For extraction, use fixed copying or structural mapping when reliable text
+  or structured data supplies the result. Use visual extraction when the image
+  determines the requested facts. Route conclusions drawn from those facts by
+  the applicable evidence or QA branch.
+- Use terminal recovery when restoring an unfamiliar setup, toolchain or local
+  service requires investigating its environment and passing a build, smoke test
+  or other repeatable check. A prescribed repair uses specified execution. A
+  localized bug investigation uses local diagnosis. Changes whose main difficulty
+  is source code or integration use the corresponding code branch.
+- For a workbook, deck or document, use structural mapping for complete field
+  assignments, specified execution for prescribed assembly, and evidence judgment
+  or synthesis for reconciling sources. Use end-to-end tools when finding and
+  testing how to assemble the file is the main work. Use the writing default for
+  prose revision. Reopen or render the deliverable and check the applicable
+  requirements for behavior, editability and source references.
 - For scientific computation and validation, consider Astra/H when the expected
   gain in accuracy is worth the additional task cost.
 - For closed hard QA, consider Astra/X when the answer requires greater accuracy
@@ -136,11 +166,10 @@ tables give task defaults.
   specified-execution row, even if long or run in a terminal.
 - Constructing or reassessing system contracts, failure/recovery semantics,
   premises, evaluation criteria or a scientific solution framework uses the
-  premises/contract or joint-construction row. Ordinary local implementation or
-  diagnosis includes choosing reproduction, observations, root cause and a local
-  fix. An unknown root cause alone does not change its row. Use ordinary code when
-  code must be delivered. Interpreting a local bug against records remains local
-  diagnosis.
+  premises/contract or joint-construction row. Local diagnosis includes
+  reproducing the issue, choosing observations and identifying a local cause.
+  An unknown root cause alone does not change the route. Interpreting a local
+  bug against records remains local diagnosis.
 - For mixed tool work, select by the unresolved technical burden, not title,
   file format, scientific label, deliverable name or order. Established algorithms
   with code integration and given error tests use the code branch; sustained

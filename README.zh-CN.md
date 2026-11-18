@@ -1,6 +1,6 @@
 # Codex Agent Presets
 
-**v0.5.1** · [English](README.md)
+**v0.5.2** · [English](README.md)
 
 四套按任务分工的 Codex 主模型与子代理预设。选择愿意为质量支付的溢价，安装到全局或单个项目，并保留已有主模型推理档位。
 
@@ -26,12 +26,16 @@
 | 科学计算与验证 | Terra/High | Sol/Medium | Sol/High | Astra/Max |
 | 答案固定的困难问答 | Sol/Medium | Sol/Medium | Astra/High | Astra/Max |
 | 困难代码集成 | Terra/High | Terra/High | Sol/Max | Astra/Xhigh |
+| 原创 2D 界面设计 | Sol/High | Sol/High | Sol/Xhigh | Astra/High |
+| 浏览器内复杂交互式 3D | Sol/Max | Sol/Max | Sol/Max | Astra/Max |
+| 必须读图才能完成的有界提取 | Terra/Medium | Terra/High | Terra/High | Terra/High |
+| 有可重复验收检查的陌生终端环境恢复 | Terra/High | Sol/High | Sol/High | Astra/Xhigh |
 
-Sol 和 Astra 使用 GPT-6.2，Terra 使用 GPT-6.1，Luna 使用 GPT-6。各预设列有对应的例外条件。每项选择所依据的得分与费用差异见[评测依据与预设设计](EVIDENCE.zh-CN.md)。
+Sol 和 Astra 使用 GPT-6.2，Terra 使用 GPT-6.1，Luna 使用 GPT-6。各预设列有对应的例外条件。交付可用的工作簿、演示稿或文档时，按核对来源、制作和验证成品所需的工作分配。每项选择所依据的得分与费用差异见[评测依据与预设设计](EVIDENCE.zh-CN.md)。
 
 ### 评价模型与数据
 
-[复算说明](benchmarks/README.zh-CN.md)涵盖 v0.5.0 基线和 6.2 数据。当前比较可查阅[评测得分与任务费用](benchmarks/quality-6.2.csv)，以及[补充任务对照与成本估算](benchmarks/task-tradeoffs-6.2.csv)。
+[复算说明](benchmarks/README.zh-CN.md)涵盖 v0.5.0 基线和 6.2 数据。当前比较可查阅[评测得分与任务费用](benchmarks/quality-6.2.csv)、[补充任务对照与成本估算](benchmarks/task-tradeoffs-6.2.csv)和[前端设计与 Web 应用评测](benchmarks/frontend.csv)。
 
 ## 按订阅选择
 
@@ -51,9 +55,9 @@ Sol 和 Astra 使用 GPT-6.2，Terra 使用 GPT-6.1，Luna 使用 GPT-6。各预
 将下面这段提示词交给 Codex：
 
 ```text
-请从以下仓库安装 Codex Agent Presets v0.5.1：
+请从以下仓库安装 Codex Agent Presets v0.5.2：
 https://github.com/CyberChun0329/codex-agent-presets
-全部源文件使用 v0.5.1 标签，或对应发布 ZIP。
+全部源文件使用 v0.5.2 标签，或对应发布 ZIP。
 
 读取预设或修改前，确定以下三个选择；若有缺项，一次询问所有缺项：
 1. 范围：全局或当前项目，并显示目标路径。

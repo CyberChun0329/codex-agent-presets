@@ -1,6 +1,6 @@
 # Codex Agent Presets
 
-**v0.5.1** · [简体中文](README.zh-CN.md)
+**v0.5.2** · [简体中文](README.zh-CN.md)
 
 Four task-based presets for Codex's primary model and subagents. Choose how much
 quality premium to accept, install globally or for one project, and keep your
@@ -38,16 +38,23 @@ premiums for gains that matter to the task. Several profiles can share the same 
 | Scientific computation and validation | Terra/High | Sol/Medium | Sol/High | Astra/Max |
 | Hard questions with a fixed answer | Sol/Medium | Sol/Medium | Astra/High | Astra/Max |
 | Demanding code integration | Terra/High | Terra/High | Sol/Max | Astra/Xhigh |
+| Original 2D interface design | Sol/High | Sol/High | Sol/Xhigh | Astra/High |
+| Complex interactive 3D in the browser | Sol/Max | Sol/Max | Sol/Max | Astra/Max |
+| Bounded extraction that requires reading an image | Terra/Medium | Terra/High | Terra/High | Terra/High |
+| Recovery of an unfamiliar terminal environment with a repeatable check | Terra/High | Sol/High | Sol/High | Astra/Xhigh |
 
 Sol and Astra refer to GPT-6.2, Terra to GPT-6.1 and Luna to GPT-6. Each profile
-lists its exceptions. See the [benchmark evidence](EVIDENCE.md) for the quality
+lists its exceptions. For a usable workbook, presentation or document, choose
+by the work required to reconcile sources, assemble the file and verify it.
+See the [benchmark evidence](EVIDENCE.md) for the quality
 gains and cost differences behind these choices.
 
 ### Model and data
 
 The [calculation guide](benchmarks/README.md) covers the v0.5.0 baseline and the
-6.2 comparisons. The current tables include [benchmark scores and task costs](benchmarks/quality-6.2.csv)
-and [additional task comparisons and cost estimates](benchmarks/task-tradeoffs-6.2.csv).
+6.2 comparisons. The current tables include [benchmark scores and task costs](benchmarks/quality-6.2.csv),
+[additional task comparisons and cost estimates](benchmarks/task-tradeoffs-6.2.csv),
+and [frontend design and web application results](benchmarks/frontend.csv).
 
 ## Choose by subscription
 
@@ -68,9 +75,9 @@ usage limits.
 Paste this prompt into Codex:
 
 ```text
-Install Codex Agent Presets v0.5.1 from:
+Install Codex Agent Presets v0.5.2 from:
 https://github.com/CyberChun0329/codex-agent-presets
-Use tag v0.5.1, or the matching release ZIP, for all source files.
+Use tag v0.5.2, or the matching release ZIP, for all source files.
 
 Before reading profiles or making changes, resolve these three choices. If any are missing, ask for the missing choices together:
 1. Scope: global or current project; show the target paths.

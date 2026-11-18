@@ -34,6 +34,29 @@
 | 答案固定的困难问答 | Astra/High | 在 AA HLE-Diamond 的 1,000 道题上，Astra/High 答对 65.9%，每题 $0.14656。Sol/Max 答对 64.0%，每题 $0.14888。需要更高准确率时可选 Astra/Xhigh（67.3%、每题 $0.23407）。 |
 | 按既定规则操作、需要跟踪状态的多步工具任务 | Sol/High | 在 OpenAI 的 AutomationBench 上，High 的得分为 41.2%，每题 $0.21，Xhigh 为 40.6%，每题 $0.23。AA 测得 Xhigh 的严格通过率略高，但 High 每题违规次数略少。若一次违反权限或状态约束就会让结果失效，可选 Astra/High。需要探索环境、按反馈调整操作的端到端任务继续用 Sol/Xhigh。 |
 
+## 前端设计与实现
+
+原创 2D 界面要决定视觉或交互并在浏览器中验证时，Balance 和 Economy 用 Sol/High。已有设计与行为规范的局部实现，Economy 用 Terra/Medium。Quality 的原创界面默认用 Sol/Xhigh，视觉设计本身是主要验收项时用 Astra/High。Extra Quality 默认用 Astra/High，多个相互影响的页面或流程需要一并设计和测试时用 Xhigh。这些默认依据工作特点和 [OpenAI 的设计建议](https://developers.openai.com/api/docs/guides/model-selection)。[WebDev Arena Frontend](https://arena.ai/leaderboard/code/webdev/frontend) 和 [Image-to-WebDev](https://arena.ai/leaderboard/code/image-to-webdev) 分别提供前端生成与参考图还原的评测。2026 年 11 月 18 日可查到的快照没有 6.2 成绩，无法据此确定推理档位的排序。
+
+AA-3D 用 55 个 Three.js 场景进行人工盲评。Sol/Max 为 1259.28 Elo，每场景约 $3.77。Astra/Max 为 1317.62 Elo，每场景约 $15.29。两项费用均按 AA 图表输入复算。Balance 和 Economy 选 Sol/Max。Quality 也默认用 Sol/Max，明确要求较高视觉保真度和成熟交互时选 Astra/Max。Extra Quality 默认用 Astra/Max。榜单没有 Terra 的结果，也没有两款 6.2 的较低推理档结果。[AA-3D](https://artificialanalysis.ai/evaluations/aa-3d) · [得分与费用输入](benchmarks/frontend.csv)
+
+AA-3D 的七个子场景能看出差异。在按对手等权的票数胜率上，Astra 在游戏、运动与驾驶组领先 Sol 9.3 个百分点，Sol 在故事与幻想组领先 4.5 个百分点。每组有 5 到 10 个场景，胜率是对其他对手的平均值，也没有对应的分组费用。是否值得加价，仍要结合交付要求的视觉和交互质量。[AA-3D 分场景结果](https://artificialanalysis.ai/evaluations/aa-3d)
+
+| Web 应用功能任务 | Sol/Max | Astra/Max |
+| --- | ---: | ---: |
+| 从零搭建应用，验收浏览器里的功能流程 | 87.62%，每题 $3.23 | 89.90%，每题 $7.92 |
+| 连续修改既有应用，每轮检查回归 | 40.94%，每组 $12.74 | 55.16%，每组 $45.66 |
+
+两项 Vals 测试均使用 OpenHands。第一项测应用功能，第二项在 50 个起始场景上计算连续通过的请求比例，包含回归检查。Astra 完成了 18 组完整请求，Sol 完成了 9 组。1–100 的费用涵盖未成功的生成过程，评估开销另计。按变更类型拆出的成绩只统计各模型实际到达的请求，分母不同。若任务的难点是跨多个相互依赖的改动保留既有行为，应按代码集成分工，并验收受影响的旧流程。[Vibe Code Bench](https://www.vals.ai/benchmarks/vibe-code) · [Vibe Code Bench 1–100](https://www.vals.ai/benchmarks/vcb-1-100-v1-1)
+
+## 读图提取、终端恢复与成品交付
+
+**读图提取。** 在 AA MMMU-Pro 上，Luna/Medium 得分为 77.86%、每题 $0.00038，略高于 Luna/High。Terra/Medium 为 82.77%、$0.00164，Terra/High 为 83.82%、$0.00240。费用按 AA 输入复算。当图中的位置、标注或关系决定答案时，Balance 选 Terra/High，Economy 选 Medium，Quality 和 Extra Quality 都选 High。Terra/Xhigh 此次与 High 同分。Astra/Medium 高 2.31 个百分点，费用约为 Terra/High 的 3.8 倍。MMMU-Pro 测的是多模态推理，结果用来间接参考读图提取。 [MMMU-Pro](https://artificialanalysis.ai/evaluations/mmmu-pro)
+
+**终端环境恢复。** 对于需要探索陌生环境且能用可重复检查验收的恢复任务，Balance 和 Quality 用 Sol/High。AA Terminal-Bench 4.0 上，Sol/High 得分为 58.59%，Xhigh 为 56.06%。对可缓存输入采用相同的 95% 命中率假设，估算每题分别为 $1.01 和 $1.25。Sol/Max 得分为 60.10%，AA 报告每题 $1.29。按表中费率估算，可缓存输入的命中率达到约 90% 后，High 的估算费用才低于这个价格。Economy 选 Terra/High，得分 41.92%、每题 $0.44。Terra/Medium 为 32.32%、$0.28。Extra Quality 选 Astra/Xhigh，与 Astra/Max 同为 64.14%，每题分别为 $2.88 和 $4.66。终端套件包含多种任务，这条默认仅用于验收检查明确的环境恢复。 [Terminal-Bench 4.0](https://artificialanalysis.ai/evaluations/terminalbench-4-0)
+
+**可用成品交付。** AA-Briefcase 中 Terra/High 通过 37.68% 的评分项，每题 $0.28。沿用相同缓存假设，Sol/High 为 49.90%、估算 $1.01，Sol/Xhigh 为 51.82%、估算 $1.30。总体成绩混合了不同工作。在 38 项工作簿任务上，Sol/High 为 51.59%，Astra/High 为 53.86%。在 22 项演示稿任务上，两者分别为 44.08% 和 55.92%。不同格式对应不同题目和评分标准。补充表给出这些分项的评分项通过率，费用栏留空。按成品的关键工作派发，例如完成工作簿前需要消解来源冲突，并在交付时验证公式。 [AA-Briefcase](https://artificialanalysis.ai/evaluations/aa-briefcase) · [任务数据与估算假设](benchmarks/task-tradeoffs-6.2.csv)
+
 ## v0.5.0 评测基线
 
 下文的例子和表格使用 2026 年 11 月 15 日的快照，其中 Sol 指 GPT-6.1 Sol，Astra 指 GPT-6 Astra，另两个模型为 GPT-6 Luna 和 GPT-6.1 Terra。共 15 个组合，覆盖 Medium、High、Xhigh 和 Max，排除 Luna/Max。[数据与复算程序](benchmarks/README.zh-CN.md)

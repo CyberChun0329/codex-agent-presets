@@ -1,5 +1,15 @@
 # Changelog / 版本记录
 
+## 0.5.2
+
+### English
+
+- Added subagent guidance for frontend design and implementation, image analysis, terminal recovery, and document QA.
+
+### 简体中文
+
+- 补充前端设计与实现、图像分析、终端环境恢复和文档验收的子代理分工。
+
 ## 0.5.1
 
 ### English
