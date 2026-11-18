@@ -9,11 +9,35 @@
 | [Launch comparisons](gpt-6.2-launch.csv) | Five comparisons reported by OpenAI at launch |
 | [Scores and task costs](quality-6.2.csv) | OpenAI and Artificial Analysis results by model and reasoning effort |
 | [Supplementary task comparisons](task-tradeoffs-6.2.csv) | Tool work, evidence synthesis, visual extraction and professional deliverables, including rule interpretation and quantitative analysis |
+| [Codex in the AA Coding Agent Index v2.1](codex-agent-2.1.csv) | Three benchmark scores, composite API cost and agent wall time under the Codex harness |
 | [Frontend](frontend.csv) | AA-3D overall and domain scores, AA task cost inputs, and Vals functional web application scores and costs |
+| [Other publisher results](publisher-observations-6.2.csv) | Agents’ Last Exam, GDPval v2, Vals science, finance and legal research, and Plotly analytics |
 
-The frontend table keeps the source units and settings. AA-3D averages the votes against each opponent with equal weight in `opponent_balanced_vote_share_pct`. Domain rows have no matching costs. To reproduce the overall AA-3D cost, multiply cacheable input by the hit rate, price those hits at the read rate and all remaining input at the write rate, then price answer and reasoning tokens at the output rate. Divide the total by `task_count` and one million. Vals rows record the run's effort and reported costs. Luna/Max is included for context and excluded by the presets. [Frontend choices](../EVIDENCE.md#frontend-design-and-implementation)
+The frontend table keeps the source units and settings. AA-3D averages the votes against each opponent with equal weight in `opponent_balanced_vote_share_pct`. Domain rows have no matching costs. To reproduce the overall AA-3D cost, multiply cacheable input by the hit rate to get the number of cached tokens. Price those tokens at the read rate, the remaining input at the write rate, and answer and reasoning tokens at the output rate. Divide the total by `task_count` and one million. Vals rows record the run's effort and reported costs. Luna/Max is included for context and excluded by the presets. [Frontend choices](../EVIDENCE.md#frontend-design-and-implementation)
 
-## Inspect or reproduce
+## Compare the v0.6.0 defaults
+
+The [routing table](routing-0.6.0.csv) lists the four defaults for every task,
+the relevant benchmark panel where available, and the reason for the choice.
+A proxy can inform a decision even if its tasks or harness differ from the work
+being assigned. Rows marked `task structure` or `vendor guidance` have no matched
+quality/cost panel.
+
+Run this command from the repository root.
+
+```sh
+python3 -B benchmarks/compare_routing.py --output /tmp/codex-v0.6.0-tradeoffs.csv
+```
+
+The offline comparison checks the routing table against the four profiles and
+reports score and cost differences from Balance, the observed Pareto frontier
+and the conditional preference intervals. It applies these calculations within
+each selected source, metric and unit. Use the source CSV to inspect the other
+candidates. Blank values indicate missing observations or inapplicable
+calculations. The result describes the evidence behind the defaults, including
+cases where a decision depends on risk or other sources.
+
+## Reproduce the v0.5.0 baseline
 
 The v0.5.0 baseline (15 November 2026) uses GPT-6.1 Sol and GPT-6 Astra.
 
@@ -36,15 +60,21 @@ python3 benchmarks/evaluate.py --output-dir /tmp/codex-preset-analysis
 
 This reproduces the published result tables and checks every available source cost against its token/price inputs. It runs offline without model calls or changes to Codex configuration. [summary.json](results/summary.json) records input hashes and coverage; [cost-checks.csv](results/cost-checks.csv) records 338 reproduced costs and 322 unknown costs.
 
-The numerical snapshot is AA data. Vals, CUA Speedrun, DeepFinance, Snorkel and vendor guidance are separate coverage and transfer checks described in [Benchmarks and preset design](../EVIDENCE.md); their scores are not pooled into these tables. The 44 views include shared runs and derived metrics, not 44 independent experiments. General task defaults without a matching benchmark retain a null source in `presets.json`.
+The historical numerical snapshot is AA data. The 44 views include shared runs
+and derived metrics. General task defaults without a matching benchmark retain
+a null source in `presets.json`. [Other evidence](../EVIDENCE.md)
 
 ## Supplementary task tradeoffs
 
-The [supplementary table](task-tradeoffs-6.2.csv) includes OpenAI’s LifeVal, BenchCAD and PatchBench results, AA’s MLCR accuracy and overall pass rate, MMMU-Pro, and AA-Briefcase rubric checks overall and by file type. Direct AA scores use fractions. Scores from OpenAI charts use percentages. Separate columns identify the source’s task cost, costs reconstructed using the AA client, and costs estimated under a cache assumption. AutomationBench assigns the same run cost to its strict score. Briefcase file-type rows count the fraction of rubric checks passed and leave the cost blank. See the [Quality data](quality-6.2.csv) for earlier comparisons, including SciCode.
+The [supplementary table](task-tradeoffs-6.2.csv) includes OpenAI’s LifeVal, BenchCAD and PatchBench results, AA’s MLCR accuracy and overall pass rate, MMMU-Pro, and AA-Briefcase rubric checks overall and by file type. BenchCAD 2.1 Core covers GPT-6.2 Sol and Astra at Medium through Max. The `unit` column distinguishes fractions, percentage scores, net points and event counts per checked task. Separate columns identify the source’s task cost, costs reconstructed using the AA client, and costs estimated under a cache assumption. AutomationBench assigns the same run cost to its strict score. Briefcase file-type rows count the fraction of rubric checks passed and leave the cost blank. [OpenAI launch chart](https://openai.com/index/introducing-gpt-6-2-astra-sol/) · [Quality data](quality-6.2.csv)
 
-Harvey LAB-AA v1.1 and AA-AnalystAgent each have eight matched rows for GPT-6.2 Sol and Astra from Medium through Max. The Harvey rows use the AA evaluation scores and costs reported in OpenAI’s launch chart. Count this evidence once. AnalystAgent uses `pass_power_5_all_attempts`, the fraction of 80 questions answered correctly in all five attempts. Its cost fields are blank because the cost per single attempt and the cost for the five-attempt bundle could not be aligned. Each new row includes the source URL, field locator and snapshot SHA-256. [OpenAI launch chart](https://openai.com/index/introducing-gpt-6-2-astra-sol/) · [Harvey LAB-AA](https://artificialanalysis.ai/evaluations/harvey-lab-aa) · [AA-AnalystAgent](https://artificialanalysis.ai/evaluations/aa-analyst-agent)
+GDP.pdf All-pass counts attempts that meet every criterion across five attempts on each of 100 tasks. Its costs cover contestant model calls. Omniscience v1.1 net points penalize hallucinations and treat abstentions as neutral. Accuracy is the fraction correct across the same 3,000 questions, with the common run cost recorded on the net-score row. CritPt v2 uses five attempts per problem. Hard draws on 40 of the 70 problems covered by the full run, with a separate token field and denominator for its cost. The Hard and full rows overlap. [GDP.pdf](https://artificialanalysis.ai/evaluations/gdp-pdf) · [Omniscience](https://artificialanalysis.ai/evaluations/omniscience) · [CritPt v2](https://artificialanalysis.ai/evaluations/critpt-v2) · [AA methodology](https://artificialanalysis.ai/methodology/intelligence-benchmarking)
 
-To reproduce the Sol estimates, use each row’s input (`I`), answer (`A`), reasoning (`R`) and cacheable input (`C`) token totals, along with task count `N`. With hit fraction `h` among cacheable input tokens, the AA client’s convention gives the cost per task in USD:
+The AA rows identify the decoded chart field and the snapshot SHA-256. For GDP.pdf, Omniscience and CritPt, reported costs come from the AA model comparison pages and reconstructed costs use the corresponding canonical token fields, task denominators and model pricing. Blank cost cells indicate that a matching value is unavailable or already recorded on another view of the same run. [AA chart data](https://artificialanalysis.ai/data/241a91dd5b5e7b25.txt) · [Sol and Astra costs](https://artificialanalysis.ai/models/comparisons/gpt-6-2-sol-vs-gpt-6-2-astra) · [Terra and Luna costs](https://artificialanalysis.ai/models/comparisons/gpt-6-1-terra-vs-gpt-6-luna)
+
+Harvey LAB-AA v1.1 and AA-AnalystAgent cover GPT-6.2 Sol and Astra from Medium through Max. Harvey’s headline scores and costs come from AA via OpenAI’s launch chart. The same runs provide the criterion pass rate before the hallucination gate and the rates of material and minor hallucinations per checked task. Fewer hallucinations are better. AnalystAgent uses `pass_power_5_all_attempts`, the fraction of 80 questions answered correctly in all five attempts. The five-attempt bundle cost is unavailable. [OpenAI launch chart](https://openai.com/index/introducing-gpt-6-2-astra-sol/) · [Harvey LAB-AA](https://artificialanalysis.ai/evaluations/harvey-lab-aa) · [AA-AnalystAgent](https://artificialanalysis.ai/evaluations/aa-analyst-agent)
+
+To reproduce the Sol cache scenarios, use each row’s input (`I`), answer (`A`), reasoning (`R`) and cacheable input (`C`) token totals, along with task count `N`. With hit fraction `h` among cacheable input tokens, the AA client’s convention gives the cost per task in USD:
 
 ```text
 (C*h*0.10 + (I-C*h)*2.50 + (A+R)*10) / (1,000,000*N)
@@ -52,11 +82,24 @@ To reproduce the Sol estimates, use each row’s input (`I`), answer (`A`), reas
 
 The low, 95%-hit and high cost scenarios use `h` of 1, 0.95 and 0. If the source omits `C`, use `(I*2 + (A+R)*10) / (1,000,000*N)`. This is why all three HLE-Diamond estimates coincide. Rates are per million tokens at OpenAI Standard short-context prices on 18 November 2026, with 30-minute cache writes. Actual cache use and context length can change the task cost. [API prices](https://developers.openai.com/api/docs/pricing#latest-models) · [AA client](https://artificialanalysis.ai/_next/static/chunks/17016-9e1b20384a9bc1ed.js)
 
+The updated AA model comparison gives reported costs for Sol/Medium,
+High and Xhigh in several panels. Use reported per-task costs where available,
+then AA client reconstructions. The hypothetical cache scenarios remain
+available for sensitivity checks. [AA model comparison](https://artificialanalysis.ai/models/comparisons/gpt-6-2-sol-vs-gpt-6-2-astra)
+
+## Codex harness comparisons
+
+The [Codex table](codex-agent-2.1.csv) covers all Codex variants in the 18 November AA snapshot. Terminal-Bench 4.1 and SWE-Atlas-QnA-AA report pass@1. FrontierCode-AA 2.0 reports the mean benchmark score. Each benchmark averages three attempts per task. The three scores contribute equally to the index. Use the publisher’s v2.1 label for Terminal-Bench 4.1, whose data key still reads `terminal-bench-v4`. [AA Coding Agent Index](https://artificialanalysis.ai/agents/coding-agents) · [AA coding agent methodology](https://artificialanalysis.ai/methodology/coding-agents-benchmarking)
+
+The `index_mean_*` fields apply to the three-benchmark portfolio. The captured per-benchmark rows lacked matching cost and time. AA uses API prices and reports agent wall time in seconds, with equal weight for each benchmark. These runs measure individual coding agents in AA’s benchmark environment. The table includes Low and Luna/Max for context. [AA cost and timing methodology](https://artificialanalysis.ai/methodology/coding-agents-benchmarking#efficiency-metrics)
+
 ## Quality 6.2 panels
 
 [quality-6.2.csv](quality-6.2.csv) retains the complete captured candidate rows for AA FrontierCode 2.0, TerminalBench 4.0, SciCode, Terminal-Bench Science, HLE-Diamond and AutomationBench strict results, plus OpenAI's launch-chart FrontierCode 2.0, Terminal-Bench Science and AutomationBench. AA violations per task are a separate, lower-is-better risk measure, not a quality objective. SciCode has no captured 6.2 quality or cost; its older results do not establish a 6.2 comparison.
 
-Each row identifies its source, metric, native unit, model/effort and direct source URL. AA JSON pointers and the captured source SHA-256 identify the specific source snapshot; OpenAI values were extracted from the launch page's Vega-Lite chart. AA's fraction and OpenAI's percent are different scales and their runs must not be pooled. `usd_per_task` is the source-reported task cost or AA client reconstruction identified in `cost_basis`, not a Codex bill. `cost_scope` distinguishes the generic same-run AutomationBench cost attached to its strict/risk metrics from the panel cost. Blank values mean unavailable, not zero; eligible does not imply measured. Low, non-reasoning and Luna/Max are recorded but excluded by the Quality policy. The other metrics are quality-eligible; violations are not.
+Each row identifies its source, metric, native unit, model and effort, and direct source URL. AA rows give the JSON pointer and SHA-256 for the source snapshot. OpenAI rows come from the launch page's Vega-Lite chart. Compare the AA fractions and OpenAI percentages within their own runs.
+
+`usd_per_task` gives the source-reported task cost or the AA client reconstruction specified in `cost_basis`. `cost_scope` identifies where AutomationBench strict pass and violation metrics use the overall cost from the same run, and where a metric uses a panel-specific cost. The data keep Low, non-reasoning and Luna/Max for reference. Quality excludes these candidates and treats violations as a separate risk measure. Blank cells mark unavailable values, including for eligible combinations.
 
 To verify the recorded original frontier and conditional intervals for every captured panel, run from the repository root:
 
@@ -88,7 +131,7 @@ print('All captured panel classifications match.')
 PYCODE
 ```
 
-The calculation excludes missing quality or cost, and uses only the recorded eligible candidate set in each source/condition/metric/unit panel. Compare candidate pairs within those panels, then weigh the observed quality and cost changes alongside risk, task requirements and the uncertainty of point estimates. The frontier and intervals alone do not choose a task route. An omitted or unpriced candidate could change the result.
+The calculation uses eligible candidates with both quality and cost data within each source, condition, metric and unit. Weigh the resulting quality and cost differences alongside risk, task requirements and the uncertainty of the point estimates when choosing an assignment.
 
 ## What the calculation means
 
@@ -98,7 +141,7 @@ For a candidate `i` within one source and metric, let `q_i` be its source qualit
 - **Conditional preference:** `U_i(v) = v × q_i − c_i`, where `v ≥ 0` is an assumed USD value per source quality unit. The script finds the interval in which each candidate maximizes this expression against all usable observations. Endpoints include ties; a supported point with a blank upper endpoint is unbounded. These are preference intervals, not confidence intervals.
 - **Task tradeoff:** inspect quality differences and cost differences/multiples between the chosen defaults, alongside risk and conflicting components. No arbitrary extra hallucination penalty is added to a score that already penalizes errors.
 
-A Pareto point need not be selected by a linear objective; it can still make sense under a hard budget or quality constraint. Missing quality or cost is not zero, exclusion is not proof of unsuitability, and an unobserved candidate can change the frontier. The published calculation uses exact fractions for the preference intervals.
+A point on the Pareto frontier can meet a hard budget or quality constraint even if its preference interval is empty. A candidate with missing data may still suit the task. An omitted or unpriced candidate could change the frontier and intervals. The published calculation uses exact fractions for the preference intervals.
 
 ## From comparisons to defaults
 
@@ -106,7 +149,9 @@ First match the remaining work and acceptance requirements to relevant evidence.
 
 Balance chooses a competitive quality/cost compromise using those comparisons. Economy accepts less quality margin where the requirements permit it. Quality and Extra Quality accept larger task-relevant premiums. There is no fitted universal `v` for the four profiles, no automatic maximum-ratio selection, and no requirement to change pair at every tier. [The design explanation](../EVIDENCE.md#choosing-the-balance-defaults) gives concrete Balance choices and the four-profile heavy-synthesis example.
 
-The 32 branch rows are calculated comparisons of the supplied defaults. Open-ended judgment, writing and the general defaults also rely on task structure and vendor guidance. Native application quality, rework, handoff cost and subscription usage remain unmeasured.
+The historical 32 branch comparisons use the v0.5.0 defaults. The current routing
+comparison uses the v0.6.0 defaults. Native application quality, rework, handoff
+cost and subscription usage remain unmeasured.
 
 ## Cost units and exclusions
 

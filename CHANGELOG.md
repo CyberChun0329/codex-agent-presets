@@ -1,5 +1,17 @@
 # Changelog / 版本记录
 
+## 0.6.0
+
+### English
+
+- Streamline subagent routing with a shared decision tree and clearer assignments for source searches, document Q&A, code review and scientific validation.
+- Add GPT-6.2 benchmark scores, per-task costs and a comparison of the four presets. [Benchmark data](benchmarks/README.md)
+
+### 简体中文
+
+- 四档采用统一决策树，精简子代理派发规则，细化来源查找、文档问答、代码审查和科学验证的分工。
+- 补充 GPT-6.2 评测成绩、任务成本和四档对照。[评测数据](benchmarks/README.zh-CN.md)
+
 ## 0.5.2
 
 ### English
