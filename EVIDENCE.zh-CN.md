@@ -57,6 +57,18 @@ AA-3D 的七个子场景能看出差异。在按对手等权的票数胜率上�
 
 **可用成品交付。** AA-Briefcase 中 Terra/High 通过 37.68% 的评分项，每题 $0.28。沿用相同缓存假设，Sol/High 为 49.90%、估算 $1.01，Sol/Xhigh 为 51.82%、估算 $1.30。总体成绩混合了不同工作。在 38 项工作簿任务上，Sol/High 为 51.59%，Astra/High 为 53.86%。在 22 项演示稿任务上，两者分别为 44.08% 和 55.92%。不同格式对应不同题目和评分标准。补充表给出这些分项的评分项通过率，费用栏留空。按成品的关键工作派发，例如完成工作簿前需要消解来源冲突，并在交付时验证公式。 [AA-Briefcase](https://artificialanalysis.ai/evaluations/aa-briefcase) · [任务数据与估算假设](benchmarks/task-tradeoffs-6.2.csv)
 
+## 如何按任务使用补充证据
+
+**解读既定规则。** Harvey LAB-AA v1.1 只有在法律交付物满足全部评分标准、没有实质性幻觉时才计为通过。在 OpenAI 转引的 AA 结果中，Sol/Max 为 11.1%、每题 $1.92，Astra/High 为 13.3%、每题 $3.86。引用适用条文，说明相关例外，并报告尚未厘清的规则优先顺序。若工作要决定规则或验收标准本身，则按构造前提或系统约定的分工处理。[OpenAI 发布图](https://openai.com/index/introducing-gpt-6-2-astra-sol/) · [Harvey LAB-AA](https://artificialanalysis.ai/evaluations/harvey-lab-aa)
+
+**核对并计算数据。** AA-AnalystAgent 的 80 道题中，Sol/High 五次均答对的比例为 52.5%，Astra/High 为 61.25%。依据材料计算时，记录可供复算的原始数值、单位、假设和公式。[AA-AnalystAgent](https://artificialanalysis.ai/evaluations/aa-analyst-agent) · [分档对照数据](benchmarks/task-tradeoffs-6.2.csv)
+
+**只读工程诊断。** Coding Agent Index v2.1 覆盖仓库修改（FrontierCode-AA 2.0）、终端执行（Terminal-Bench 4.1 为 4.0 的同一批 66 道题重新评分）和仓库问答（SWE-Atlas-QnA-AA）。ITBench-AA 用离线事故记录考查根因诊断。范围明确的代码或日志排查按局部诊断处理。若关键在于跨记录重建有争议的时间线或因果链，则按重证据综合分工。引用支持结论的代码或记录。[Coding Agent Index 方法](https://artificialanalysis.ai/methodology/coding-agents-benchmarking/) · [ITBench-AA](https://artificialanalysis.ai/evaluations/itbench-aa)
+
+**从图像证据推断。** 可直接从图中读取的细节，包括跨视图的简单对照，按读图提取分工。如果结论依赖解释视觉线索或应用领域知识，按相应的证据判断或问答任务处理。VIALS-AA 测试科学图像解读，MKA 测试依据视觉信息密集的材料制作专业交付物。[VIALS-AA](https://artificialanalysis.ai/evaluations/vials-aa) · [MKA](https://artificialanalysis.ai/evaluations/mka)
+
+**验收交付物和操作结果。** 重新打开 CAD 模型，核对所要求的几何、约束和可编辑性。对有时序要求的媒体，在渲染回放中检查顺序与时间，适用时核对源文件中的时序。对于已授权的操作，按预期结果和允许的变更范围核对最终状态。BenchCAD、Code2Video-AA 和 EnterpriseOps-Gym-AA 分别覆盖几何、渲染媒体和最终状态的检查。[BenchCAD 2.1](https://benchcad.com/blog/benchcad-2-1) · [Code2Video-AA](https://artificialanalysis.ai/methodology/intelligence-benchmarking#code2video-aa) · [EnterpriseOps-Gym-AA](https://artificialanalysis.ai/evaluations/enterprise-ops-gym-aa)
+
 ## v0.5.0 评测基线
 
 下文的例子和表格使用 2026 年 11 月 15 日的快照，其中 Sol 指 GPT-6.1 Sol，Astra 指 GPT-6 Astra，另两个模型为 GPT-6 Luna 和 GPT-6.1 Terra。共 15 个组合，覆盖 Medium、High、Xhigh 和 Max，排除 Luna/Max。[数据与复算程序](benchmarks/README.zh-CN.md)

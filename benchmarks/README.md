@@ -8,7 +8,7 @@
 | --- | --- |
 | [Launch comparisons](gpt-6.2-launch.csv) | Five comparisons reported by OpenAI at launch |
 | [Scores and task costs](quality-6.2.csv) | OpenAI and Artificial Analysis results by model and reasoning effort |
-| [Supplementary task comparisons](task-tradeoffs-6.2.csv) | Additional comparisons for tool work, evidence synthesis, visual extraction and professional deliverables |
+| [Supplementary task comparisons](task-tradeoffs-6.2.csv) | Tool work, evidence synthesis, visual extraction and professional deliverables, including rule interpretation and quantitative analysis |
 | [Frontend](frontend.csv) | AA-3D overall and domain scores, AA task cost inputs, and Vals functional web application scores and costs |
 
 The frontend table keeps the source units and settings. AA-3D averages the votes against each opponent with equal weight in `opponent_balanced_vote_share_pct`. Domain rows have no matching costs. To reproduce the overall AA-3D cost, multiply cacheable input by the hit rate, price those hits at the read rate and all remaining input at the write rate, then price answer and reasoning tokens at the output rate. Divide the total by `task_count` and one million. Vals rows record the run's effort and reported costs. Luna/Max is included for context and excluded by the presets. [Frontend choices](../EVIDENCE.md#frontend-design-and-implementation)
@@ -40,7 +40,9 @@ The numerical snapshot is AA data. Vals, CUA Speedrun, DeepFinance, Snorkel and 
 
 ## Supplementary task tradeoffs
 
-The [supplementary table](task-tradeoffs-6.2.csv) includes OpenAI’s LifeVal, BenchCAD and PatchBench results, AA’s MLCR accuracy and overall pass rate, MMMU-Pro, and AA-Briefcase rubric checks overall and by file type. AA scores use fractions. OpenAI scores use percentages. Separate columns identify the source’s task cost, costs reconstructed using the AA client, and costs estimated under a cache assumption. AutomationBench assigns the same run cost to its strict score. Briefcase file-type rows count the fraction of rubric checks passed and leave the cost blank. See the [Quality data](quality-6.2.csv) for earlier comparisons, including SciCode.
+The [supplementary table](task-tradeoffs-6.2.csv) includes OpenAI’s LifeVal, BenchCAD and PatchBench results, AA’s MLCR accuracy and overall pass rate, MMMU-Pro, and AA-Briefcase rubric checks overall and by file type. Direct AA scores use fractions. Scores from OpenAI charts use percentages. Separate columns identify the source’s task cost, costs reconstructed using the AA client, and costs estimated under a cache assumption. AutomationBench assigns the same run cost to its strict score. Briefcase file-type rows count the fraction of rubric checks passed and leave the cost blank. See the [Quality data](quality-6.2.csv) for earlier comparisons, including SciCode.
+
+Harvey LAB-AA v1.1 and AA-AnalystAgent each have eight matched rows for GPT-6.2 Sol and Astra from Medium through Max. The Harvey rows use the AA evaluation scores and costs reported in OpenAI’s launch chart. Count this evidence once. AnalystAgent uses `pass_power_5_all_attempts`, the fraction of 80 questions answered correctly in all five attempts. Its cost fields are blank because the cost per single attempt and the cost for the five-attempt bundle could not be aligned. Each new row includes the source URL, field locator and snapshot SHA-256. [OpenAI launch chart](https://openai.com/index/introducing-gpt-6-2-astra-sol/) · [Harvey LAB-AA](https://artificialanalysis.ai/evaluations/harvey-lab-aa) · [AA-AnalystAgent](https://artificialanalysis.ai/evaluations/aa-analyst-agent)
 
 To reproduce the Sol estimates, use each row’s input (`I`), answer (`A`), reasoning (`R`) and cacheable input (`C`) token totals, along with task count `N`. With hit fraction `h` among cacheable input tokens, the AA client’s convention gives the cost per task in USD:
 

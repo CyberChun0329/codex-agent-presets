@@ -68,6 +68,7 @@ Keep required reviews. Review the actual version against its requirements and
 check the relevant source, output or behavior. For a blind review, keep prior
 verdicts and producer rationale out of the assignment. If exposed, report the
 loss of blindness and use a fresh reviewer when a blind verdict is required.
+For changes to shared items, check the final state against the authorized outcome.
 The primary checks delegated results before adoption and accepts the whole task.
 
 Retry temporary failures when a retry is likely to help. Honor Retry-After and
@@ -95,8 +96,12 @@ M, H, X and Max mean Medium, High, Xhigh and Max respectively.
 | Literal copying, counting and fixed replacement | Luna/H |
 | Structural mapping under complete fields and rules | Luna/H |
 | Execution with behavior, mechanism and steps specified | Terra/H |
-| Natural writing, fidelity review or local diagnosis | Terra/H |
+| Natural writing or fidelity review | Terra/H |
+| Local diagnosis, including a bounded code or log investigation | Terra/H |
 | Substantive evidence judgment within a given framework | Astra/H |
+| Interpret established rules across sources when applicability, priority or exceptions require judgment | Astra/H |
+| Quantitative analysis under a defined metric, with material differences in sources or measurements to reconcile | Astra/H |
+| Interpret visual evidence under a given framework when the image determines the conclusion | Astra/H |
 | Construct or reassess premises, system contract or evaluation framework | Astra/H |
 | Jointly construct assumptions, methods and observables | Astra/Max |
 | Sustained difficult proof, deep derivation or counterexample search | Astra/Max |
@@ -110,7 +115,7 @@ M, H, X and Max mean Medium, High, Xhigh and Max respectively.
 | Original 2D interface design with key layout or interaction decisions | Astra/H |
 | Complex interactive browser 3D with substantial scene design or 3D interaction work | Astra/Max |
 | Bounded extraction that depends on labels, positions or relations in an image | Terra/H |
-| Document QA: answer fully and correctly from given documents | Sol/H |
+| Document QA: answer directly from facts stated in supplied material | Sol/H |
 | Stateful tools: perform established operations where tracking state or applying workflow constraints is central to the work | Astra/Max |
 | End-to-end tools: environment exploration, implementation, execution and feedback adjustment determine a working deliverable | Astra/X |
 | Recovery of an unfamiliar terminal environment with a repeatable check | Astra/X |
@@ -127,20 +132,26 @@ M, H, X and Max mean Medium, High, Xhigh and Max respectively.
   specified execution. If tracking state constraints or exploring the environment
   determines the result, use the corresponding tools branch.
 - For extraction, use fixed copying or structural mapping when reliable text
-  or structured data supplies the result. Use visual extraction when the image
-  determines the requested facts. Route conclusions drawn from those facts by
-  the applicable evidence or QA branch.
+  or structured data supplies the result. Use visual extraction for labels,
+  positions and relations that can be read directly from images. Use visual
+  evidence judgment for substantive inference under a given framework.
 - Use terminal recovery when restoring an unfamiliar setup, toolchain or local
   service requires investigating its environment and passing a build, smoke test
   or other repeatable check. A prescribed repair uses specified execution. A
-  localized bug investigation uses local diagnosis. Changes whose main difficulty
-  is source code or integration use the corresponding code branch.
+  localized bug investigation uses local diagnosis, including when it requires
+  comparing logs. Use document QA for direct answers about recorded behavior.
+  Use heavy evidence synthesis for a wider investigation that turns on
+  reconstructing a disputed timeline or causal chain. Changes whose main
+  difficulty is source code or integration use the corresponding code branch.
 - For a workbook, deck or document, use structural mapping for complete field
   assignments, specified execution for prescribed assembly, and evidence judgment
   or synthesis for reconciling sources. Use end-to-end tools when finding and
   testing how to assemble the file is the main work. Use the writing default for
   prose revision. Reopen or render the deliverable and check the applicable
   requirements for behavior, editability and source references.
+- For CAD, reopen the final model and check the required geometry, constraints
+  and editability. For timed media, check the rendered sequence and timing,
+  including source timing when applicable.
 - For original 2D design, choose Astra/X when several interacting screens or
   flows must be designed and tested together.
 - For heavy evidence synthesis, consider Sol/Max when factual accuracy takes
@@ -161,6 +172,14 @@ tables give task defaults.
   reproducing the issue, choosing observations and identifying a local cause.
   An unknown root cause alone does not change the route. Interpreting a local
   bug against records remains local diagnosis.
+- When interpreting rules, cite the facts and applicable rules, including
+  material exceptions. Report priority conflicts the supplied authority leaves
+  unresolved. Use heavy evidence synthesis when reconstructing the underlying
+  facts is the main work.
+- For quantitative analysis, record the inputs, choices such as units or
+  denominators, and the steps needed to reproduce key results. A prescribed
+  calculation uses specified execution. A decision about what the metric should
+  measure uses evaluation framework design.
 - For mixed tool work, select by the unresolved technical burden, not title,
   file format, scientific label, deliverable name or order. Established algorithms
   with code integration and given error tests use the code branch; sustained
@@ -168,13 +187,14 @@ tables give task defaults.
   a fixed framework uses scientific execution. A result table or renaming results
   does not change the route. Distinguish state constraints from environment repair
   by the work actually remaining.
-- Natural writing and fidelity checking use the local-work row. Judging whether a
-  source claim holds uses evidence judgment or framework construction, as applicable.
+- Judging whether a source claim holds uses evidence judgment or framework
+  construction, as applicable.
   For overlapping QA, heavy evidence synthesis takes precedence when chain
   reconstruction, conflict resolution and composite adjudication are the main
-  burden. Document QA covers complete answers from supplied material. Closed hard
-  QA applies when external domain knowledge or independent hard problem solving
-  dominates and acceptance is fixed. Length, citations, professional terminology,
+  burden. Use the corresponding evidence or analysis row when the answer depends
+  on interpreting rules, reconciling measures or drawing inferences from visual
+  evidence. Closed hard QA applies when external domain knowledge or independent
+  hard problem solving dominates and acceptance is fixed. Length, citations, professional terminology,
   cover label or subject alone does not decide the route. Sustained proof takes
   precedence, including under fixed axioms; ordinary function boundary tests do not.
 - Research-level physics problems requiring a tool-assisted scientific solution

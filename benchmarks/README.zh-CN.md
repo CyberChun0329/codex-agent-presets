@@ -8,7 +8,7 @@
 | --- | --- |
 | [发布对照](gpt-6.2-launch.csv) | OpenAI 发布时公布的五项对比 |
 | [得分与任务费用](quality-6.2.csv) | OpenAI 和 Artificial Analysis 按模型与推理档位给出的评测结果 |
-| [补充任务对照](task-tradeoffs-6.2.csv) | 工具任务、证据综合、读图提取和专业交付的补充对照 |
+| [补充任务对照](task-tradeoffs-6.2.csv) | 工具任务、证据综合、读图提取和专业交付，包括规则解读与定量分析 |
 | [前端评测](frontend.csv) | AA-3D 总分、分场景得分和费用输入，以及 Vals Web 应用功能测试的成绩与费用 |
 
 前端数据保留各来源的计量单位和测试设置。AA-3D 的 `opponent_balanced_vote_share_pct` 将对每个对手的胜率等权平均。分场景数据没有对应费用。复算 AA-3D 总体费用时，以可缓存输入乘命中率计算缓存命中量，命中部分按读取费率计费，其余输入按写入费率计费，答案和推理 token 按输出费率计费。总额除以 `task_count` 和一百万。Vals 行保留实际推理档位与来源报告的费用。Luna/Max 供比较，四档预设均不派发该组合。[前端分工依据](../EVIDENCE.zh-CN.md#前端设计与实现)
@@ -40,7 +40,9 @@ python3 benchmarks/evaluate.py --output-dir /tmp/codex-preset-analysis
 
 ## 补充任务对照
 
-[补充表](task-tradeoffs-6.2.csv)收录 OpenAI 的 LifeVal、BenchCAD 和 PatchBench 成绩，以及 AA 的 MLCR 准确性和整体通过率、MMMU-Pro、Briefcase 总体及各文件类型的评分项通过率。AA 分数用比例，OpenAI 用百分数。来源给出的任务费用、按 AA 客户端公式复算的费用和假设缓存命中率后估算的费用各列一栏。AutomationBench 严格通过率对应整次运行的每题费用。Briefcase 文件类型分组统计通过的评分项比例，费用留空。SciCode 等对照见 [Quality 数据表](quality-6.2.csv)。
+[补充表](task-tradeoffs-6.2.csv)收录 OpenAI 的 LifeVal、BenchCAD 和 PatchBench 成绩，以及 AA 的 MLCR 准确性和整体通过率、MMMU-Pro、Briefcase 总体及各文件类型的评分项通过率。直接取自 AA 的分数用比例，OpenAI 图表中的分数用百分数。来源给出的任务费用、按 AA 客户端公式复算的费用和假设缓存命中率后估算的费用各列一栏。AutomationBench 严格通过率对应整次运行的每题费用。Briefcase 文件类型分组统计通过的评分项比例，费用留空。SciCode 等对照见 [Quality 数据表](quality-6.2.csv)。
+
+Harvey LAB-AA v1.1 和 AA-AnalystAgent 各收录八行，覆盖 GPT-6.2 Sol 和 Astra 从 Medium 到 Max 的四个档位。Harvey 采用 OpenAI 发布图转引的 AA 评测得分和费用，作为同一组证据计算一次。AnalystAgent 的 `pass_power_5_all_attempts` 是 80 道题中五次尝试均答对的比例。单次尝试与五次合计的费用口径尚未对齐，费用留空。新增行均提供来源链接、字段位置和快照 SHA-256。[OpenAI 发布图](https://openai.com/index/introducing-gpt-6-2-astra-sol/) · [Harvey LAB-AA](https://artificialanalysis.ai/evaluations/harvey-lab-aa) · [AA-AnalystAgent](https://artificialanalysis.ai/evaluations/aa-analyst-agent)
 
 复算 Sol 的估算费用时，取每行的输入（`I`）、回答（`A`）、推理（`R`）、可缓存输入（`C`）token 总数及任务数 `N`。按 AA 客户端的计价方式，可缓存输入中的命中比例为 `h` 时，每题美元费用为
 
