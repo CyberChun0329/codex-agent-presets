@@ -1,6 +1,6 @@
 # Codex Agent Presets
 
-**v0.6.0** · [简体中文](README.zh-CN.md)
+**v0.6.1** · [简体中文](README.zh-CN.md)
 
 Four presets set Codex's primary model and guide subagent assignments by task.
 Choose a preset based on how much more you are willing to spend for better
@@ -56,12 +56,12 @@ premiums for gains that matter to the task. Several profiles can share the same 
 | Task | Economy | Balance | Quality | Extra Quality |
 | --- | --- | --- | --- | --- |
 | Bounded source discovery within a predefined scope | Terra/Medium | Terra/Medium | Terra/High | Terra/High |
-| Document Q&A combining stated facts from supplied material | Terra/Medium | Sol/Medium | Sol/High | Sol/High |
+| Document Q&A combining stated facts from supplied material | Terra/Medium | Sol/Medium | Sol/Medium | Sol/Medium |
 | Tools with established steps and state constraints | Terra/Medium | Sol/Medium | Sol/High | Astra/Max |
 | Tool work that requires exploration and adjustment | Terra/Medium | Sol/High | Sol/Xhigh | Astra/Xhigh |
 | Scientific computation and validation | Terra/High | Sol/Medium | Sol/High | Astra/Xhigh |
 | Hard questions with a fixed answer | Sol/Medium | Sol/Medium | Astra/High | Astra/Max |
-| Demanding code integration | Terra/High | Terra/High | Sol/Max | Astra/Xhigh |
+| Demanding code integration | Terra/High | Sol/Medium | Sol/Max | Astra/Xhigh |
 | Original 2D interface design | Sol/High | Sol/High | Sol/Xhigh | Astra/High |
 | Complex interactive 3D in the browser | Sol/Max | Sol/Max | Sol/Max | Astra/Max |
 | Bounded extraction that requires reading an image | Terra/Medium | Terra/High | Terra/High | Terra/High |
@@ -77,7 +77,7 @@ gain worth the cost.
 
 For editable workbooks, presentations and documents, use end-to-end tools when
 figuring out how to assemble or verify the file determines acceptance, even
-with a supplied layout. See the [full routing table](benchmarks/routing-0.6.0.csv)
+with a supplied layout. See the [full routing table](benchmarks/routing-0.6.1.csv)
 and the [benchmark evidence](EVIDENCE.md).
 
 ### Model and data
@@ -86,7 +86,8 @@ The [calculation guide](benchmarks/README.md) covers the v0.5.0 baseline and the
 6.2 comparisons. The current tables include [benchmark scores and task costs](benchmarks/quality-6.2.csv),
 [additional task comparisons and cost estimates](benchmarks/task-tradeoffs-6.2.csv),
 [Codex repository Q&A, terminal and patch results](benchmarks/codex-agent-2.1.csv),
-and [frontend design and web application results](benchmarks/frontend.csv).
+[frontend design and web application results](benchmarks/frontend.csv),
+and [additional GPT-6.2 results](benchmarks/benchmark-refresh-6.2.csv).
 
 ## Choose by subscription
 
@@ -107,7 +108,7 @@ usage limits.
 Paste this prompt into Codex:
 
 ```text
-Install Codex Agent Presets v0.6.0 from the matching ZIP if I supply one. Otherwise use the official v0.6.0 tag at:
+Install Codex Agent Presets v0.6.1 from the matching ZIP if I supply one. Otherwise use the official v0.6.1 tag at:
 https://github.com/CyberChun0329/codex-agent-presets
 If the tag is unavailable, ask me for the matching ZIP. Use that same version and source for every file.
 
@@ -120,7 +121,7 @@ After selection, read only profiles/<chosen-profile>.md and the agents/cqp_*.tom
 
 Global targets are AGENTS.md, config.toml and agents/ under $CODEX_HOME (default ~/.codex). Project targets are <project>/AGENTS.md, <project>/.codex/config.toml and <project>/.codex/agents/.
 
-Before writing, check that the selected profile has a complete marked block for the chosen tier and v0.6.0 and that all eight role files are present. For a supplied ZIP, compare its SHA-256 with the official digest if available. Stop before writing if any check fails.
+Before writing, check that the selected profile has a complete marked block for the chosen tier and v0.6.1 and that all eight role files are present. For a supplied ZIP, compare its SHA-256 with the official digest if available. Stop before writing if any check fails.
 
 Check which guidance, roles and model would apply in the intended directory after the change. If higher-priority files or settings such as AGENTS.override.md or a project preset, disabled subagents, project trust or the instruction byte limit would prevent the selected preset from taking effect, report the specific blocker and wait for my decision before writing. Keep those files and settings unless I authorize a change.
 

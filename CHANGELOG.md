@@ -1,5 +1,17 @@
 # Changelog / 版本记录
 
+## 0.6.1
+
+### English
+
+- Use Sol/Medium for demanding code integration in Balance and for document Q&A about stated facts in Quality and Extra Quality.
+- Add GPT-6.2 benchmark results and task costs. [Benchmark data](benchmarks/README.md)
+
+### 简体中文
+
+- Balance 的困难代码集成、Quality 和 Extra Quality 的文档事实问答改用 Sol/Medium。
+- 补充 GPT-6.2 评测成绩与任务费用。[评测数据](benchmarks/README.zh-CN.md)
+
 ## 0.6.0
 
 ### English

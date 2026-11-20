@@ -18,10 +18,10 @@
 | 需要探索环境、按反馈调整的工具任务 | Balance 选 Sol/High。LifeVal 上，High 为 80.8%、每题 $0.65，Medium 为 70.3%、每题 $0.38。BenchCAD 上，同样的升级让得分从 41.2% 升至 64.0%，每题费用从 $0.29 升至 $0.75。Economy 保留 Terra/Medium，如果走错一步会导致后续步骤重做，可直接选 Terra/High。 |
 | 科学计算 | 在 AA Terminal-Bench-Science 上，Terra/Xhigh 为 41.90%、每题 $1.04，Sol/Medium 为 60.48%、AA 报告每题 $1.03。Balance 选 Sol/Medium，数值误差或稳定性决定验收时选 Sol/High。对于方法已定、有独立测试可验收的小型科学代码，Economy 可选 Luna/Xhigh。在 SciCode 上，Luna/Xhigh 和 Terra/Medium 的子题得分率分别为 51.74% 和 51.62%。按 AA 客户端公式以 288 道参评子题为分母复算，平均每道参评子题的费用分别为 $0.00144 和 $0.00518。AA 目前将 SciCode 标为旧版评测，正在重新审查。 [AA SciCode](https://artificialanalysis.ai/evaluations/scicode) |
 | 答案固定的困难问答 | 在 AA HLE-Diamond 上，Terra/Medium 的准确率为 31.3%，每题 $0.00896。Sol/Medium 的准确率为 50.7%，估算每题 $0.01872。即使是 Economy，这段准确率提升也值得每题多花约一美分。Economy 和 Balance 在准确率要求更高时都可选 Sol/High（58.3%，估算每题 $0.04219）。 |
-| 困难代码集成 | Extra Quality 选 Astra/Xhigh，Quality 选 Sol/Max。在 AA FrontierCode 上，两者分别拿到 48.95% 和 44.38% 的评分点，每题分别为 $3.75 和 $1.30。OpenAI FrontierCode 测得的差距较小（44.1% 对 43.8%）。在 PatchBench 上，Astra/Xhigh 和 Astra/Max 同为 79.7%，每题分别为 $2.45 和 $4.18。 |
+| 困难代码集成 | 跨组件变更且预期行为已明确时，Balance 用 Sol/Medium。在 AA FrontierCode 上，它拿到 41.40% 的评分点，每题 $0.458，Economy 的 Terra/High 为 37.46%、$0.392。Quality 用 Sol/Max（44.38%、$1.30），Extra Quality 用 Astra/Xhigh（48.95%、$3.75）。在 PatchBench 上，Astra/Xhigh 和 Astra/Max 同为 79.7%，每题分别为 $2.45 和 $4.18。 |
 | 重证据综合 | 在 AA MLCR 上，Economy、Balance、Quality 和 Extra Quality 所用组合的通过率分别为 30.56%（Terra/Max，每题 $0.06395）、35.00%（Sol/Xhigh，$0.08963）、37.22%（Sol/Max，$0.10856）和 39.44%（Astra/Max，$0.42003）。费用均按 AA 客户端的分词计价公式复算。该评测要求答案完整且准确。单看准确性，Sol/Max 为 98.89%，Astra/Max 为 96.67%。验收更重视事实准确性时可选 Sol/Max。医疗记录题可为证据综合提供参考，独立审查耦合代码行为仍需要审查任务的证据。 |
 
-补充表列出来源报告的费用，并说明复算或估算的依据。[评测结果](benchmarks/quality-6.2.csv) · [补充结果与费用估算](benchmarks/task-tradeoffs-6.2.csv) · [分工与证据对照表](benchmarks/routing-0.6.0.csv)
+补充表列出来源报告的费用，并说明复算或估算的依据。[评测结果](benchmarks/quality-6.2.csv) · [补充结果与费用估算](benchmarks/task-tradeoffs-6.2.csv) · [分工与证据对照表](benchmarks/routing-0.6.1.csv)
 
 ### Quality 的四类任务怎么分
 
@@ -38,7 +38,7 @@
 
 ## 前端设计与实现
 
-原创 2D 界面要决定视觉或交互并在浏览器中验证时，Balance 和 Economy 用 Sol/High。已有设计与行为规范的局部实现，Economy 用 Terra/Medium。Quality 的原创界面默认用 Sol/Xhigh，视觉设计本身是主要验收项时用 Astra/High。Extra Quality 默认用 Astra/High，多个相互影响的页面或流程需要一并设计和测试时用 Xhigh。这些默认依据工作特点和 [OpenAI 的设计建议](https://developers.openai.com/api/docs/guides/model-selection)。[WebDev Arena Frontend](https://arena.ai/leaderboard/code/webdev/frontend) 和 [Image-to-WebDev](https://arena.ai/leaderboard/code/image-to-webdev) 分别提供前端生成与参考图还原的评测。2026 年 11 月 18 日可查到的快照没有 6.2 成绩，无法据此确定推理档位的排序。
+原创 2D 界面要决定视觉或交互并在浏览器中验证时，Balance 和 Economy 用 Sol/High。已有设计与行为规范的局部实现，Economy 用 Terra/Medium。Quality 的原创界面默认用 Sol/Xhigh，视觉设计本身是主要验收项时用 Astra/High。Extra Quality 默认用 Astra/High，多个相互影响的页面或流程需要一并设计和测试时用 Xhigh。这些默认依据工作特点和 [OpenAI 的设计建议](https://developers.openai.com/api/docs/guides/model-selection)。[WebDev Arena Frontend](https://arena.ai/leaderboard/code/webdev/frontend) 和 [Image-to-WebDev](https://arena.ai/leaderboard/code/image-to-webdev) 分别提供前端生成与参考图还原的评测。11 月 20 日的 WebDev 快照补入了 6.2 Max 档数据。目前仍缺少 6.2 的 Medium、High 和 Xhigh 对照。[WebDev 得分与费用](benchmarks/benchmark-refresh-6.2.csv)
 
 AA-3D 用 55 个 Three.js 场景进行人工盲评。Sol/Max 为 1259.28 Elo，每场景约 $3.77。Astra/Max 为 1317.62 Elo，每场景约 $15.29。两项费用均按 AA 图表输入复算。Balance 和 Economy 选 Sol/Max。Quality 也默认用 Sol/Max，明确要求较高视觉保真度和成熟交互时选 Astra/Max。Extra Quality 默认用 Astra/Max。榜单没有 Terra 的结果，也没有两款 6.2 的较低推理档结果。[AA-3D](https://artificialanalysis.ai/evaluations/aa-3d) · [得分与费用输入](benchmarks/frontend.csv)
 
@@ -65,7 +65,7 @@ OpenAI 用 Agents’ Last Exam v1.1 评估耗时较长、涉及多步的专业�
 
 ## 如何按任务使用补充证据
 
-**依据文档作答。** 文本或结构化数据能直接给出唯一且无歧义的答案时，按直接查找处理。汇集给定材料中明示的事实属于文档问答。在 AA GDP.pdf 上，Terra/Medium 的全项通过率为 28.4%，每题 $0.167，Sol/Medium 为 29.2%、$0.33444，Sol/High 为 28.8%、$0.34114。三者得分接近。Economy 用 Terra/Medium，Balance 用 Sol/Medium。Quality 和 Extra Quality 面向更广的文档问答，暂保留 Sol/High，等待同条件案例对照。若答案取决于解释规则、消解记录冲突或根据图像推断，则使用对应的取证分支。[GDP.pdf](https://artificialanalysis.ai/evaluations/gdp-pdf) · [对照数据](benchmarks/task-tradeoffs-6.2.csv)
+**依据文档作答。** 文本或结构化数据能直接给出唯一且无歧义的答案时，按直接查找处理。汇集给定材料中明示的事实属于文档问答。在 AA GDP.pdf 上，Terra/Medium 的全项通过率为 28.4%，每题 $0.167，Sol/Medium 为 29.2%、$0.33444，Sol/High 为 28.8%、$0.34114。Economy 用 Terra/Medium。其余三档在这类任务上用 Sol/Medium。GDP.pdf 覆盖更广的文档推理任务，Medium 与 High 的汇总成绩接近。若答案取决于解释规则、消解记录冲突或根据图像推断，则使用对应的取证分支。[GDP.pdf](https://artificialanalysis.ai/evaluations/gdp-pdf) · [对照数据](benchmarks/task-tradeoffs-6.2.csv)
 
 **查找来源。** 搜索范围预先界定、筛选标准可直接应用时，可交给 scout。Economy 和 Balance 默认用 Terra/Medium，Quality 和 Extra Quality 用 Terra/High。若要判断哪些来源能回答问题、来源是否权威或覆盖是否充分，按开放找证处理。报告实际覆盖和记录缺口。Epoch 的实际工作评测提供了检查来源覆盖和结论完整性的案例。两类来源查找适用的模型与推理档位仍缺少直接证据。[Epoch 实际工作评测](https://epoch.ai/publications/how-good-are-fable-5-2-and-gpt-6-2-astra-at-real-work)
 
@@ -93,7 +93,7 @@ Coding Agent Index v2.1 的分项表现支持分别比较仓库问答和终端�
 
 归档的 AA-PersonalityBench 数据缺少 Terra，Decision Index 和 HealthBench Professional 数据缺少 Sol 与 Astra。OpenAI 系统卡给出 HealthBench Professional 汇总成绩，缺少按推理档位匹配的得分和费用。[AA-PersonalityBench](https://artificialanalysis.ai/evaluations/aa-personalitybench) · [Decision Index](https://artificialanalysis.ai/evaluations/artificial-analysis-decision-index) · [HealthBench Professional](https://artificialanalysis.ai/evaluations/healthbench) · [OpenAI 系统卡](https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf#page=74)
 
-要测量 v0.6.0 规则对首次分派、返工、用量和耗时的影响，需要在 Codex 中运行同任务对照。实际 Codex 工作流的总成本也尚未测量，其中包括主代理、工具、交接和返工。
+评测费用仅涵盖评测运行。包括交接与返工在内的 Codex 工作流成本尚未测量。
 
 ## v0.5.0 评测基线
 

@@ -1,6 +1,6 @@
 # Codex Agent Presets
 
-**v0.6.0** · [English](README.md)
+**v0.6.1** · [English](README.md)
 
 四套预设为 Codex 设置主模型，并提供按任务分派子代理的规则。按愿意为质量多付多少来选档，可安装到全局或单个项目。安装保留主代理已有的推理档位。
 
@@ -33,12 +33,12 @@
 | 任务 | Economy | Balance | Quality | Extra Quality |
 | --- | --- | --- | --- | --- |
 | 在既定范围内按明确标准查找来源 | Terra/Medium | Terra/Medium | Terra/High | Terra/High |
-| 汇集给定材料中明示事实的文档问答 | Terra/Medium | Sol/Medium | Sol/High | Sol/High |
+| 汇集给定材料中明示事实的文档问答 | Terra/Medium | Sol/Medium | Sol/Medium | Sol/Medium |
 | 按既定步骤操作并跟踪状态的工具任务 | Terra/Medium | Sol/Medium | Sol/High | Astra/Max |
 | 需要探索环境并按反馈调整的工具任务 | Terra/Medium | Sol/High | Sol/Xhigh | Astra/Xhigh |
 | 科学计算与验证 | Terra/High | Sol/Medium | Sol/High | Astra/Xhigh |
 | 答案固定的困难问答 | Sol/Medium | Sol/Medium | Astra/High | Astra/Max |
-| 困难代码集成 | Terra/High | Terra/High | Sol/Max | Astra/Xhigh |
+| 困难代码集成 | Terra/High | Sol/Medium | Sol/Max | Astra/Xhigh |
 | 原创 2D 界面设计 | Sol/High | Sol/High | Sol/Xhigh | Astra/High |
 | 浏览器内复杂交互式 3D | Sol/Max | Sol/Max | Sol/Max | Astra/Max |
 | 必须读图才能完成的有界提取 | Terra/Medium | Terra/High | Terra/High | Terra/High |
@@ -46,11 +46,11 @@
 
 Sol 和 Astra 使用 GPT-6.2，Terra 使用 GPT-6.1，Luna 使用 GPT-6。各预设列有对应的例外条件。数值方法与测试已定，且验收取决于代码集成时，按代码工作分配。验收取决于判断数值结果是否有效、稳定或满足误差要求时，按科学计算分配。误差或稳定性决定验收时，Balance 用 Sol/High。直接相关的证据表明准确性提升值得额外成本时，Extra Quality 可选 Astra/Max。
 
-交付可编辑的工作簿、演示稿或文档时，即使版式已给定，只要需要探索如何制作或验证文件、且这项工作决定验收，就按端到端工具任务分配。详见[完整分工表](benchmarks/routing-0.6.0.csv)和[评测依据与预设设计](EVIDENCE.zh-CN.md)。
+交付可编辑的工作簿、演示稿或文档时，即使版式已给定，只要需要探索如何制作或验证文件、且这项工作决定验收，就按端到端工具任务分配。详见[完整分工表](benchmarks/routing-0.6.1.csv)和[评测依据与预设设计](EVIDENCE.zh-CN.md)。
 
 ### 评价模型与数据
 
-[复算说明](benchmarks/README.zh-CN.md)涵盖 v0.5.0 基线和 6.2 数据。当前比较可查阅[评测得分与任务费用](benchmarks/quality-6.2.csv)、[补充任务对照与成本估算](benchmarks/task-tradeoffs-6.2.csv)、[Codex 环境中的仓库问答、终端和代码修改成绩](benchmarks/codex-agent-2.1.csv)和[前端设计与 Web 应用评测](benchmarks/frontend.csv)。
+[复算说明](benchmarks/README.zh-CN.md)涵盖 v0.5.0 基线和 6.2 数据。当前比较可查阅[评测得分与任务费用](benchmarks/quality-6.2.csv)、[补充任务对照与成本估算](benchmarks/task-tradeoffs-6.2.csv)、[Codex 环境中的仓库问答、终端和代码修改成绩](benchmarks/codex-agent-2.1.csv)、[前端设计与 Web 应用评测](benchmarks/frontend.csv)和[补充的 GPT-6.2 成绩](benchmarks/benchmark-refresh-6.2.csv)。
 
 ## 按订阅选择
 
@@ -70,7 +70,7 @@ Sol 和 Astra 使用 GPT-6.2，Terra 使用 GPT-6.1，Luna 使用 GPT-6。各预
 将下面这段提示词交给 Codex：
 
 ```text
-请安装 Codex Agent Presets v0.6.0。如果我提供了对应的 ZIP，就从该 ZIP 安装；否则使用以下仓库的官方 v0.6.0 标签：
+请安装 Codex Agent Presets v0.6.1。如果我提供了对应的 ZIP，就从该 ZIP 安装；否则使用以下仓库的官方 v0.6.1 标签：
 https://github.com/CyberChun0329/codex-agent-presets
 如果标签还不可用，向我索取对应的 ZIP。全部文件使用同一来源、同一版本。
 
@@ -83,7 +83,7 @@ https://github.com/CyberChun0329/codex-agent-presets
 
 全局目标为 $CODEX_HOME 下的 AGENTS.md、config.toml 和 agents/（默认 ~/.codex）；项目目标为 <project>/AGENTS.md、<project>/.codex/config.toml 和 <project>/.codex/agents/。
 
-写入前，确认预设的起止标记完整、档位和版本为所选档位和 v0.6.0，并确认八个角色文件齐全。如果我提供了 ZIP 且有官方 SHA-256，就核对摘要。任何一项核验失败时，先停止写入。
+写入前，确认预设的起止标记完整、档位和版本为所选档位和 v0.6.1，并确认八个角色文件齐全。如果我提供了 ZIP 且有官方 SHA-256，就核对摘要。任何一项核验失败时，先停止写入。
 
 检查改动后，预期工作目录会应用哪些指引、角色和模型。如果 AGENTS.override.md、项目预设等更高优先级的文件或设置，或子代理被禁用、项目的信任状态、指引字节上限会妨碍所选预设生效，请说明具体原因，等我决定后再写入。除非我授权，保留这些文件和设置。
 

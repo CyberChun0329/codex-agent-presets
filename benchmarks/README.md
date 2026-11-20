@@ -2,7 +2,7 @@
 
 [简体中文](README.zh-CN.md)
 
-## GPT-6.2 data · 18 November 2026
+## GPT-6.2 data
 
 | Table | Contents |
 | --- | --- |
@@ -12,12 +12,21 @@
 | [Codex in the AA Coding Agent Index v2.1](codex-agent-2.1.csv) | Three benchmark scores, composite API cost and agent wall time under the Codex harness |
 | [Frontend](frontend.csv) | AA-3D overall and domain scores, AA task cost inputs, and Vals functional web application scores and costs |
 | [Other publisher results](publisher-observations-6.2.csv) | Agents’ Last Exam, GDPval v2, Vals science, finance and legal research, and Plotly analytics |
+| [Additional 6.2 results](benchmark-refresh-6.2.csv) | AA visual tasks, Arena, Vals, ARC Prize and other publisher results. Snapshot dates are in the table. |
+
+Arena reports median costs per task. Vals reports costs per test in its own harness. ARC-AGI-3 Standard and Provider Adapter runs are listed separately. Blank costs indicate that a matching value is unavailable. VIALS scores require three correct repeats. Its cost uses AA’s 161-task chart denominator. The listed tokens and prices reproduce the VIALS and MKA costs.
 
 The frontend table keeps the source units and settings. AA-3D averages the votes against each opponent with equal weight in `opponent_balanced_vote_share_pct`. Domain rows have no matching costs. To reproduce the overall AA-3D cost, multiply cacheable input by the hit rate to get the number of cached tokens. Price those tokens at the read rate, the remaining input at the write rate, and answer and reasoning tokens at the output rate. Divide the total by `task_count` and one million. Vals rows record the run's effort and reported costs. Luna/Max is included for context and excluded by the presets. [Frontend choices](../EVIDENCE.md#frontend-design-and-implementation)
 
-## Compare the v0.6.0 defaults
+Run the same frontier calculation on the additional results.
 
-The [routing table](routing-0.6.0.csv) lists the four defaults for every task,
+```sh
+python3 -B benchmarks/compare_refresh.py > /tmp/codex-v0.6.1-refresh.csv
+```
+
+## Compare the v0.6.1 defaults
+
+The [routing table](routing-0.6.1.csv) lists the four defaults for every task,
 the relevant benchmark panel where available, and the reason for the choice.
 A proxy can inform a decision even if its tasks or harness differ from the work
 being assigned. Rows marked `task structure` or `vendor guidance` have no matched
@@ -26,7 +35,7 @@ quality/cost panel.
 Run this command from the repository root.
 
 ```sh
-python3 -B benchmarks/compare_routing.py --output /tmp/codex-v0.6.0-tradeoffs.csv
+python3 -B benchmarks/compare_routing.py --output /tmp/codex-v0.6.1-tradeoffs.csv
 ```
 
 The offline comparison checks the routing table against the four profiles and
@@ -150,7 +159,7 @@ First match the remaining work and acceptance requirements to relevant evidence.
 Balance chooses a competitive quality/cost compromise using those comparisons. Economy accepts less quality margin where the requirements permit it. Quality and Extra Quality accept larger task-relevant premiums. There is no fitted universal `v` for the four profiles, no automatic maximum-ratio selection, and no requirement to change pair at every tier. [The design explanation](../EVIDENCE.md#choosing-the-balance-defaults) gives concrete Balance choices and the four-profile heavy-synthesis example.
 
 The historical 32 branch comparisons use the v0.5.0 defaults. The current routing
-comparison uses the v0.6.0 defaults. Native application quality, rework, handoff
+comparison uses the v0.6.1 defaults. Native application quality, rework, handoff
 cost and subscription usage remain unmeasured.
 
 ## Cost units and exclusions

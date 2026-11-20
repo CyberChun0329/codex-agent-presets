@@ -1,4 +1,4 @@
-"""Compare the v0.6.0 task defaults within their selected benchmark panels."""
+"""Compare the v0.6.1 task defaults within their selected benchmark panels."""
 import argparse
 import re
 from collections import defaultdict
@@ -57,7 +57,7 @@ def compare_panel(panel):
 
 
 def compare():
-    routes = read_csv(HERE / 'routing-0.6.0.csv')
+    routes = read_csv(HERE / 'routing-0.6.1.csv')
     labels = [route['task'] for route in routes]
     if len(labels) != len(set(labels)):
         raise ValueError('Duplicate task in routing table')

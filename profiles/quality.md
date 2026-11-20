@@ -1,5 +1,5 @@
 <!-- codex-delegation-presets:start -->
-<!-- Codex delegation preset: quality; version: 0.6.0 -->
+<!-- Codex delegation preset: quality; version: 0.6.1 -->
 
 # Codex Delegation Policy
 
@@ -124,7 +124,7 @@ runs in a terminal. Scouts can do bounded source discovery.
 
 | Remaining work | Pair |
 | --- | --- |
-| Document QA: locate and combine stated facts in supplied material | Sol/H |
+| Document QA: locate and combine stated facts in supplied material | Sol/M |
 | Local investigation: trace bounded code behavior or diagnose a local issue, including by comparing logs | Terra/H |
 | Fidelity review against an accepted source or reference | Terra/H |
 | Open-ended evidence research: discover sources, verify their authority and judge coverage under a defined question | Sol/H |

@@ -1,5 +1,5 @@
 <!-- codex-delegation-presets:start -->
-<!-- Codex delegation preset: balance; version: 0.6.0 -->
+<!-- Codex delegation preset: balance; version: 0.6.1 -->
 
 # Codex Delegation Policy
 
@@ -157,7 +157,7 @@ runs in a terminal. Scouts can do bounded source discovery.
 | --- | --- |
 | Natural writing with content and claims settled | Terra/H |
 | Ordinary code implementation: clear behavior; choose local implementation and tests | Terra/H |
-| Demanding code integration: implement established mechanisms while tracking integration constraints | Terra/H |
+| Demanding code integration: implement established mechanisms while tracking integration constraints | Sol/M |
 | Stateful tools: perform established operations where tracking state or applying workflow constraints is central | Sol/M |
 | End-to-end tools: environment exploration, implementation, execution and feedback determine a working deliverable | Sol/H |
 | Recovery of an unfamiliar terminal environment with a repeatable check | Sol/H |

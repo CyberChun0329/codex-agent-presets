@@ -1,5 +1,5 @@
 <!-- codex-delegation-presets:start -->
-<!-- Codex delegation preset: economy; version: 0.6.0 -->
+<!-- Codex delegation preset: economy; version: 0.6.1 -->
 
 # Codex Delegation Policy
 

@@ -2,7 +2,7 @@
 
 [English](README.md)
 
-## GPT-6.2 数据 · 2026 年 11 月 18 日
+## GPT-6.2 数据
 
 | 表格 | 内容 |
 | --- | --- |
@@ -12,12 +12,21 @@
 | [AA Coding Agent Index v2.1 的 Codex 结果](codex-agent-2.1.csv) | Codex 运行环境下的三项得分，以及综合 API 费用和 agent 实际用时 |
 | [前端评测](frontend.csv) | AA-3D 总分、分场景得分和费用输入，以及 Vals Web 应用功能测试的成绩与费用 |
 | [其他评测方的成绩](publisher-observations-6.2.csv) | Agents’ Last Exam、GDPval v2、Vals 科学、金融和法律研究，以及 Plotly 数据分析 |
+| [补充 6.2 结果](benchmark-refresh-6.2.csv) | AA 视觉任务、Arena、Vals、ARC Prize 等评测结果，各行附快照日期 |
+
+Arena 报告每任务成本中位数。Vals 按其测试环境报告每题费用。ARC-AGI-3 的 Standard 和 Provider Adapter 分开记录。空白费用表示缺少对应值。VIALS 按三次作答均正确计分，费用采用 AA 图表的 161 题分母。表内 token 用量和费率可复算 VIALS 与 MKA 的费用。
 
 前端数据保留各来源的计量单位和测试设置。AA-3D 的 `opponent_balanced_vote_share_pct` 将对每个对手的胜率等权平均。分场景数据没有对应费用。复算 AA-3D 总体费用时，先把可缓存输入乘以命中率，得到命中的 token 数。命中部分按读取费率计费，其余输入按写入费率计费，答案和推理 token 按输出费率计费。总额除以 `task_count` 和一百万。Vals 行保留实际推理档位与来源报告的费用。Luna/Max 供比较，四档预设均不派发该组合。[前端分工依据](../EVIDENCE.zh-CN.md#前端设计与实现)
 
-## 比较 v0.6.0 的默认组合
+补充结果也可以用同一模型计算前沿。
 
-[分工对照表](routing-0.6.0.csv)列出每项任务的四档默认、可用的评测及选择依据。
+```sh
+python3 -B benchmarks/compare_refresh.py > /tmp/codex-v0.6.1-refresh.csv
+```
+
+## 比较 v0.6.1 的默认组合
+
+[分工对照表](routing-0.6.1.csv)列出每项任务的四档默认、可用的评测及选择依据。
 `proxy` 表示可参考的评测，其题目或运行环境与实际分工有所不同。
 `task structure` 和 `vendor guidance` 分别表示依据任务结构和厂商建议，目前缺少
 对应的得分与成本对照。
@@ -25,7 +34,7 @@
 在仓库根目录运行以下命令。
 
 ```sh
-python3 -B benchmarks/compare_routing.py --output /tmp/codex-v0.6.0-tradeoffs.csv
+python3 -B benchmarks/compare_routing.py --output /tmp/codex-v0.6.1-tradeoffs.csv
 ```
 
 程序离线核对分工表是否与四份预设一致，并在同一来源、指标和单位内计算各档
@@ -113,7 +122,7 @@ Pareto 前沿上的候选即使没有偏好区间，也可能满足预算上限�
 
 Balance 根据这些比较选择有竞争力的质量与费用折中。Economy 在要求允许时减少质量余量；Quality 和 Extra Quality 接受更高的任务相关溢价。四档没有拟合出的通用 `v`，不自动选择质量/费用比最大者，也不要求每档都换一个组合。[设计说明](../EVIDENCE.zh-CN.md#如何选择-balance-基准)提供 Balance 的具体选择及重证据综合的四档例子。
 
-历史的 32 行分支比较使用 v0.5.0 默认，当前分工对照使用 v0.6.0 默认。原生
+历史的 32 行分支比较使用 v0.5.0 默认，当前分工对照使用 v0.6.1 默认。原生
 应用质量、返工、交接费用和订阅用量尚未测量。
 
 ## 费用单位与排除项
