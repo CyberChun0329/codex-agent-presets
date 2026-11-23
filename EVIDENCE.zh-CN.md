@@ -2,6 +2,8 @@
 
 [English](EVIDENCE.md)
 
+[行业证据与派发](INDUSTRY.zh-CN.md)列出六个行业指数的用途，以及个案规则适用和受约束模型构建的选型条件。
+
 ## 为什么换用 GPT-6.2
 
 四档预设中的 Sol 和 Astra 均使用 GPT-6.2。在 OpenAI 的 FrontierCode 2.0 测试中，Sol/Max 与 Astra/Max 的得分相差不超过 0.5 分，前者的成本约为后者的五分之一。在 Terminal-Bench-Science 0.1 上，新版 Astra 比上一代高 9 个百分点，每题成本低于上一代的三分之一。OpenAI 的发布公告称，GPT-6.2 Sol 在 GDPval v2 上比 GPT-6.1 Sol 高 5.3 个百分点。[OpenAI 发布评测](https://openai.com/index/introducing-gpt-6-2-astra-sol/) · [发布对照数据](benchmarks/gpt-6.2-launch.csv)
@@ -10,7 +12,7 @@
 
 ### 怎样从 Balance 确定其他档位
 
-每类任务先选 Balance，衡量额外成本能带来多少得分提升，以及出错会带来什么后果。Economy 更重视成本，Quality 和 Extra Quality 依次更愿意为有依据的质量收益付费。有些任务可共用一个组合，例如 Economy 和 Balance 的答案固定的困难问答。
+按任务的验收要求、预算或质量目标选 Balance，在同一评测内比较候选。Economy 在能满足要求时省钱，Quality 和 Extra Quality 为有依据的质量收益付费。相邻档可以共用一个组合。 [选型方法](INDUSTRY.zh-CN.md#先定-balance)
 
 | 任务 | 选择依据 |
 | --- | --- |
@@ -21,7 +23,7 @@
 | 困难代码集成 | 跨组件变更且预期行为已明确时，Balance 用 Sol/Medium。在 AA FrontierCode 上，它拿到 41.40% 的评分点，每题 $0.458，Economy 的 Terra/High 为 37.46%、$0.392。Quality 用 Sol/Max（44.38%、$1.30），Extra Quality 用 Astra/Xhigh（48.95%、$3.75）。在 PatchBench 上，Astra/Xhigh 和 Astra/Max 同为 79.7%，每题分别为 $2.45 和 $4.18。 |
 | 重证据综合 | 在 AA MLCR 上，Economy、Balance、Quality 和 Extra Quality 所用组合的通过率分别为 30.56%（Terra/Max，每题 $0.06395）、35.00%（Sol/Xhigh，$0.08963）、37.22%（Sol/Max，$0.10856）和 39.44%（Astra/Max，$0.42003）。费用均按 AA 客户端的分词计价公式复算。该评测要求答案完整且准确。单看准确性，Sol/Max 为 98.89%，Astra/Max 为 96.67%。验收更重视事实准确性时可选 Sol/Max。医疗记录题可为证据综合提供参考，独立审查耦合代码行为仍需要审查任务的证据。 |
 
-补充表列出来源报告的费用，并说明复算或估算的依据。[评测结果](benchmarks/quality-6.2.csv) · [补充结果与费用估算](benchmarks/task-tradeoffs-6.2.csv) · [分工与证据对照表](benchmarks/routing-0.6.1.csv)
+补充表列出来源报告的费用，并说明复算或估算的依据。[评测结果](benchmarks/quality-6.2.csv) · [补充结果与费用估算](benchmarks/task-tradeoffs-6.2.csv) · [分工与证据对照表](benchmarks/routing-0.7.0.csv)
 
 ### Quality 的四类任务怎么分
 

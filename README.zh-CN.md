@@ -1,6 +1,8 @@
 # Codex Agent Presets
 
-**v0.6.1** · [English](README.md)
+**v0.7.0** · [English](README.md)
+
+了解[行业证据和任务预算](INDUSTRY.zh-CN.md)如何影响四档选型。
 
 四套预设为 Codex 设置主模型，并提供按任务分派子代理的规则。按愿意为质量多付多少来选档，可安装到全局或单个项目。安装保留主代理已有的推理档位。
 
@@ -46,7 +48,7 @@
 
 Sol 和 Astra 使用 GPT-6.2，Terra 使用 GPT-6.1，Luna 使用 GPT-6。各预设列有对应的例外条件。数值方法与测试已定，且验收取决于代码集成时，按代码工作分配。验收取决于判断数值结果是否有效、稳定或满足误差要求时，按科学计算分配。误差或稳定性决定验收时，Balance 用 Sol/High。直接相关的证据表明准确性提升值得额外成本时，Extra Quality 可选 Astra/Max。
 
-交付可编辑的工作簿、演示稿或文档时，即使版式已给定，只要需要探索如何制作或验证文件、且这项工作决定验收，就按端到端工具任务分配。详见[完整分工表](benchmarks/routing-0.6.1.csv)和[评测依据与预设设计](EVIDENCE.zh-CN.md)。
+交付可编辑的工作簿、演示稿或文档时，即使版式已给定，只要需要探索如何制作或验证文件、且这项工作决定验收，就按端到端工具任务分配。详见[完整分工表](benchmarks/routing-0.7.0.csv)和[评测依据与预设设计](EVIDENCE.zh-CN.md)。
 
 ### 评价模型与数据
 
@@ -70,7 +72,7 @@ Sol 和 Astra 使用 GPT-6.2，Terra 使用 GPT-6.1，Luna 使用 GPT-6。各预
 将下面这段提示词交给 Codex：
 
 ```text
-请安装 Codex Agent Presets v0.6.1。如果我提供了对应的 ZIP，就从该 ZIP 安装；否则使用以下仓库的官方 v0.6.1 标签：
+请安装 Codex Agent Presets v0.7.0。如果我提供了对应的 ZIP，就从该 ZIP 安装；否则使用以下仓库的官方 v0.7.0 标签：
 https://github.com/CyberChun0329/codex-agent-presets
 如果标签还不可用，向我索取对应的 ZIP。全部文件使用同一来源、同一版本。
 
@@ -83,7 +85,7 @@ https://github.com/CyberChun0329/codex-agent-presets
 
 全局目标为 $CODEX_HOME 下的 AGENTS.md、config.toml 和 agents/（默认 ~/.codex）；项目目标为 <project>/AGENTS.md、<project>/.codex/config.toml 和 <project>/.codex/agents/。
 
-写入前，确认预设的起止标记完整、档位和版本为所选档位和 v0.6.1，并确认八个角色文件齐全。如果我提供了 ZIP 且有官方 SHA-256，就核对摘要。任何一项核验失败时，先停止写入。
+写入前，确认预设的起止标记完整、档位和版本为所选档位和 v0.7.0，并确认八个角色文件齐全。如果我提供了 ZIP 且有官方 SHA-256，就核对摘要。任何一项核验失败时，先停止写入。
 
 检查改动后，预期工作目录会应用哪些指引、角色和模型。如果 AGENTS.override.md、项目预设等更高优先级的文件或设置，或子代理被禁用、项目的信任状态、指引字节上限会妨碍所选预设生效，请说明具体原因，等我决定后再写入。除非我授权，保留这些文件和设置。
 

@@ -1,6 +1,8 @@
 # Codex Agent Presets
 
-**v0.6.1** · [简体中文](README.zh-CN.md)
+**v0.7.0** · [简体中文](README.zh-CN.md)
+
+See how [industry evidence and task budgets](INDUSTRY.md) inform each preset's choices.
 
 Four presets set Codex's primary model and guide subagent assignments by task.
 Choose a preset based on how much more you are willing to spend for better
@@ -77,7 +79,7 @@ gain worth the cost.
 
 For editable workbooks, presentations and documents, use end-to-end tools when
 figuring out how to assemble or verify the file determines acceptance, even
-with a supplied layout. See the [full routing table](benchmarks/routing-0.6.1.csv)
+with a supplied layout. See the [full routing table](benchmarks/routing-0.7.0.csv)
 and the [benchmark evidence](EVIDENCE.md).
 
 ### Model and data
@@ -108,7 +110,7 @@ usage limits.
 Paste this prompt into Codex:
 
 ```text
-Install Codex Agent Presets v0.6.1 from the matching ZIP if I supply one. Otherwise use the official v0.6.1 tag at:
+Install Codex Agent Presets v0.7.0 from the matching ZIP if I supply one. Otherwise use the official v0.7.0 tag at:
 https://github.com/CyberChun0329/codex-agent-presets
 If the tag is unavailable, ask me for the matching ZIP. Use that same version and source for every file.
 
@@ -121,7 +123,7 @@ After selection, read only profiles/<chosen-profile>.md and the agents/cqp_*.tom
 
 Global targets are AGENTS.md, config.toml and agents/ under $CODEX_HOME (default ~/.codex). Project targets are <project>/AGENTS.md, <project>/.codex/config.toml and <project>/.codex/agents/.
 
-Before writing, check that the selected profile has a complete marked block for the chosen tier and v0.6.1 and that all eight role files are present. For a supplied ZIP, compare its SHA-256 with the official digest if available. Stop before writing if any check fails.
+Before writing, check that the selected profile has a complete marked block for the chosen tier and v0.7.0 and that all eight role files are present. For a supplied ZIP, compare its SHA-256 with the official digest if available. Stop before writing if any check fails.
 
 Check which guidance, roles and model would apply in the intended directory after the change. If higher-priority files or settings such as AGENTS.override.md or a project preset, disabled subagents, project trust or the instruction byte limit would prevent the selected preset from taking effect, report the specific blocker and wait for my decision before writing. Keep those files and settings unless I authorize a change.
 

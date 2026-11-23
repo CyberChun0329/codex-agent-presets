@@ -2,6 +2,8 @@
 
 [简体中文](EVIDENCE.zh-CN.md)
 
+The [industry evidence guide](INDUSTRY.md) gives the six Capability Index portfolios and the conditions for case-specific rule application and constrained model construction.
+
 ## GPT-6.2 model choices
 
 All four presets use GPT-6.2 for Sol and Astra. In OpenAI’s launch results, Sol/Max scored within 0.5 points of Astra/Max on FrontierCode 2.0 at about one-fifth of its cost. On Terminal-Bench-Science 0.1, Astra gained nine percentage points over the previous Astra at less than a third of its task cost. OpenAI’s launch announcement reports a GDPval v2 gain of 5.3 percentage points for GPT-6.2 Sol over GPT-6.1 Sol. [OpenAI launch results](https://openai.com/index/introducing-gpt-6-2-astra-sol/) · [Launch comparisons](benchmarks/gpt-6.2-launch.csv)
@@ -10,7 +12,7 @@ On Standard API requests with up to 272,000 input tokens, GPT-6.2 Sol costs $2 p
 
 ### From Balance to the other presets
 
-Choose Balance first for each task, weighing the score gain against the extra cost and the consequences of an error. Economy places more weight on cost. Quality and Extra Quality pay more when the evidence supports a useful gain. Two presets can share a pair, as Economy and Balance do for hard questions with a fixed answer.
+Choose Balance using the task's acceptance requirements and its budget or quality target. Examine alternatives on the same benchmark. Economy saves where the requirements can still be met. Quality and Extra Quality pay more when the evidence supports a useful gain. Two presets can share a pair. [Selection method](INDUSTRY.md#choose-balance-first)
 
 | Task | Choice and evidence |
 | --- | --- |
@@ -21,7 +23,7 @@ Choose Balance first for each task, weighing the score gain against the extra co
 | Demanding code integration | Balance uses Sol/Medium for cross-component changes with established behavior. In AA FrontierCode, it earned 41.40% of scoring credit at $0.458, up from 37.46% at $0.392 for Economy’s Terra/High. Quality uses Sol/Max (44.38%, $1.30) and Extra Quality uses Astra/Xhigh (48.95%, $3.75). On PatchBench, Astra/Xhigh scored 79.7% at $2.45, matching Astra/Max at $4.18. |
 | Heavy evidence synthesis | On AA MLCR, the Economy, Balance, Quality and Extra Quality pairs score 30.56% (Terra/Max, $0.06395), 35.00% (Sol/Xhigh, $0.08963), 37.22% (Sol/Max, $0.10856) and 39.44% (Astra/Max, $0.42003). Costs are reconstructed using AA’s canonical-token cost formula. Passing requires completeness and accuracy. On accuracy alone, Sol/Max scores 98.89% and Astra/Max 96.67%. Consider Sol/Max when factual accuracy takes priority over coverage. The medical-record tasks inform evidence synthesis. Independent review of coupled code behavior still needs review-specific evidence. |
 
-The supplementary tables give reported costs and document any reconstructions or estimates. [Benchmark results](benchmarks/quality-6.2.csv) · [Supplementary results and cost estimates](benchmarks/task-tradeoffs-6.2.csv) · [Routing table and evidence notes](benchmarks/routing-0.6.1.csv)
+The supplementary tables give reported costs and document any reconstructions or estimates. [Benchmark results](benchmarks/quality-6.2.csv) · [Supplementary results and cost estimates](benchmarks/task-tradeoffs-6.2.csv) · [Routing table and evidence notes](benchmarks/routing-0.7.0.csv)
 
 ### How Quality assigns four tasks
 

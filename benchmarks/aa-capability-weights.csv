@@ -1,0 +1,33 @@
+index,weight_percent,component,benchmarks,source_url,source_sha256
+Finance & Accounting Index,30,Agentic Knowledge Work,AA-Briefcase v1.1,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Finance & Accounting Index,25,Business Knowledge,AA-Omniscience v1.1,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Finance & Accounting Index,15,Reasoning,HLE-Diamond,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Finance & Accounting Index,15,Non-Hallucination,AA-Omniscience v1.1,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Finance & Accounting Index,10,Agentic Tool Use,AutomationBench-AA,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Finance & Accounting Index,5,Long-Context,GDP.pdf,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Strategy & Ops Index,35,Agentic Tool Use,AutomationBench-AA,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Strategy & Ops Index,30,Agentic Knowledge Work,AA-Briefcase v1.1,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Strategy & Ops Index,25,Business Knowledge,AA-Omniscience v1.1,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Strategy & Ops Index,5,Long-Context,GDP.pdf,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Strategy & Ops Index,5,Non-Hallucination,AA-Omniscience v1.1,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Legal Index,30,Legal Knowledge,AA-Omniscience v1.1,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Legal Index,25,Agentic Knowledge Work,AA-Briefcase v1.1,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Legal Index,15,Reasoning,HLE-Diamond,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Legal Index,15,Non-Hallucination,AA-Omniscience v1.1,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Legal Index,10,Long-Context,GDP.pdf,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Legal Index,5,Agentic Tool Use,AutomationBench-AA,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Healthcare & Medical Index,25,Medical & Health Knowledge,AA-Omniscience v1.1,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Healthcare & Medical Index,25,Agentic Knowledge Work,AA-Briefcase v1.1,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Healthcare & Medical Index,15,Long-Context Reasoning,MLCR-AA,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Healthcare & Medical Index,15,Agentic Tool Use,AutomationBench-AA,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Healthcare & Medical Index,10,Non-Hallucination,AA-Omniscience v1.1,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Healthcare & Medical Index,10,Reasoning,HLE-Diamond,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Engineering Index,30,Engineering Knowledge,AA-Omniscience v1.1,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Engineering Index,20,Science,"CritPt v2 (Hard Subset), Terminal-Bench-Science 0.1",https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Engineering Index,20,Reasoning,HLE-Diamond,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Engineering Index,15,Agentic Coding,"Terminal-Bench 4.0, FrontierCode-AA 2.0",https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Engineering Index,15,Agentic Knowledge Work,AA-Briefcase v1.1,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Economics Index,30,Economics Knowledge,AA-Omniscience v1.1,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Economics Index,30,Agentic Knowledge Work,AA-Briefcase v1.1,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Economics Index,25,Reasoning,HLE-Diamond,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23
+Economics Index,15,Long-Context Reasoning,GDP.pdf,https://artificialanalysis.ai/methodology/capability-indexes,8b4f5428126f0af078ea5a79a10d89b66301138b494846c661fc5b8182890a23

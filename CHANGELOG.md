@@ -1,5 +1,15 @@
 # Changelog / 版本记录
 
+## 0.7.0
+
+### English
+
+- Update the mathematical selection model, refine task routing, and adjust model and reasoning effort for some tasks.
+
+### 简体中文
+
+- 更新选型数学模型，完善任务分工，调整部分任务的模型与推理档位。
+
 ## 0.6.1
 
 ### English

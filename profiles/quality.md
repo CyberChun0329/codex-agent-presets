@@ -1,5 +1,5 @@
 <!-- codex-delegation-presets:start -->
-<!-- Codex delegation preset: quality; version: 0.6.1 -->
+<!-- Codex delegation preset: quality; version: 0.7.0 -->
 
 # Codex Delegation Policy
 
@@ -104,6 +104,12 @@ Use the most specific applicable row. Fixed steps use prescribed work unless
 success depends on tracking live state or applying permissions. Separate agreed
 implementation from open decisions about behavior, authority or evaluation.
 
+After choosing the task row, use industry evidence when domain judgment or a
+domain-specific error determines acceptance. Compare model and effort using
+quality and cost evidence from similar work. Use industry indexes to identify
+relevant skills and candidates. Keep the applicable default when evidence is
+inconclusive.
+
 #### Prescribed work
 
 | Remaining work | Pair |
@@ -129,7 +135,8 @@ runs in a terminal. Scouts can do bounded source discovery.
 | Fidelity review against an accepted source or reference | Terra/H |
 | Open-ended evidence research: discover sources, verify their authority and judge coverage under a defined question | Sol/H |
 | Substantive evidence judgment within a given framework | Sol/H |
-| Interpret established rules across sources when applicability, priority or exceptions require judgment | Sol/H |
+| Explain established rules or resolve a bounded question about their meaning or scope | Sol/H |
+| Case-specific rule application: determine an outcome from interacting established rules and decisive facts | Sol/Max |
 | Quantitative analysis under a defined metric, with material differences in sources or measurements to reconcile | Sol/H |
 | Interpret visual evidence under a given framework when the image determines the conclusion | Sol/H |
 | Heavy evidence synthesis or coupled behavior review: reconstruct disputed chronology, causal chains or interacting execution paths under established criteria | Sol/Max |
@@ -141,6 +148,29 @@ runs in a terminal. Scouts can do bounded source discovery.
   inference, use the relevant evidence row. Cite governing facts, rules and
   material exceptions. Report unresolved priority conflicts. Record input and
   measurement choices needed to reproduce key quantitative results.
+- Use case-specific rule application when an outcome for a particular case
+  depends on interactions among established rules or exceptions and decisive
+  facts. Examples include applying a transition rule in an eligibility decision
+  or resolving competing contract terms. Verify the governing sources and facts.
+  Explain the rules when their meaning is the deliverable. Use heavy synthesis
+  when establishing the case facts controls acceptance, and design when the
+  rules need to be chosen. The listed pair draws on comparable work such as
+  complex legal determinations. For less comparable work, start with the
+  general rule-interpretation pair.
+  In comparable legal work, consider Astra/High when broader coverage and
+  fewer material errors against the record justify the premium. Verify
+  external authorities separately.
+- For a checkable financial modeling answer under an agreed framework that
+  requires independent reasoning, use closed hard QA. Use quantitative
+  analysis to reconcile figures under a defined metric, and design when
+  valuation or identification assumptions are open.
+- For economics, use evidence judgment to assess studies and identification
+  claims, scientific execution to validate a settled estimator, and design
+  to choose a new method or observables.
+- For healthcare records, use document QA for stated facts and heavy evidence
+  synthesis when reconciling a material conflict across records. Use the
+  scientific or evidence row that fits any remaining technical judgment.
+
 - Route a bounded code trace to local investigation. Use heavy synthesis or
   coupled behavior review for interacting paths or conflicts across an evidence
   chain. Use a reviewer for independent checks.
@@ -160,10 +190,25 @@ runs in a terminal. Scouts can do bounded source discovery.
 | Ordinary code implementation: clear behavior; choose local implementation and tests | Terra/H |
 | Demanding code integration: implement established mechanisms while tracking integration constraints | Sol/Max |
 | Stateful tools: perform established operations where tracking state or applying workflow constraints is central | Sol/H |
-| End-to-end tools: environment exploration, implementation, execution and feedback determine a working deliverable | Sol/X |
+| End-to-end tools: figure out the tools or workflow needed to produce a working deliverable | Sol/X |
+| Constrained model construction: build or revise an editable model and verify how its linked elements behave together | Sol/Max |
 | Recovery of an unfamiliar terminal environment with a repeatable check | Sol/H |
 | Scientific execution: numerical implementation, computation and validity are the main burden | Sol/H |
 
+- Use constrained model construction when requirements are settled and the
+  editable model must preserve relationships across changes. Examples include
+  revising an assembly and checking affected constraints, or building a
+  scenario-driven workbook and verifying its dependent formulas and outputs.
+  Use the authoring tool to verify those relationships. Use prescribed work
+  when the edit or model run and all checks are fully specified. Use design for open requirements, code integration
+  when software behavior governs acceptance, and scientific execution when
+  numerical validity governs it. Use end-to-end tools when the main work is
+  figuring out how to use the tools or assemble the file. The listed pair
+  draws on comparable work such as iterative CAD. For less comparable work,
+  start with the end-to-end tools pair.
+- In operations work, use the stateful row when permissions or the state of
+  business systems govern acceptance. Use end-to-end tools when exploration
+  and feedback govern delivery, and design for unsettled process rules.
 - Route specified UI or media by the execution or implementation required.
   Check rendered UI and affected interactions at relevant screen sizes and
   states. Use fidelity review for independent comparison with an accepted
@@ -173,8 +218,6 @@ runs in a terminal. Scouts can do bounded source discovery.
 - Use the code rows for numerical work with a settled method and known tests
   when integration determines acceptance. Use scientific execution when
   numerical validity, stability or error requires judgment.
-- Use end-to-end tools when figuring out how to assemble or verify an editable
-  file determines acceptance, even with a specified layout.
 - Reopen or render files to check behavior, editability and sources as
   applicable. Check CAD geometry and constraints in the editable model. For
   timed media, check rendered order and timing and any applicable source timing.

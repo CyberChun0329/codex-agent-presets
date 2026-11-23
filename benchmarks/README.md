@@ -13,6 +13,8 @@
 | [Frontend](frontend.csv) | AA-3D overall and domain scores, AA task cost inputs, and Vals functional web application scores and costs |
 | [Other publisher results](publisher-observations-6.2.csv) | Agents’ Last Exam, GDPval v2, Vals science, finance and legal research, and Plotly analytics |
 | [Additional 6.2 results](benchmark-refresh-6.2.csv) | AA visual tasks, Arena, Vals, ARC Prize and other publisher results. Snapshot dates are in the table. |
+| [AA sector indexes](aa-capability-indexes.csv) and [weights](aa-capability-weights.csv) | Scores, weighted portfolio costs, subscores and exact preference intervals across six industry indexes. |
+| [AA sector task results](aa-industry-task-results.csv) | AnalystAgent, EnterpriseOps, AutomationBench domain metrics and original HealthBench. |
 
 Arena reports median costs per task. Vals reports costs per test in its own harness. ARC-AGI-3 Standard and Provider Adapter runs are listed separately. Blank costs indicate that a matching value is unavailable. VIALS scores require three correct repeats. Its cost uses AA’s 161-task chart denominator. The listed tokens and prices reproduce the VIALS and MKA costs.
 
@@ -21,12 +23,12 @@ The frontend table keeps the source units and settings. AA-3D averages the votes
 Run the same frontier calculation on the additional results.
 
 ```sh
-python3 -B benchmarks/compare_refresh.py > /tmp/codex-v0.6.1-refresh.csv
+python3 -B benchmarks/compare_refresh.py > /tmp/codex-v0.7.0-refresh.csv
 ```
 
-## Compare the v0.6.1 defaults
+## Compare the v0.7.0 defaults
 
-The [routing table](routing-0.6.1.csv) lists the four defaults for every task,
+The [routing table](routing-0.7.0.csv) lists the four defaults for every task,
 the relevant benchmark panel where available, and the reason for the choice.
 A proxy can inform a decision even if its tasks or harness differ from the work
 being assigned. Rows marked `task structure` or `vendor guidance` have no matched
@@ -35,7 +37,8 @@ quality/cost panel.
 Run this command from the repository root.
 
 ```sh
-python3 -B benchmarks/compare_routing.py --output /tmp/codex-v0.6.1-tradeoffs.csv
+python3 -B benchmarks/compare_routing.py --output /tmp/codex-v0.7.0-tradeoffs.csv
+python3 -B benchmarks/compare_budget.py --output /tmp/codex-v0.7.0-budgets.csv
 ```
 
 The offline comparison checks the routing table against the four profiles and
@@ -45,6 +48,15 @@ each selected source, metric and unit. Use the source CSV to inspect the other
 candidates. Blank values indicate missing observations or inapplicable
 calculations. The result describes the evidence behind the defaults, including
 cases where a decision depends on risk or other sources.
+
+The budget comparison lists every allowed pair and its interval of average
+execution budgets within each benchmark. The lower endpoint is inclusive and
+the upper endpoint is exclusive. Each interval shows where that pair has the
+highest observed score within budget, with lower execution cost breaking ties.
+The examples for legal and stateful work apply illustrative error ceilings.
+The cache examples apply only to pairs with enough published data. Missing
+scores, costs and error measures are marked separately. These comparisons
+use published point estimates and exclude production review and rework costs.
 
 ## Reproduce the v0.5.0 baseline
 
@@ -159,11 +171,11 @@ First match the remaining work and acceptance requirements to relevant evidence.
 Balance chooses a competitive quality/cost compromise using those comparisons. Economy accepts less quality margin where the requirements permit it. Quality and Extra Quality accept larger task-relevant premiums. There is no fitted universal `v` for the four profiles, no automatic maximum-ratio selection, and no requirement to change pair at every tier. [The design explanation](../EVIDENCE.md#choosing-the-balance-defaults) gives concrete Balance choices and the four-profile heavy-synthesis example.
 
 The historical 32 branch comparisons use the v0.5.0 defaults. The current routing
-comparison uses the v0.6.1 defaults. Native application quality, rework, handoff
+comparison uses the v0.7.0 defaults. Native application quality, rework, handoff
 cost and subscription usage remain unmeasured.
 
 ## Cost units and exclusions
 
 Source prices are USD per million tokens. Estimated cost is input cost plus answer/reasoning output cost, divided by one million and the source client's task denominator. For cacheable input, cached reads use the source hit rate and cache-hit price; the remaining input uses the cache-write price. A missing cache price falls back to the input price as in the source client. Missing required inputs remain unknown. These are source accounting assumptions, not measured Codex bills.
 
-HealthBench is excluded from quality/cost analysis while its version/field binding remains unresolved. AnalystAgent's five-attempt all-correct score has no established matching bundle cost. CritPt Hard retains its separate token field and task denominator. MLCR's missing Terra efforts and non-monotone accuracy component remain visible.
+In the sector task table, HealthBench is the original conversation benchmark. HealthBench Professional remains separate. AnalystAgent costs reproduce the AA chart convention, with the repeat-cost normalization unspecified. CritPt Hard retains its separate token field and task denominator. MLCR's missing Terra efforts and non-monotone accuracy component remain visible.

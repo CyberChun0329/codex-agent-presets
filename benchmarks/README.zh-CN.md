@@ -13,6 +13,8 @@
 | [前端评测](frontend.csv) | AA-3D 总分、分场景得分和费用输入，以及 Vals Web 应用功能测试的成绩与费用 |
 | [其他评测方的成绩](publisher-observations-6.2.csv) | Agents’ Last Exam、GDPval v2、Vals 科学、金融和法律研究，以及 Plotly 数据分析 |
 | [补充 6.2 结果](benchmark-refresh-6.2.csv) | AA 视觉任务、Arena、Vals、ARC Prize 等评测结果，各行附快照日期 |
+| [AA 行业指数](aa-capability-indexes.csv)与[权重](aa-capability-weights.csv) | 六个行业的得分、加权成本、分项及精确偏好区间 |
+| [AA 行业任务对照](aa-industry-task-results.csv) | AnalystAgent、EnterpriseOps、AutomationBench 分领域及原版 HealthBench |
 
 Arena 报告每任务成本中位数。Vals 按其测试环境报告每题费用。ARC-AGI-3 的 Standard 和 Provider Adapter 分开记录。空白费用表示缺少对应值。VIALS 按三次作答均正确计分，费用采用 AA 图表的 161 题分母。表内 token 用量和费率可复算 VIALS 与 MKA 的费用。
 
@@ -21,12 +23,12 @@ Arena 报告每任务成本中位数。Vals 按其测试环境报告每题费用
 补充结果也可以用同一模型计算前沿。
 
 ```sh
-python3 -B benchmarks/compare_refresh.py > /tmp/codex-v0.6.1-refresh.csv
+python3 -B benchmarks/compare_refresh.py > /tmp/codex-v0.7.0-refresh.csv
 ```
 
-## 比较 v0.6.1 的默认组合
+## 比较 v0.7.0 的默认组合
 
-[分工对照表](routing-0.6.1.csv)列出每项任务的四档默认、可用的评测及选择依据。
+[分工对照表](routing-0.7.0.csv)列出每项任务的四档默认、可用的评测及选择依据。
 `proxy` 表示可参考的评测，其题目或运行环境与实际分工有所不同。
 `task structure` 和 `vendor guidance` 分别表示依据任务结构和厂商建议，目前缺少
 对应的得分与成本对照。
@@ -34,13 +36,19 @@ python3 -B benchmarks/compare_refresh.py > /tmp/codex-v0.6.1-refresh.csv
 在仓库根目录运行以下命令。
 
 ```sh
-python3 -B benchmarks/compare_routing.py --output /tmp/codex-v0.6.1-tradeoffs.csv
+python3 -B benchmarks/compare_routing.py --output /tmp/codex-v0.7.0-tradeoffs.csv
+python3 -B benchmarks/compare_budget.py --output /tmp/codex-v0.7.0-budgets.csv
 ```
 
 程序离线核对分工表是否与四份预设一致，并在同一来源、指标和单位内计算各档
 相对 Balance 的得分和费用差、观察集 Pareto 前沿与条件偏好区间。可在对应的
 源数据表查看其他候选。空值表示缺少观察或该计算不适用。结合表内依据判断
 哪些默认还取决于风险或其他来源。
+
+预算对照列出每个允许的组合在同一评测中的平均执行预算区间。区间包含下限，
+不含上限。区间内该组合的观测分数最高，同分时取执行成本较低的。法律和有状态
+操作使用示例错误上限。缓存场景只覆盖有足够公开数据的组合。表中分别标出缺测
+的分数、费用和错误指标。计算基于公开点估计，实际复核和返工费用需另行计入。
 
 ## 复算 v0.5.0 基线
 
@@ -122,11 +130,11 @@ Pareto 前沿上的候选即使没有偏好区间，也可能满足预算上限�
 
 Balance 根据这些比较选择有竞争力的质量与费用折中。Economy 在要求允许时减少质量余量；Quality 和 Extra Quality 接受更高的任务相关溢价。四档没有拟合出的通用 `v`，不自动选择质量/费用比最大者，也不要求每档都换一个组合。[设计说明](../EVIDENCE.zh-CN.md#如何选择-balance-基准)提供 Balance 的具体选择及重证据综合的四档例子。
 
-历史的 32 行分支比较使用 v0.5.0 默认，当前分工对照使用 v0.6.1 默认。原生
+历史的 32 行分支比较使用 v0.5.0 默认，当前分工对照使用 v0.7.0 默认。原生
 应用质量、返工、交接费用和订阅用量尚未测量。
 
 ## 费用单位与排除项
 
 来源价格为美元/百万令牌。费用估计为输入费用与回答、推理输出费用之和，除以一百万和来源客户端的任务分母。可缓存输入按来源命中率计算缓存读取，使用缓存读取价；剩余输入使用缓存写入价。缓存价格缺失时，按来源客户端规则退回普通输入价。必要输入缺失则保持未知。这些是来源的计费假设，不是 Codex 实际账单。
 
-HealthBench 的版本与字段绑定尚未解决，因此不纳入质量与费用分析；AnalystAgent 的五次全对分数没有已确认对应的整组费用；CritPt Hard 保留独立令牌字段和任务分母。MLCR 缺失的 Terra 档位及不单调的 accuracy 分项仍可见。
+行业任务表中的 HealthBench 是原版健康对话评测，和 HealthBench Professional 分开。AnalystAgent 成本按 AA 网页口径复算，五次重复的成本归一化方式未明。CritPt Hard 保留独立令牌字段和任务分母。MLCR 缺失的 Terra 档位及不单调的 accuracy 分项仍可见。
